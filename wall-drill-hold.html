@@ -152,94 +152,94 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
    ============================================= */
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  @page{size:297mm 210mm;margin:0}
+  @page{size:210mm 297mm;margin:0}
 
-  html,body{width:297mm;background:#fff;font-size:12px;line-height:1.45;margin:0;padding:0;overflow:visible}
+  html,body{width:210mm;background:#fff;font-size:11px;line-height:1.4;margin:0;padding:0;overflow:visible}
   .content{max-width:100%!important;width:100%!important;box-shadow:none;margin:0;padding:0}
   .topbar,.print-btn,.doc-footer,.action-bar,.fab-bar{display:none!important}
 
-  /* === JEDE SECTION = VOLLE LANDSCAPE-SEITE === */
+  /* === JEDE SECTION = VOLLE A4 PORTRAIT SEITE === */
   .sec,.hero{
     page-break-after:always;
     page-break-inside:avoid;
     width:100%!important;max-width:100%!important;
-    height:210mm!important;min-height:210mm!important;
-    padding:16mm 24mm;
+    height:297mm!important;min-height:297mm!important;
+    padding:18mm 20mm;
     margin:0;
     overflow:hidden;
     display:flex!important;flex-direction:column!important;
   }
   .sec:last-of-type{page-break-after:auto}
 
-  /* Fehler + Lösungen auf EINER Seite zusammenfassen */
-  .sec-fehler{page-break-after:avoid!important;height:auto!important;min-height:auto!important;padding-bottom:4mm}
-  .sec-loesungen{page-break-before:avoid!important;padding-top:4mm}
+  /* Fehler + Lösungen auf EINER Seite */
+  .sec-fehler{page-break-after:avoid!important;height:auto!important;min-height:auto!important;padding-bottom:6mm}
+  .sec-loesungen{page-break-before:avoid!important;padding-top:6mm}
 
   /* === HERO === */
-  .hero{padding:20mm 28mm}
-  .hero h1{font-size:2.4rem;margin-bottom:12px}
-  .hero-sub{font-size:1rem;margin-bottom:24px}
-  .hero-grid{gap:20px;flex:1;align-content:start}
+  .hero{padding:24mm 22mm}
+  .hero h1{font-size:2.8rem;margin-bottom:14px}
+  .hero-sub{font-size:1.1rem;margin-bottom:28px}
+  .hero-grid{gap:20px;flex:1}
   .loom-box{display:none!important}
   .loom-print{display:block!important}
-  .loom-print .play-c{width:52px;height:52px;margin-bottom:12px}
-  .loom-print p{font-size:.9rem}
-  .loom-print a{font-size:.8rem}
+  .loom-print .play-c{width:56px;height:56px;margin-bottom:14px}
+  .loom-print p{font-size:1rem}
+  .loom-print a{font-size:.85rem}
   .info-card{padding:24px}
-  .info-card h3{font-size:1rem}
-  .info-card p{font-size:.85rem}
-  .info-tip p{font-size:.8rem}
+  .info-card h3{font-size:1.05rem}
+  .info-card p{font-size:.9rem;line-height:1.55}
+  .info-tip p{font-size:.85rem}
 
   /* === SECTION HEADERS === */
-  .sec-label{font-size:.7rem;letter-spacing:4px;margin-bottom:6px}
-  .sec-title{font-size:1.6rem;margin-bottom:16px}
+  .sec-label{font-size:.72rem;letter-spacing:4px;margin-bottom:8px}
+  .sec-title{font-size:1.8rem;margin-bottom:18px}
 
   /* === WARUM === */
-  .warum-grid{gap:20px;margin-top:16px;flex:1}
-  .cat-label{font-size:1rem;margin-bottom:12px}
+  .warum-grid{gap:24px;margin-top:18px;flex:1}
+  .cat-label{font-size:1.05rem;margin-bottom:14px}
   .b-stack{gap:14px}
-  .ben{padding:14px 16px;gap:12px;border-radius:10px}
-  .b-ico{width:32px;height:32px;border-radius:6px}
-  .b-ico svg{width:15px;height:15px}
-  .ben h4{font-size:.88rem;margin-bottom:4px}
-  .ben p{font-size:.78rem;line-height:1.5}
+  .ben{padding:16px 18px;gap:14px;border-radius:10px}
+  .b-ico{width:34px;height:34px;border-radius:7px}
+  .b-ico svg{width:16px;height:16px}
+  .ben h4{font-size:.95rem;margin-bottom:4px}
+  .ben p{font-size:.82rem;line-height:1.5}
 
   /* === BEWEGUNGSZIEL === */
-  .goal-box{padding:16px 18px;margin-bottom:16px}
-  .goal-box p{font-size:.88rem;line-height:1.55}
-  h3[style]{font-size:1.05rem!important;margin-bottom:8px!important}
-  .focus-grid{gap:14px;margin-top:16px;flex:1}
-  .f-card{padding:16px 18px;border-top-width:3px;border-radius:8px}
-  .f-card p{font-size:.82rem;line-height:1.5}
+  .goal-box{padding:18px 20px;margin-bottom:20px}
+  .goal-box p{font-size:.92rem;line-height:1.6}
+  h3[style]{font-size:1.1rem!important;margin-bottom:10px!important}
+  .focus-grid{gap:14px;margin-top:18px;flex:1}
+  .f-card{padding:18px 20px;border-top-width:3px;border-radius:10px}
+  .f-card p{font-size:.88rem;line-height:1.5}
 
   /* === ÜBUNGSBESCHREIBUNG === */
-  .steps{margin-top:16px;flex:1}
-  .stp{padding:8px 0;gap:14px}
-  .stp-n{width:30px;height:30px;font-size:.78rem;border-radius:6px}
-  .stp h3{font-size:.9rem;margin-bottom:4px}
-  .stp li{font-size:.78rem;line-height:1.5;padding-left:14px;margin-bottom:3px}
+  .steps{margin-top:18px;flex:1}
+  .stp{padding:10px 0;gap:14px}
+  .stp-n{width:32px;height:32px;font-size:.82rem;border-radius:7px}
+  .stp h3{font-size:.95rem;margin-bottom:4px}
+  .stp li{font-size:.82rem;line-height:1.5;padding-left:14px;margin-bottom:4px}
   .stp li::before{top:7px;width:4px;height:4px}
-  .steps::before{left:14px}
+  .steps::before{left:15px}
 
   /* === FEHLER === */
-  .errs{gap:6px;margin-top:12px}
-  .er{padding:10px 16px;gap:12px;border-radius:8px}
-  .er-n{width:28px;height:28px;font-size:.75rem;border-radius:6px}
-  .er span{font-size:.82rem}
+  .errs{gap:8px;margin-top:14px}
+  .er{padding:12px 16px;gap:14px;border-radius:8px}
+  .er-n{width:30px;height:30px;font-size:.78rem;border-radius:6px}
+  .er span{font-size:.88rem}
 
   /* === LÖSUNGEN === */
-  .sol-grid{gap:12px;margin-top:12px}
-  .sol{padding:14px 16px;border-radius:10px}
-  .sol h4{font-size:.85rem;margin-bottom:6px;padding-bottom:5px}
-  .sol-t{font-size:.65rem;width:55px}
-  .sol-v{font-size:.75rem;line-height:1.45}
+  .sol-grid{gap:14px;margin-top:14px}
+  .sol{padding:16px 18px;border-radius:10px}
+  .sol h4{font-size:.9rem;margin-bottom:8px;padding-bottom:6px}
+  .sol-t{font-size:.68rem;width:58px}
+  .sol-v{font-size:.78rem;line-height:1.45}
 
   /* === KRITERIEN === */
-  .crit-grid{gap:16px;margin-top:20px;flex:1}
-  .cri{padding:20px;gap:14px;border-radius:12px}
-  .cri-n{width:40px;height:40px;font-size:1.05rem;border-radius:8px}
-  .cri h4{font-size:.92rem;margin-bottom:4px}
-  .cri p{font-size:.78rem;line-height:1.5}
+  .crit-grid{gap:18px;margin-top:22px;flex:1}
+  .cri{padding:22px;gap:16px;border-radius:12px}
+  .cri-n{width:44px;height:44px;font-size:1.1rem;border-radius:10px}
+  .cri h4{font-size:1rem;margin-bottom:4px}
+  .cri p{font-size:.82rem;line-height:1.5}
   .cri p{font-size:.58rem;line-height:1.35}
 }
 </style>
