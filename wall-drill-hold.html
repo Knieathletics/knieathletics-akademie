@@ -122,6 +122,22 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
 /* Print Button */
 .print-btn{position:fixed;bottom:20px;right:20px;z-index:200;background:var(--grad-orange);color:#fff;border:none;padding:10px 20px;border-radius:50px;font-size:.82rem;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(255,85,0,.3);font-family:inherit}
 
+/* Action Bar am Ende */
+.action-bar{display:flex;gap:12px;justify-content:center;padding:32px 40px;background:#fff;border-top:1px solid rgba(0,0,0,.06)}
+.action-bar a,.action-bar button{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-size:.88rem;font-weight:700;text-decoration:none;font-family:inherit;cursor:pointer;border:none;transition:transform .15s}
+.action-bar a:hover,.action-bar button:hover{transform:scale(1.03)}
+.btn-fullscreen{background:var(--dark);color:#fff}
+.btn-pdf{background:var(--grad-orange);color:#fff;box-shadow:0 3px 12px rgba(255,85,0,.25)}
+.btn-print{background:var(--ice);color:var(--dark);border:1px solid rgba(0,0,0,.08)!important}
+
+/* Floating Action Buttons (nur in iframe sichtbar) */
+.fab-bar{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:200;display:flex;gap:8px;background:rgba(0,44,67,.95);backdrop-filter:blur(8px);padding:8px 12px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.fab-bar a,.fab-bar button{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;font-size:.78rem;font-weight:600;text-decoration:none;font-family:inherit;cursor:pointer;border:none;color:#fff}
+.fab-full{background:rgba(255,255,255,.15)}
+.fab-full:hover{background:rgba(255,255,255,.25)}
+.fab-pdf{background:var(--orange)}
+.fab-pdf:hover{opacity:.9}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:700px){
   .sec,.hero{padding:28px 20px}
@@ -140,7 +156,7 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
 
   html,body{width:297mm;background:#fff;font-size:12px;line-height:1.45;margin:0;padding:0;overflow:visible}
   .content{max-width:100%!important;width:100%!important;box-shadow:none;margin:0;padding:0}
-  .topbar,.print-btn,.doc-footer{display:none!important}
+  .topbar,.print-btn,.doc-footer,.action-bar,.fab-bar{display:none!important}
 
   /* === JEDE SECTION = VOLLE LANDSCAPE-SEITE === */
   .sec,.hero{
@@ -342,9 +358,29 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
 
 </div><!-- /content -->
 
+<!-- Action Bar (sichtbar wenn Seite direkt geöffnet) -->
+<div class="action-bar" id="actionBar">
+  <a href="https://knieathletics.github.io/knieathletics-akademie/wall-drill-hold.html" target="_blank" class="btn-fullscreen">↗ Vollansicht öffnen</a>
+  <a href="https://knieathletics.github.io/knieathletics-akademie/wall-drill-hold.pdf" download class="btn-pdf">📥 PDF herunterladen</a>
+  <button class="btn-print" onclick="window.print()">🖨️ Drucken</button>
+</div>
+
 <div class="doc-footer"><p>© 2026 MJS Sports GmbH · KNIEATHLETICS · knieathletics.de</p></div>
 
-<button class="print-btn" onclick="alert('Druckeinstellungen:\n\n1. Ziel → «Als PDF speichern»\n2. Layout → QUERFORMAT\n3. Farbe → FARBE (nicht Schwarz-Weiß)\n4. Weitere Einstellungen → «Hintergrundgrafiken» aktivieren'); setTimeout(()=>window.print(), 300)">🖨️ Als PDF drucken</button>
+<!-- Floating Action Bar (sichtbar in iframe) -->
+<div class="fab-bar" id="fabBar">
+  <a href="https://knieathletics.github.io/knieathletics-akademie/wall-drill-hold.html" target="_blank" class="fab-full">↗ Vollansicht</a>
+  <a href="https://knieathletics.github.io/knieathletics-akademie/wall-drill-hold.pdf" download class="fab-pdf">📥 PDF</a>
+</div>
+
+<script>
+// Detect if in iframe → show FAB, hide action bar. If standalone → hide FAB.
+(function(){
+  var inIframe = window.self !== window.top;
+  document.getElementById('fabBar').style.display = inIframe ? 'flex' : 'none';
+  document.getElementById('actionBar').style.display = inIframe ? 'none' : 'flex';
+})();
+</script>
 
 </body>
 </html>
