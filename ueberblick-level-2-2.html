@@ -728,19 +728,30 @@ html.embed-mode .hero { scroll-margin-top: 0 }
 
 <!-- JAVASCRIPT -->
 <script>
-// Fullscreen Toggle
+// Fullscreen Toggle (Browser Fullscreen API + CSS)
 function toggleFullscreen() {
   const html = document.documentElement;
-  const label = document.getElementById('fabFullLabel');
-  if (html.classList.contains('fullscreen-mode')) {
-    html.classList.remove('fullscreen-mode');
-    label.textContent = 'Vollbild';
+  if (!document.fullscreenElement) {
+    html.requestFullscreen().catch(function() {
+      // Fallback: CSS-only
+      html.classList.add('fullscreen-mode');
+      document.getElementById('fabFullLabel').textContent = 'Normal';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   } else {
-    html.classList.add('fullscreen-mode');
-    label.textContent = 'Normal';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.exitFullscreen();
   }
 }
+document.addEventListener('fullscreenchange', function() {
+  var label = document.getElementById('fabFullLabel');
+  if (document.fullscreenElement) {
+    document.documentElement.classList.add('fullscreen-mode');
+    label.textContent = 'Normal';
+  } else {
+    document.documentElement.classList.remove('fullscreen-mode');
+    label.textContent = 'Vollbild';
+  }
+});
 
 // Scrollspy
 const sections = document.querySelectorAll('[id^="sec-"]');
