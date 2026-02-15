@@ -291,6 +291,19 @@ html.fullscreen-mode .fok-a-card p { font-size: .88rem }
   html.fullscreen-mode .hero h1 { font-size: 2.2rem }
 }
 
+/* === EMBED MODE (iframe in Memberspot) === */
+html.embed-mode { background: transparent }
+html.embed-mode body { background: transparent }
+html.embed-mode .content { max-width: 100%; box-shadow: none }
+html.embed-mode .topbar { display: none }
+html.embed-mode .nav-bar { display: none }
+html.embed-mode .fab-bar { display: none }
+html.embed-mode .doc-footer { display: none }
+html.embed-mode .hero { border-radius: 12px 12px 0 0; overflow: hidden }
+html.embed-mode .sec:last-of-type { border-radius: 0 0 12px 12px; overflow: hidden }
+html.embed-mode .sec { scroll-margin-top: 0 }
+html.embed-mode .hero { scroll-margin-top: 0 }
+
 /* === PRINT === */
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
@@ -715,8 +728,15 @@ html.fullscreen-mode .fok-a-card p { font-size: .88rem }
 
 <!-- JAVASCRIPT -->
 <script>
-// Fullscreen Toggle
+// Detect iframe embed mode
+const isEmbedded = window !== window.parent;
+if (isEmbedded) {
+  document.documentElement.classList.add('embed-mode');
+}
+
+// Fullscreen Toggle (only works standalone)
 function toggleFullscreen() {
+  if (isEmbedded) return;
   const html = document.documentElement;
   const label = document.getElementById('fabFullLabel');
   if (html.classList.contains('fullscreen-mode')) {
@@ -729,48 +749,47 @@ function toggleFullscreen() {
   }
 }
 
-// Scrollspy
-const sections = document.querySelectorAll('[id^="sec-"]');
-const navItems = document.querySelectorAll('.nav-item');
-const navBar = document.getElementById('navBar');
+// Scrollspy (only standalone)
+if (!isEmbedded) {
+  const sections = document.querySelectorAll('[id^="sec-"]');
+  const navItems = document.querySelectorAll('.nav-item');
+  const navBar = document.getElementById('navBar');
 
-function updateScrollspy() {
-  const scrollPos = window.scrollY + 140;
-  let activeIndex = 0;
-
-  sections.forEach((sec, i) => {
-    if (sec.offsetTop <= scrollPos) activeIndex = i;
-  });
-
-  navItems.forEach((item, i) => {
-    item.classList.toggle('active', i === activeIndex);
-  });
-
-  const activeNav = navItems[activeIndex];
-  if (activeNav && navBar) {
-    const navRect = navBar.getBoundingClientRect();
-    const itemRect = activeNav.getBoundingClientRect();
-    if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
-      activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  function updateScrollspy() {
+    const scrollPos = window.scrollY + 140;
+    let activeIndex = 0;
+    sections.forEach((sec, i) => {
+      if (sec.offsetTop <= scrollPos) activeIndex = i;
+    });
+    navItems.forEach((item, i) => {
+      item.classList.toggle('active', i === activeIndex);
+    });
+    const activeNav = navItems[activeIndex];
+    if (activeNav && navBar) {
+      const navRect = navBar.getBoundingClientRect();
+      const itemRect = activeNav.getBoundingClientRect();
+      if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+        activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     }
   }
+  window.addEventListener('scroll', updateScrollspy, { passive: true });
+  updateScrollspy();
 }
-
-window.addEventListener('scroll', updateScrollspy, { passive: true });
-updateScrollspy();
 
 if (window.location.search.includes('fullscreen=true')) {
   document.documentElement.classList.add('fullscreen-mode');
 }
 
-// Auto-resize: Tell parent iframe our real height
-function notifyParentHeight() {
-  const height = document.documentElement.scrollHeight;
-  window.parent.postMessage({ type: 'ka-resize', height: height }, '*');
+// Embed: notify parent of exact content height
+if (isEmbedded) {
+  function notifyParentHeight() {
+    const height = document.querySelector('.content').scrollHeight;
+    window.parent.postMessage({ type: 'ka-resize', height: height }, '*');
+  }
+  window.addEventListener('load', notifyParentHeight);
+  window.addEventListener('resize', notifyParentHeight);
 }
-window.addEventListener('load', notifyParentHeight);
-window.addEventListener('resize', notifyParentHeight);
-new MutationObserver(notifyParentHeight).observe(document.body, { childList: true, subtree: true });
 </script>
 </body>
 </html>
