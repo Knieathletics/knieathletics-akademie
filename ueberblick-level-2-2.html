@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Überblick Level 2.2 – KNIEATHLETICS</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark: #004467;
+  --petrol: #0087B3;
+  --cyan: #2ab5d7;
+  --orange: #ff6d09;
+  --ice: #eef6f9;
+  --offwhite: #f3eee7;
+  --heading: #004467;
+  --txt: #2d3748;
+  --muted: #718096;
+  --grad-blue: linear-gradient(135deg, #004467 0%, #006a8e 40%, #0087B3 70%, #2ab5d7 100%);
+  --grad-orange: linear-gradient(135deg, #ff5500 0%, #ff6d09 30%, #ff8b3c 70%, #ffaa55 100%);
+}
+
+/* === BASE === */
+* { margin: 0; padding: 0; box-sizing: border-box }
+html { scroll-behavior: smooth }
+body { font-family: 'Roboto', 'Arial', sans-serif; color: var(--txt); background: #f5f5f5; font-size: 16px; line-height: 1.6 }
+.content { max-width: 900px; margin: 0 auto; background: #fff; box-shadow: 0 0 40px rgba(0,0,0,.08); transition: max-width .4s ease, box-shadow .4s ease }
+
+/* === FULLSCREEN MODE === */
+html.fullscreen-mode { background: #fff }
+html.fullscreen-mode body { background: #fff }
+html.fullscreen-mode .content { max-width: 100%; box-shadow: none }
+html.fullscreen-mode .sec-inner,
+html.fullscreen-mode .hero-inner { max-width: 1200px; margin: 0 auto }
+html.fullscreen-mode .topbar { padding: 18px 5vw }
+html.fullscreen-mode .topbar-inner { max-width: 1200px; margin: 0 auto }
+html.fullscreen-mode .topbar-logo { height: 36px }
+html.fullscreen-mode .hero { padding: 64px 5vw }
+html.fullscreen-mode .hero h1 { font-size: 2.8rem }
+html.fullscreen-mode .hero-sub { font-size: 1.1rem; max-width: 660px }
+html.fullscreen-mode .sec { padding: 52px 5vw }
+html.fullscreen-mode .sec-title { font-size: 2rem }
+html.fullscreen-mode .sec-intro { font-size: .95rem }
+html.fullscreen-mode .sec-label { font-size: .7rem; letter-spacing: 5px }
+html.fullscreen-mode .stp-b-card h3 { font-size: 1rem }
+html.fullscreen-mode .stp-b-card p { font-size: .92rem }
+html.fullscreen-mode .num { width: 30px; height: 30px; font-size: .78rem }
+html.fullscreen-mode .vid-a-card h4 { font-size: 1rem }
+html.fullscreen-mode .vid-a-card p { font-size: .9rem }
+html.fullscreen-mode .act-card h4 { font-size: .95rem }
+html.fullscreen-mode .act-card p,
+html.fullscreen-mode .act-card li { font-size: .9rem }
+html.fullscreen-mode .pyr-level { padding: 22px 28px }
+html.fullscreen-mode .pyr-level h4 { font-size: .95rem }
+html.fullscreen-mode .pyr-level li { font-size: .88rem }
+html.fullscreen-mode .cri-c-card h4 { font-size: .95rem }
+html.fullscreen-mode .cri-c-card p { font-size: .88rem }
+html.fullscreen-mode .hl { font-size: .92rem; padding: 18px 22px }
+html.fullscreen-mode .img-hero { max-height: 420px }
+html.fullscreen-mode .sec-split-img img { max-height: 400px }
+html.fullscreen-mode .hero-split .img-hero { width: 320px; min-width: 320px; max-height: 400px }
+html.fullscreen-mode .fok-b-item h4 { font-size: .95rem }
+html.fullscreen-mode .fok-b-item p { font-size: .88rem }
+html.fullscreen-mode .fok-b-num { width: 46px; height: 46px; font-size: .9rem }
+html.fullscreen-mode .nav-bar { padding: 0 5vw; top: 73px }
+html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify-content: center }
+html.fullscreen-mode .ben-a-card h4 { font-size: .95rem }
+html.fullscreen-mode .ben-a-card p { font-size: .88rem }
+html.fullscreen-mode .sol-b-card h4 { font-size: .95rem }
+html.fullscreen-mode .sol-b-row p { font-size: .88rem }
+html.fullscreen-mode .fok-a-card p { font-size: .88rem }
+
+/* === TOPBAR === */
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 44px; border-bottom: 1px solid rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.97); backdrop-filter: blur(8px); font-family: 'Roboto', 'Arial', sans-serif }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; width: 100% }
+.topbar-logo { height: 32px }
+.topbar-right { display: flex; align-items: center; gap: 12px; font-size: .78rem; color: var(--muted) }
+.badge { background: var(--ice); color: var(--petrol); font-size: .62rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; letter-spacing: .5px; font-family: 'Roboto', 'Arial', sans-serif }
+
+/* === NAV-BAR === */
+.nav-bar { position: sticky; top: 61px; z-index: 99; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); padding: 0 44px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none }
+.nav-bar::-webkit-scrollbar { display: none }
+.nav-bar-inner { display: flex; gap: 0; min-width: max-content; padding-bottom: 2px }
+.nav-item { display: flex; align-items: center; gap: 6px; padding: 10px 16px; font-size: .72rem; font-weight: 700; color: var(--muted); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; position: relative; font-family: 'Roboto', 'Arial', sans-serif }
+.nav-item:hover { color: var(--petrol) }
+.nav-item.active { color: var(--dark); border-bottom-color: var(--cyan) }
+.nav-item .nav-num { width: 18px; height: 18px; background: rgba(0,68,103,.08); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: .58rem; font-weight: 800; color: var(--petrol); flex-shrink: 0; transition: background .2s, color .2s }
+.nav-item.active .nav-num { background: var(--grad-blue); color: #fff }
+
+/* === SECTIONS === */
+.sec { padding: 48px 44px; scroll-margin-top: 110px }
+.sec-inner {}
+.sec + .sec { border-top: 1px solid rgba(0,0,0,.04) }
+.sec-label { font-size: .65rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--petrol); margin-bottom: 6px }
+.sec-title { font-size: 1.7rem; font-weight: 900; color: var(--heading); margin-bottom: 16px; letter-spacing: -.3px; line-height: 1.25 }
+.sec-intro { font-size: .85rem; color: var(--txt); line-height: 1.65; margin-bottom: 20px }
+.bg-ice { background: var(--ice) }
+.bg-off { background: var(--offwhite) }
+.bg-grad { background: var(--grad-blue); color: #fff }
+.bg-grad .sec-label { color: rgba(255,255,255,.3) }
+.bg-grad .sec-title { color: #fff }
+
+/* === HERO === */
+.hero { background: var(--grad-blue); color: #fff; padding: 56px 44px; position: relative; overflow: hidden; scroll-margin-top: 110px }
+.hero-inner {}
+.hero-label { font-size: .62rem; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--cyan); margin-bottom: 10px }
+.hero h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; letter-spacing: -.5px; line-height: 1.2 }
+.hero-sub { font-size: .95rem; color: rgba(255,255,255,.55); margin-bottom: 32px; max-width: 520px; line-height: 1.6 }
+
+/* === NUMBERS === */
+.num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--grad-blue); border-radius: 7px; color: #fff; font-size: .7rem; font-weight: 800; flex-shrink: 0 }
+.num-accent { background: var(--grad-orange); width: 30px; height: 30px; border-radius: 8px; font-size: .8rem; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; flex-shrink: 0 }
+
+/* === BENEFITS A === */
+.ben-a { display: flex; flex-direction: column; gap: 14px; margin-top: 18px }
+.ben-a-card { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid rgba(0,0,0,.05); display: flex; gap: 16px; align-items: flex-start; transition: box-shadow .2s }
+.ben-a-card:hover { box-shadow: 0 4px 20px rgba(0,68,103,.06) }
+.ben-a-ico { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center }
+.ben-a-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 4px }
+.ben-a-card p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+.bg-ice .ben-a-card { background: #fff }
+.bg-off .ben-a-card { background: #fff }
+
+/* === FOKUS A === */
+.fok-a { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px }
+.fok-a-card { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 12px; padding: 20px; display: flex; gap: 14px; align-items: center; transition: box-shadow .2s }
+.fok-a-card:hover { box-shadow: 0 4px 20px rgba(0,68,103,.08) }
+.fok-a-ico { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center }
+.fok-a-card p { font-size: .82rem; line-height: 1.5; font-weight: 500; color: var(--heading) }
+
+/* === FOKUS B === */
+.fok-b-wrap { max-width: 720px; margin: 4px auto 0 }
+.fok-b { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative }
+.fok-b::before { content: ''; position: absolute; top: 20px; left: 50px; right: 50px; height: 2px; background: linear-gradient(90deg, var(--cyan), var(--petrol)) }
+.fok-b-item { text-align: center; position: relative; padding: 0 12px; background: none !important; box-shadow: none !important; border: none !important }
+.fok-b-num { width: 40px; height: 40px; background: var(--grad-blue); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .82rem; font-weight: 800; position: relative; z-index: 1; border: 3px solid var(--offwhite); box-shadow: 0 2px 8px rgba(0,68,103,.15) }
+.fok-b-item h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-top: 14px; margin-bottom: 4px }
+.fok-b-item p { font-size: .78rem; line-height: 1.45; font-weight: 400; color: var(--txt); margin-top: 4px }
+
+/* === STEPS B === */
+.stp-b { margin-top: 18px; display: flex; flex-direction: column; gap: 12px }
+.stp-b-card { background: var(--ice); border: 1px solid rgba(0,135,179,.08); border-radius: 12px; padding: 20px 22px; border-left: 4px solid var(--cyan) }
+.stp-b-card:nth-child(2) { border-left-color: var(--petrol); background: rgba(238,246,249,.6) }
+.stp-b-card:nth-child(3) { border-left-color: var(--dark); background: rgba(243,238,231,.5) }
+.stp-b-card:nth-child(4) { border-left-color: var(--orange); background: rgba(255,109,9,.04) }
+.stp-b-card:nth-child(5) { border-left-color: var(--cyan); background: var(--ice) }
+.stp-b-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px }
+.stp-b-card h3 { font-size: .88rem; font-weight: 700; color: var(--heading) }
+.stp-b-card p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+.stp-b-card ul { list-style: none; padding: 0; margin: 0 }
+.stp-b-card li { font-size: .82rem; line-height: 1.55; padding-left: 14px; position: relative; margin-bottom: 3px; color: var(--txt) }
+.stp-b-card li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--petrol); border-radius: 50% }
+.bg-off .stp-b-card { background: #fff; border-color: rgba(0,0,0,.06) }
+.bg-off .stp-b-card { border-left: 4px solid var(--cyan) }
+.bg-off .stp-b-card:nth-child(2) { border-left-color: var(--petrol) }
+
+/* === STEPS C === */
+.stp-c { margin-top: 18px; position: relative; padding-left: 44px }
+.stp-c::before { content: ''; position: absolute; left: 13px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(180deg, var(--cyan), var(--petrol)) }
+.stp-c-item { position: relative; padding: 16px 0 }
+.stp-c-item + .stp-c-item { border-top: 1px solid rgba(0,0,0,.04) }
+.stp-c-num { width: 28px; height: 28px; background: var(--grad-blue); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .68rem; font-weight: 800; position: absolute; left: -44px; top: 18px; border: 3px solid #fff; z-index: 1 }
+.stp-c-item h3 { font-size: .88rem; font-weight: 700; color: var(--heading); margin-bottom: 4px }
+.stp-c-item ul { list-style: none; padding: 0; margin: 0 }
+.stp-c-item li { font-size: .82rem; line-height: 1.55; padding-left: 14px; position: relative; margin-bottom: 3px }
+.stp-c-item li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--cyan); border-radius: 50% }
+.stp-c-item p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+
+/* === SOLUTION B === */
+.sol-b { margin-top: 18px; display: flex; flex-direction: column; gap: 10px }
+.sol-b-card { background: #fff; border-radius: 12px; padding: 18px 20px; border: 1px solid rgba(0,0,0,.05) }
+.sol-b-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,.06) }
+.sol-b-row { display: flex; gap: 10px; margin-bottom: 6px; align-items: flex-start }
+.sol-b-label { font-size: .65rem; font-weight: 700; color: var(--petrol); text-transform: uppercase; letter-spacing: .3px; flex-shrink: 0; width: 58px; margin-top: 4px }
+.sol-b-row p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+.sol-b-row ul { list-style: none; padding: 0; margin: 0 }
+.sol-b-row li { font-size: .82rem; line-height: 1.55; padding-left: 14px; position: relative; margin-bottom: 3px; color: var(--txt) }
+.sol-b-row li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--petrol); border-radius: 50% }
+
+/* === KRITERIEN C === */
+.cri-c { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px }
+.cri-c-card { background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 24px 20px; text-align: center }
+.cri-c-num { font-size: 2rem; font-weight: 900; color: var(--orange); margin-bottom: 6px; line-height: 1 }
+.cri-c-card h4 { font-size: .85rem; font-weight: 700; color: #fff; margin-bottom: 4px }
+.cri-c-card p { font-size: .78rem; color: rgba(255,255,255,.55); line-height: 1.5 }
+
+/* === ACTION === */
+.act-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px }
+.act-card { background: #fff; border-radius: 12px; padding: 22px 20px; border: 1px solid rgba(0,0,0,.05); position: relative; overflow: hidden }
+.act-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad-blue) }
+.act-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 6px }
+.act-card p, .act-card li { font-size: .8rem; line-height: 1.55 }
+.act-card ul { list-style: none; padding: 0; margin: 6px 0 0 }
+.act-card li { padding-left: 14px; position: relative; margin-bottom: 3px }
+.act-card li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--cyan); border-radius: 50% }
+
+/* === Image Placeholder === */
+.img-placeholder { background: linear-gradient(135deg, rgba(0,68,103,.06) 0%, rgba(42,181,215,.08) 100%); border: 2px dashed rgba(0,135,179,.2); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); min-height: 120px; padding: 24px; margin-bottom: 12px }
+.img-placeholder svg { opacity: .4 }
+.img-placeholder span { font-size: .78rem; font-weight: 500; text-align: center }
+.act-card .img-placeholder { min-height: 100px; margin-bottom: 12px }
+
+/* === HIGHLIGHTS === */
+.hl { border-radius: 0 10px 10px 0; padding: 14px 18px; font-size: .82rem; line-height: 1.6; margin-top: 16px }
+.hl-info { background: rgba(42,181,215,.08); border-left: 3px solid var(--cyan) }
+.hl-warn { background: rgba(255,109,9,.06); border-left: 3px solid var(--orange) }
+.hl-dark { background: rgba(42,181,215,.1); border-left: 3px solid var(--cyan); color: rgba(255,255,255,.7) }
+
+/* === FOOTER === */
+.doc-footer { padding: 18px 44px; background: var(--dark); text-align: center }
+.doc-footer p { font-size: .68rem; color: rgba(255,255,255,.25) }
+
+/* === FAB BAR === */
+.fab-bar { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; gap: 8px; background: rgba(0,44,67,.95); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,.25) }
+.fab-bar button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
+.fab-full { background: rgba(255,255,255,.15) }
+.fab-full:hover { background: rgba(255,255,255,.25) }
+.fab-pdf { background: var(--orange) }
+.fab-pdf:hover { background: #ff5500 }
+
+/* === RESPONSIVE: Desktop Readability === */
+@media (min-width: 701px) {
+  .sec-intro { font-size: .95rem }
+  .ben-a-card h4, .sol-b-card h4, .act-card h4, .fok-b-item h4, .cri-c-card h4 { font-size: .95rem }
+  .ben-a-card p, .fok-a-card p, .stp-b-card p, .stp-c-item p,
+  .sol-b-row p, .hl { font-size: .95rem }
+  .stp-b-card li, .stp-c-item li, .sol-b-row li, .act-card p, .act-card li { font-size: .95rem }
+  .stp-b-card h3, .stp-c-item h3 { font-size: 1rem }
+  .fok-b-item p { font-size: .9rem }
+  .cri-c-card p { font-size: .88rem }
+  .hero-sub { font-size: 1.05rem }
+  .info-card p { font-size: .92rem }
+}
+
+/* === RESPONSIVE: Mobile Portrait === */
+@media (max-width: 700px) {
+  body { font-size: 15px }
+  .sec, .hero { padding: 28px 20px }
+  .hero { padding-top: 20px; padding-bottom: 20px }
+  .hero h1 { font-size: 1.7rem; margin-bottom: 4px }
+  .hero-label { margin-bottom: 4px }
+  .hero-sub { font-size: .85rem; margin-bottom: 0 }
+  .fok-a, .sol-a, .err-c { grid-template-columns: 1fr }
+  .vid-a { grid-template-columns: 1fr }
+  .act-grid { grid-template-columns: 1fr }
+  .cri-c { grid-template-columns: 1fr }
+  .topbar { padding: 10px 16px }
+  .topbar-logo { height: 26px }
+  .nav-bar { padding: 0 12px; top: 47px }
+  .nav-item { padding: 8px 10px; font-size: .65rem }
+  .nav-item .nav-num { width: 16px; height: 16px; font-size: .52rem }
+  .sec, .hero { scroll-margin-top: 90px }
+  .fok-b-wrap { max-width: 100% }
+  .fok-b { grid-template-columns: 1fr; padding-left: 44px; gap: 4px }
+  .fok-b::before { top: 0; bottom: 0; left: 17px; right: auto; width: 2px; height: auto }
+  .fok-b-item { text-align: left; padding: 10px 0; display: flex; gap: 14px; align-items: flex-start; flex-direction: column; position: relative }
+  .fok-b-num { width: 34px; height: 34px; font-size: .75rem; border-width: 3px; border-color: var(--offwhite); position: absolute; left: -44px; top: 10px }
+  .fok-b-item h4 { margin-top: 0 }
+  .fok-b-item p { margin-top: 2px }
+  .fab-full { display: none }
+  .fab-bar { bottom: 10px; padding: 6px 10px }
+  .fab-bar button { padding: 7px 12px; font-size: .72rem }
+  html.fullscreen-mode .sec,
+  html.fullscreen-mode .hero { padding: 28px 20px }
+  html.fullscreen-mode .hero h1 { font-size: 1.6rem }
+  html.fullscreen-mode .topbar { padding: 10px 16px }
+}
+
+/* === RESPONSIVE: Smartphone Landscape === */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { padding: 32px 40px }
+  .hero h1 { font-size: 1.8rem }
+  .sec { padding: 32px 40px }
+  .topbar { padding: 8px 24px }
+  .topbar-logo { height: 24px }
+  .nav-bar { top: 40px }
+  .nav-item { padding: 6px 10px; font-size: .65rem }
+  .fab-bar { bottom: 8px; padding: 5px 8px }
+  .fab-bar button { padding: 6px 10px; font-size: .7rem }
+  .fok-b-wrap { max-width: 500px }
+}
+
+/* === RESPONSIVE: Tablet === */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .topbar { padding: 12px 28px }
+  .nav-bar { padding: 0 28px }
+  .sec, .hero { padding: 40px 28px }
+  html.fullscreen-mode .sec { padding: 40px 28px }
+  html.fullscreen-mode .hero { padding: 48px 28px }
+  html.fullscreen-mode .hero h1 { font-size: 2.2rem }
+}
+
+/* === PRINT === */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
+  @page { size: A4 portrait; margin: 10mm }
+  html, html.fullscreen-mode { background: #fff !important }
+  body { background: #fff !important; font-size: 11px; line-height: 1.45; margin: 0; padding: 0 }
+  .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0 }
+  .topbar, .nav-bar, .doc-footer, .fab-bar { display: none !important }
+  .sec, .hero,
+  html.fullscreen-mode .sec,
+  html.fullscreen-mode .hero { padding: 8mm 10mm; page-break-inside: avoid; width: 100% !important; margin: 0; scroll-margin-top: 0 }
+  .hero, html.fullscreen-mode .hero { padding: 10mm 12mm }
+  .hero h1 { font-size: 2rem !important }
+  .hero-sub { font-size: .85rem !important }
+  .sec-title { font-size: 1.4rem !important }
+  .sec-inner, .hero-inner,
+  html.fullscreen-mode .sec-inner,
+  html.fullscreen-mode .hero-inner { max-width: 100% !important }
+  .sec + .sec { border-top: none }
+  .fok-b-wrap { max-width: 100% }
+  .fok-b { grid-template-columns: 1fr; padding-left: 36px; gap: 2px }
+  .fok-b::before { top: 0; bottom: 0; left: 13px; right: auto; width: 2px; height: auto }
+  .fok-b-item { text-align: left; padding: 6px 0; display: flex; gap: 10px; align-items: flex-start; flex-direction: column; position: relative }
+  .fok-b-num { width: 24px; height: 24px; font-size: .6rem; position: absolute; left: -36px; top: 6px }
+  .img-placeholder { min-height: 80px; border-width: 1px }
+}
+</style>
+</head>
+<body>
+<div class="content">
+
+  <!-- TOPBAR -->
+  <div class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <svg class="topbar-logo" viewBox="0 0 841.89 231.42" xmlns="http://www.w3.org/2000/svg"><g><path fill="#2d3748" d="M758.98,133.73c-2.41,1.76-5.61,2.63-9.59,2.63c-4.47,0-8.05-1.04-10.74-3.13c-2.69-2.08-4.04-4.93-4.04-8.53h-4.32 c0,3,0.78,5.65,2.34,7.97c1.56,2.32,3.84,4.12,6.85,5.41c3.01,1.29,6.31,1.93,9.92,1.93c5.27,0,9.51-1.22,12.73-3.65 c3.22-2.44,4.83-5.67,4.83-9.69c0-2.55-0.6-4.76-1.79-6.64c-1.19-1.87-2.97-3.48-5.34-4.83c-2.36-1.35-5.84-2.65-10.43-3.9 c-4.59-1.25-7.92-2.7-10.01-4.34c-2.08-1.64-3.13-3.76-3.13-6.37c0-2.81,1.16-5.09,3.48-6.84c2.32-1.75,5.43-2.62,9.34-2.62 c4.03,0,7.23,1.06,9.62,3.19c2.39,2.13,3.58,4.94,3.58,8.43h4.35c0-2.88-0.74-5.49-2.21-7.83c-1.47-2.34-3.55-4.17-6.23-5.48 c-2.68-1.31-5.72-1.97-9.11-1.97c-5.01,0-9.12,1.22-12.34,3.67c-3.22,2.45-4.83,5.62-4.83,9.53c0,4.03,1.73,7.28,5.2,9.76 c2.43,1.76,6.3,3.38,11.59,4.86c5.29,1.49,8.93,3.05,10.92,4.7c1.99,1.65,2.98,3.89,2.98,6.72 C762.59,129.65,761.39,131.98,758.98,133.73 M713.41,123.37c-0.54,4.33-1.95,7.58-4.25,9.74c-2.29,2.17-5.7,3.25-10.22,3.25 c-4.56,0-8.19-1.76-10.87-5.27c-2.68-3.51-4.02-8.22-4.02-14.12v-6.26c0-6.11,1.37-10.9,4.13-14.37c2.75-3.47,6.44-5.2,11.08-5.2 c8.36,0,13.07,4.34,14.15,13.03h4.35c-0.52-5.22-2.36-9.31-5.53-12.25c-3.17-2.95-7.5-4.42-12.97-4.42 c-3.89,0-7.32,0.95-10.31,2.86c-2.98,1.91-5.27,4.62-6.86,8.13c-1.59,3.51-2.39,7.54-2.39,12.08v6.64 c0.02,4.47,0.83,8.45,2.42,11.92c1.59,3.48,3.84,6.16,6.76,8.06c2.91,1.9,6.27,2.84,10.06,2.84c5.43,0,9.78-1.43,13.04-4.28 c3.27-2.86,5.19-6.97,5.78-12.36H713.41z M662.31,88.19h-4.32v51.12h4.32V88.19z M643.4,88.19h-39.33v3.65h17.49v47.47h4.32V91.84 h17.52V88.19z M589.93,111.15h-23.91V91.84h27.32v-3.65H561.7v51.12h31.81v-3.65h-27.49v-20.86h23.91V111.15z M522.78,88.19h-4.35 v51.12h29.6v-3.65h-25.25V88.19z M500.04,88.19h-4.35v22.96h-29.21V88.19h-4.32v51.12h4.32v-24.51h29.21v24.51h4.35V88.19z M448.51,88.19h-39.32v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M384.02,93.46l10.25,27.84h-20.5L384.02,93.46z M400.95,139.31 h4.49L386.1,88.19h-4.11l-19.35,51.12h4.53l5.27-14.36h23.21L400.95,139.31z M347.47,108.91h-20.23V96.72h23.67v-8.53h-34.2v51.12 h34.27v-8.46h-23.74v-13.69h20.23V108.91z M301.56,88.19h-10.53v51.12h10.53V88.19z M275.77,88.19h-10.5v33.71l-20.54-33.71H234.2 v51.12h10.53v-33.64l20.51,33.64h10.53V88.19z M212.3,139.31h12.54l-18.68-28.41l18.15-22.72h-12.96l-13.03,16.82l-4.63,6.35V88.19 h-10.53v51.12h10.53v-14.61l5.48-5.9L212.3,139.31z"/><path fill="#2d3748" d="M120.08,102.43c-0.37,1.96-1.59,3.31-2.82,4.78c-5.15,6.5-8.59,13.49-7.85,22.08c0.25,3.07,1.96,5.52,3.07,8.22 c0.74,1.72,0.37,2.82-0.61,4.17c-6.5,8.95-8.59,18.77-6.62,29.56c0.12,0.37,0.12,0.86,0.61,1.23c0.49-11.04,2.7-21.59,7.6-32.01 c0.74,2.21,0.61,4.05,0.25,5.89c-0.61,2.82-1.84,5.4-2.94,8.1c-0.86,2.33-1.84,4.66-1.84,7.24c1.23-4.05,3.56-7.48,5.4-11.16 c1.96-3.93,2.58-7.97,1.1-12.14c-0.49-1.35-0.98-2.7-1.59-3.93c-2.45-4.78-2.45-9.81-0.86-14.84c1.47-4.54,3.07-9.08,6.13-12.88 C119.96,105.37,120.33,103.9,120.08,102.43"/><path fill="#2d3748" d="M74.94,80.47c9.08,13.98,22.57,21.1,38.64,23.92c-6.87-3.31-13.98-6.01-20.61-9.94C86.35,90.53,80.71,85.38,74.94,80.47"/><path fill="#2d3748" d="M125.11,171.12c4.54-14.11,12.51-26,19.38-38.39c5.52-9.81,10.67-19.87,13-31.03c0.86-3.8,1.23-7.73,0.49-11.65 c-0.86-5.03-3.56-8.83-7.85-11.53c-3.07-1.96-6.38-3.31-9.69-4.66c-12.27-4.91-24.65-9.69-36.92-14.6 c-0.49-0.25-0.98-0.37-1.59-0.25c0.49,0.25,1.1,0.49,1.59,0.74c13,5.76,26,11.53,39,17.29c1.72,0.74,3.31,1.59,5.03,2.45 c6.13,3.43,8.83,8.71,8.34,15.7c-0.61,7.73-3.19,14.96-6.13,22.08c-3.07,7.24-6.87,14.11-10.67,20.97 c-4.66,8.59-9.32,17.17-12.39,26.49c-0.61,1.72-0.98,3.56-1.59,5.4C124.99,170.38,124.99,170.63,125.11,171.12"/><path fill="#0087B3" d="M147.93,100.59c-5.64,4.05-9.32,3.56-13.98-1.47c-1.47,1.47-1.84,3.31-1.96,5.27 c-0.12,2.58,0.49,5.03,0.25,7.48c-0.49,5.03-2.33,9.69-3.92,14.35c-4.91,14.35-10.06,28.7-15.58,42.81 c-0.49,1.35-0.25,1.84,1.1,2.21c3.19,0.86,3.19,0.98,4.42-2.09c3.8-8.46,7.48-16.81,11.28-25.27c4.78-10.67,9.57-21.34,14.35-32.01 C145.59,108.32,146.94,104.64,147.93,100.59"/><path fill="#0087B3" d="M90.77,63.67c-0.74,4.05-1.59,7.97-4.29,11.04c0.37,0.49,0.98,0.61,1.47,0.74 c12.88,4.54,25.64,9.44,37.53,16.19c3.07,1.72,6.01,3.8,8.83,5.89c2.21,1.72,4.42,2.94,7.24,3.19c4.29,0.49,8.22-4.66,6.13-8.83 c-1.47-3.07-3.8-5.03-6.75-6.38c-2.45-1.1-5.15-1.59-7.73-2.21c-11.77-2.7-22.45-7.97-32.75-13.98 C97.14,67.47,93.96,65.63,90.77,63.67"/><path fill="#0087B3" d="M148.42,105.86c4.29-4.42,5.15-11.65,1.96-15.7C151.36,95.68,150.62,100.71,148.42,105.86"/></g></svg>
+      <div class="topbar-right">
+        <span class="badge">ÜBERBLICK</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV-BAR -->
+  <nav class="nav-bar" id="navBar">
+    <div class="nav-bar-inner">
+      <a href="#sec-hero" class="nav-item active" data-section="sec-hero"><span class="nav-num">1</span> Überblick</a>
+      <a href="#sec-ziel" class="nav-item" data-section="sec-ziel"><span class="nav-num">2</span> Ziel</a>
+      <a href="#sec-steigerung" class="nav-item" data-section="sec-steigerung"><span class="nav-num">3</span> Steigerung</a>
+      <a href="#sec-tipps" class="nav-item" data-section="sec-tipps"><span class="nav-num">4</span> Woran denken</a>
+      <a href="#sec-probleme" class="nav-item" data-section="sec-probleme"><span class="nav-num">5</span> Probleme</a>
+      <a href="#sec-training" class="nav-item" data-section="sec-training"><span class="nav-num">6</span> Training</a>
+      <a href="#sec-fortschritte" class="nav-item" data-section="sec-fortschritte"><span class="nav-num">7</span> Fortschritte</a>
+      <a href="#sec-qualitaet" class="nav-item" data-section="sec-qualitaet"><span class="nav-num">8</span> Qualität</a>
+      <a href="#sec-hilfsmittel" class="nav-item" data-section="sec-hilfsmittel"><span class="nav-num">9</span> Hilfsmittel</a>
+      <a href="#sec-ernaehrung" class="nav-item" data-section="sec-ernaehrung"><span class="nav-num">10</span> Ernährung</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="sec-hero">
+    <div class="hero-inner">
+      <div class="hero-label">LEVEL 2.2</div>
+      <h1>Überblick Level 2.2</h1>
+      <p class="hero-sub">Verbessere deine Alltagstauglichkeit</p>
+    </div>
+  </section>
+
+  <!-- ==================== ZIEL DIESER STUFE ==================== -->
+  <section class="sec bg-ice" id="sec-ziel">
+    <div class="sec-inner">
+      <div class="sec-label">ZIEL DIESER STUFE</div>
+      <h2 class="sec-title">Belastbarkeit im Alltag und im Training steigern</h2>
+      <div class="hl hl-info" style="margin-top:0;margin-bottom:20px">In dieser Phase geht es darum, deine grundlegende Alltagstauglichkeit zu festigen und zu verbessern. Du arbeitest gezielt daran, dein Knie unter Last zu stabilisieren, die Bewegungsabläufe zu vergrößern und die Kraft zu steigern, um für dynamischere Belastungen bereit zu sein.</div>
+      <div class="ben-a">
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/><circle cx="12" cy="12" r="10" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M15 9l-6 6M9 9h6v6" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Volle aktive Streckung unter Belastung:</h4><p>Du arbeitest daran, eine volle Streckung (mind. 0°) auch unter Belastung zu erreichen und zu halten. Dies ist essenziell für ein normales Gangbild und beugt Überlastungen vor.</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/><circle cx="12" cy="12" r="10" fill="none" stroke="#004467" stroke-width="1.5"/><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Steigerung der Alltagsbelastung:</h4><p>Du steigerst langsam und kontrolliert deine Gehstrecken und die allgemeine Belastung im Alltag.</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#2ab5d7" opacity="0.15"/><rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M7 17l3-5 3 3 4-6" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Kniebeuge bis 90° mit Zusatzgewicht:</h4><p>Du trainierst die Kniebeuge mit dem Ziel, sie bis 90° mit Zusatzgewicht (Richtwert: Frauen 15 kg, Männer 20 kg) kontrolliert ausführen zu können, um die Muskulatur weiter aufzubauen.</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/><circle cx="12" cy="12" r="10" fill="none" stroke="#004467" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="#004467" stroke-width="1.5"/><circle cx="12" cy="12" r="1.5" fill="#004467"/></svg></div>
+          <div><h4>Beinachse und Fußstabilität:</h4><p>Durch die Aktivierung der Fußmuskulatur und die Kräftigung der Hüfte (z. B. mit einem Miniband) wird die Beinachse weiter stabilisiert – eine wichtige Vorbereitung für komplexere einbeinige Übungen.</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/><circle cx="12" cy="12" r="10" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M8 16l2-4 2 2 4-6" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 8 18 8 18 12" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Ergometertraining:</h4><p>Du beginnst oder steigerst das Training auf dem Ergometer, um die Ausdauer und Gelenkbeweglichkeit zu fördern.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STEIGERUNG ZUR LETZTEN STUFE ==================== -->
+  <section class="sec bg-off" id="sec-steigerung">
+    <div class="sec-inner">
+      <div class="sec-label">PROGRESSION</div>
+      <h2 class="sec-title">Steigerung zur letzten Stufe</h2>
+      <div class="fok-b-wrap">
+        <div class="fok-b">
+          <div class="fok-b-item">
+            <div class="fok-b-num">1</div>
+            <div><h4>Nutzung von mehr Gewicht</h4><p>Die progressive Steigerung der Gewichte bei den Kraftübungen verbessert deine Belastbarkeit für Alltagsaufgaben wie das Tragen von schweren Gegenständen.</p></div>
+          </div>
+          <div class="fok-b-item">
+            <div class="fok-b-num">2</div>
+            <div><h4>Vergrößerung des Bewegungsradius</h4><p>Du erhöhst Stück für Stück den Bewegungsumfang bei deinen Übungen, um die Belastbarkeit im vollen Ausmaß zu verbessern.</p></div>
+          </div>
+          <div class="fok-b-item">
+            <div class="fok-b-num">3</div>
+            <div><h4>Mehr Kraftübungen</h4><p>Gezielte Übungen mit angepasster Intensität verbessern die Gelenkstabilität und geben dir mehr Vertrauen in dein Knie.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WORAN SOLLTEST DU DENKEN ==================== -->
+  <section class="sec" id="sec-tipps">
+    <div class="sec-inner">
+      <div class="sec-label">WICHTIGE HINWEISE</div>
+      <h2 class="sec-title">Woran solltest du denken</h2>
+      <div class="stp-c">
+        <div class="stp-c-item">
+          <div class="stp-c-num">1</div>
+          <h3>Geduld bei der Streckung:</h3>
+          <ul>
+            <li>Die volle Streckung unter Last kann etwas dauern. Setze mehrmals täglich Reize und führe alle Übungen mit maximal möglicher Streckung aus.</li>
+          </ul>
+        </div>
+        <div class="stp-c-item">
+          <div class="stp-c-num">2</div>
+          <h3>Alltagsbelastung kontrollieren:</h3>
+          <ul>
+            <li>Achte weiterhin darauf, deine Aktivitäten bewusst zu dosieren, um Überlastungen zu vermeiden.</li>
+          </ul>
+        </div>
+        <div class="stp-c-item">
+          <div class="stp-c-num">3</div>
+          <h3>Schmerzmanagement optimieren:</h3>
+          <ul>
+            <li>Nutze Kälteanwendungen bei Überwärmung und Schmerzen.</li>
+            <li>Trainire möglichst ohne Schmerzmittel, um Belastungsgrenzen besser einschätzen zu können.</li>
+          </ul>
+        </div>
+        <div class="stp-c-item">
+          <div class="stp-c-num">4</div>
+          <h3>Dokumentiere dein Training:</h3>
+          <ul>
+            <li>Halte deine Fortschritte fest (Wiederholungen, Sätze, Gewichte), um deine Entwicklung zu sehen und die nächste Steigerung zu planen.</li>
+          </ul>
+        </div>
+        <div class="stp-c-item">
+          <div class="stp-c-num">5</div>
+          <h3>Training mit Zusatzgewichten:</h3>
+          <ul>
+            <li>Nutze bei allen Kraftübungen Gewichte, solange die Ausführung sauber bleibt. Falls keine Hanteln vorhanden sind, nutze Alternativen wie einen Rucksack mit Büchern.</li>
+          </ul>
+        </div>
+        <div class="stp-c-item">
+          <div class="stp-c-num">6</div>
+          <h3>Zukunftsplanung:</h3>
+          <ul>
+            <li>Übungsintegration in den Arbeitsalltag</li>
+            <li>Strategien für steigende Alltagsbelastung entwickeln</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MÖGLICHE PROBLEME ==================== -->
+  <section class="sec bg-ice" id="sec-probleme">
+    <div class="sec-inner">
+      <div class="sec-label">PROBLEMLÖSUNG</div>
+      <h2 class="sec-title">Mögliche Probleme und deren Bewältigung</h2>
+      <div class="sol-b">
+        <div class="sol-b-card">
+          <h4>Die Streckung kann unter Belastung nicht gehalten werden.</h4>
+          <div class="sol-b-row">
+            <span class="sol-b-label">Ursache:</span>
+            <p>Meist handelt es sich um ein Ansteuerungsproblem des Nervensystems und nicht um ein mechanisches Blockieren.</p>
+          </div>
+          <div class="sol-b-row">
+            <span class="sol-b-label">Lösung:</span>
+            <div>
+              <ul>
+                <li>Führe alle Übungen mit maximal möglicher, kontrollierter Streckung aus.</li>
+                <li>Halte die Endposition für 2-3 Sekunden, um die Ansteuerung zu schulen.</li>
+                <li>Setze mehrmals täglich Reize in die Streckung.</li>
+                <li>Habe Geduld, es kann dauern.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Allgemeine Schmerzen/Schwellung.</h4>
+          <div class="sol-b-row">
+            <span class="sol-b-label">Ursache:</span>
+            <p>Die Strukturen (Sehnen, Muskeln) passen sich an die steigende Belastung an. Oft ist auch das Tagespensum im Alltag zu hoch.</p>
+          </div>
+          <div class="sol-b-row">
+            <span class="sol-b-label">Lösung:</span>
+            <div>
+              <ul>
+                <li>Passe die Alltagsbelastung an.</li>
+                <li>Reduziere das Gewicht im Training leicht, aber trainiere weiter.</li>
+                <li>Ein gezieltes, sauberes Training mit langsamem Tempo hilft oft, die Schmerzen zu reduzieren.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TIPPS ZUM TRAININGSVERLAUF ==================== -->
+  <section class="sec bg-off" id="sec-training">
+    <div class="sec-inner">
+      <div class="sec-label">TRAININGSVERLAUF</div>
+      <h2 class="sec-title">Tipps zum Trainingsverlauf</h2>
+      <div class="stp-b">
+        <div class="stp-b-card">
+          <div class="stp-b-head"><div class="num">1</div><h3>Nutzung von Zusatzgewichten</h3></div>
+          <ul>
+            <li>Bei allen Kraftübungen, solange Wiederholungen sauber ausgeführt werden</li>
+            <li>Zusatzgewicht kann bei Schmerz und Balance helfen</li>
+            <li>Falls keine Hanteln: Alternativen wie Rucksack mit Büchern oder Getränkekisten</li>
+            <li>Empfehlung zur Anschaffung von Gewichten oder Training im Fitnessstudio</li>
+          </ul>
+        </div>
+        <div class="stp-b-card">
+          <div class="stp-b-head"><div class="num">2</div><h3>Progression & Dokumentation</h3></div>
+          <ul>
+            <li>Fortschritt dokumentieren (Wiederholungen, Sätze, Gewichte)</li>
+            <li>Ergometertraining:
+              <ul style="margin-top:4px">
+                <li>Start mit höherer Wattzahl & 40 U/min</li>
+                <li>Reizfreies Knie → Geschwindigkeit steigern, Watt reduzieren</li>
+                <li>Start mit 3x3 min, 1 min Pause</li>
+                <li>Ist dein Knie danach reizfrei, steigere die Belastung um 10–15 %.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FORTSCHRITTE IM ALLTAG ==================== -->
+  <section class="sec" id="sec-fortschritte">
+    <div class="sec-inner">
+      <div class="sec-label">MOTIVATION</div>
+      <h2 class="sec-title">Fortschritte im Alltag erkennen</h2>
+      <p class="sec-intro">Dein Training mit mehr Gewicht und einem größeren Bewegungsumfang macht sich jetzt bezahlt. Du wirst feststellen, dass du nicht nur im Training, sondern auch im Alltag immer mehr zutrauen kannst.</p>
+      <div class="fok-a">
+        <div class="fok-a-card">
+          <div class="fok-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3" fill="#2ab5d7" opacity="0.15"/><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M8 12h8M12 8v8" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <p>Müheloses Tragen</p>
+        </div>
+        <div class="fok-a-card">
+          <div class="fok-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="#2ab5d7" opacity="0.15"/><rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M7 17l3-4 3 2 4-5" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Besseres Treppensteigen</p>
+        </div>
+        <div class="fok-a-card">
+          <div class="fok-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/><circle cx="12" cy="12" r="10" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Längere Spaziergänge</p>
+        </div>
+        <div class="fok-a-card">
+          <div class="fok-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="#2ab5d7" opacity="0.15"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M9 12l2 2 4-4" fill="none" stroke="#004467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Weniger Angst vor Belastung</p>
+        </div>
+      </div>
+      <div class="hl hl-info">Das Erreichen dieser kleinen Ziele zeigt dir, dass du auf dem richtigen Weg bist und die Kontrolle zurückgewinnst.</div>
+    </div>
+  </section>
+
+  <!-- ==================== QUALITÄT ==================== -->
+  <section class="sec bg-grad" id="sec-qualitaet">
+    <div class="sec-inner">
+      <div class="sec-label">DEIN WEG</div>
+      <h2 class="sec-title">Qualität ist dein Schlüssel zum Erfolg</h2>
+      <div class="cri-c">
+        <div class="cri-c-card">
+          <div class="cri-c-num">01</div>
+          <h4>Aktiv an der Stärke arbeiten</h4>
+          <p>Du befindest dich jetzt in einer Phase, in der du aktiv an deiner Stärke arbeitest.</p>
+        </div>
+        <div class="cri-c-card">
+          <div class="cri-c-num">02</div>
+          <h4>Belastbarkeit beweisen</h4>
+          <p>Jeder Kasten Wasser, den du hebst, und jede saubere Kniebeuge mit Gewicht ist ein Beweis für die wachsende Belastbarkeit deines Knies.</p>
+        </div>
+        <div class="cri-c-card">
+          <div class="cri-c-num">03</div>
+          <h4>Auf den Körper hören</h4>
+          <p>Es ist normal, dass Sehnen und Muskeln sich an diese neue Belastung anpassen müssen. Höre auf deinen Körper, aber vertraue auch darauf, ihn wieder fordern zu können.</p>
+        </div>
+        <div class="cri-c-card">
+          <div class="cri-c-num">04</div>
+          <h4>Robuste Grundlage schaffen</h4>
+          <p>Du schaffst hier die robuste Grundlage, die du für alle zukünftigen sportlichen Aktivitäten brauchst.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BENÖTIGTE HILFSMITTEL ==================== -->
+  <section class="sec bg-ice" id="sec-hilfsmittel">
+    <div class="sec-inner">
+      <div class="sec-label">EQUIPMENT</div>
+      <h2 class="sec-title">Benötigte Hilfsmittel</h2>
+      <div class="act-grid">
+        <div class="act-card">
+          <!-- BILD ERSETZEN: Minibands – kleine elastische Bänder in verschiedenen Farben -->
+          <div class="img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Minibands</span>
+          </div>
+          <h4>Minibands</h4>
+          <p>Kleine elastische Bänder für gezieltes Training</p>
+        </div>
+        <div class="act-card">
+          <!-- BILD ERSETZEN: Resistance Band – langes grünes Gummiband -->
+          <div class="img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Resistance Band</span>
+          </div>
+          <h4>Resistance Band</h4>
+          <p>Langes Gummiband für vielseitige Übungen</p>
+        </div>
+        <div class="act-card">
+          <!-- BILD ERSETZEN: Kleine Erhöhung – Kiste, Stufe oder Buch -->
+          <div class="img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Kleine Erhöhung</span>
+          </div>
+          <h4>Kleine Erhöhung</h4>
+          <p>Kiste, Stufe oder Buch für Calf Lift</p>
+        </div>
+        <div class="act-card">
+          <!-- BILD ERSETZEN: Hanteln / Alternative Gewichte -->
+          <div class="img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Hanteln</span>
+          </div>
+          <h4>Hanteln/ Alternative Gewichte</h4>
+          <p>Für das Training der Kraftübungen</p>
+        </div>
+        <div class="act-card">
+          <!-- BILD ERSETZEN: Pezziball – großer hellblauer Gymnastikball -->
+          <div class="img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Pezziball</span>
+          </div>
+          <h4>Pezziball</h4>
+          <p>Unterstützt dich bei verschiedenen Mobilitätsübungen und hilft dir, dein Gleichgewicht zu trainieren.</p>
+        </div>
+        <div class="act-card">
+          <!-- BILD ERSETZEN: Box / Hantelbank / Stuhl -->
+          <div class="img-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span>Box/ Hantelbank/ Stuhl</span>
+          </div>
+          <h4>Box/ Hantelbank/ Stuhl</h4>
+          <p>Für den Box Squat und Elevated Hip Thrust</p>
+        </div>
+      </div>
+      <div class="hl hl-info">Diese Hilfsmittel unterstützen dich optimal in deinem Rehabilitationsprozess. Stelle sicher, dass sie in deiner Reichweite sind, wenn du mit den Übungen beginnst.</div>
+    </div>
+  </section>
+
+  <!-- ==================== TIPPS ZUR ERNÄHRUNG ==================== -->
+  <section class="sec" id="sec-ernaehrung">
+    <div class="sec-inner">
+      <div class="sec-label">ERNÄHRUNG</div>
+      <h2 class="sec-title">Tipps zur Ernährung</h2>
+      <div class="ben-a">
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" fill="#2ab5d7" opacity="0.15"/><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Hydration</h4><p>Trinke viel, um das Blut flüssig zu halten – mindestens zwei Liter Wasser am Tag</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/><circle cx="12" cy="12" r="10" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M8 12h8" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round"/><path d="M12 8v8" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          <div><h4>Vitamin C</h4><p>Vitamin C als Ascorbinsäure am besten in Pulverform, empfohlene Menge pro Tag 95 mg bei Frauen und 110 mg bei Männern. Am besten 3-4 Portionen (ca. eine Messerspitze pro Portion) über den Tag verteilen. Der Körper kann nicht so viel auf einmal aufnehmen. Vitamin C hilft beim Aufbau von Kollagen.</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#2ab5d7" opacity="0.15"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Mineralstoffe</h4><p>Von Vorteil könnte auch die Supplementation von Mineralstoffen sein. Bei der Kombination mit anderen Supplements, wie zum Beispiel Vitamin C, muss man jedoch darauf achten, den empfohlenen Tagesbedarf nicht zu überschreiten.</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="8" rx="4" fill="#2ab5d7" opacity="0.15"/><rect x="4" y="8" width="16" height="8" rx="4" fill="none" stroke="#004467" stroke-width="1.5"/><line x1="12" y1="8" x2="12" y2="16" stroke="#004467" stroke-width="1.5"/></svg></div>
+          <div><h4>Omega 3</h4><p>Omega-3-Fettsäuren sind essenzielle Fettsäuren, die der Körper nicht selbst produzieren kann. Eine tägliche Aufnahme von 250-500 mg Omega-3 wird empfohlen.</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4" fill="#2ab5d7" opacity="0.15"/><rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M7 17l3-5 3 3 4-6" fill="none" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Supplementierung von Proteinen</h4><p>Nimm ausreichend Eiweiß zum Aufbau von Gewebe zu dir: Nimm zwischen 1,8-2 g pro kg Körpergewicht</p></div>
+        </div>
+        <div class="ben-a-card">
+          <div class="ben-a-ico"><svg width="36" height="36" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/><circle cx="12" cy="12" r="10" fill="none" stroke="#004467" stroke-width="1.5"/><path d="M9 12l2 2 4-4" fill="none" stroke="#004467" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>Supplementierung von Kollagen</h4><p>Die Wissenschaft über die Wirksamkeit von Kollagen-Supplementen ist noch umstritten. Einige Studien haben gezeigt, dass eine tägliche Supplementation von Kollagen Gelenkschmerzen lindern und bei dem Aufbau des Gewebes helfen kann.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <p>© KNIEATHLETICS · Nur für Mitglieder</p>
+  </div>
+</div>
+
+<!-- FAB-BAR -->
+<div class="fab-bar">
+  <button class="fab-full" onclick="toggleFullscreen()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg> <span id="fabFullLabel">Vollbild</span></button>
+  <button class="fab-pdf" onclick="window.print()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> PDF</button>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+// Fullscreen Toggle
+function toggleFullscreen() {
+  const html = document.documentElement;
+  const label = document.getElementById('fabFullLabel');
+  if (html.classList.contains('fullscreen-mode')) {
+    html.classList.remove('fullscreen-mode');
+    label.textContent = 'Vollbild';
+  } else {
+    html.classList.add('fullscreen-mode');
+    label.textContent = 'Normal';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+// Scrollspy
+const sections = document.querySelectorAll('[id^="sec-"]');
+const navItems = document.querySelectorAll('.nav-item');
+const navBar = document.getElementById('navBar');
+
+function updateScrollspy() {
+  const scrollPos = window.scrollY + 140;
+  let activeIndex = 0;
+
+  sections.forEach((sec, i) => {
+    if (sec.offsetTop <= scrollPos) activeIndex = i;
+  });
+
+  navItems.forEach((item, i) => {
+    item.classList.toggle('active', i === activeIndex);
+  });
+
+  const activeNav = navItems[activeIndex];
+  if (activeNav && navBar) {
+    const navRect = navBar.getBoundingClientRect();
+    const itemRect = activeNav.getBoundingClientRect();
+    if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+      activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+}
+
+window.addEventListener('scroll', updateScrollspy, { passive: true });
+updateScrollspy();
+
+if (window.location.search.includes('fullscreen=true')) {
+  document.documentElement.classList.add('fullscreen-mode');
+}
+</script>
+</body>
+</html>
