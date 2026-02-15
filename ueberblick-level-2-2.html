@@ -762,6 +762,15 @@ updateScrollspy();
 if (window.location.search.includes('fullscreen=true')) {
   document.documentElement.classList.add('fullscreen-mode');
 }
+
+// Auto-resize: Tell parent iframe our real height
+function notifyParentHeight() {
+  const height = document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: 'ka-resize', height: height }, '*');
+}
+window.addEventListener('load', notifyParentHeight);
+window.addEventListener('resize', notifyParentHeight);
+new MutationObserver(notifyParentHeight).observe(document.body, { childList: true, subtree: true });
 </script>
 </body>
 </html>
