@@ -728,15 +728,8 @@ html.embed-mode .hero { scroll-margin-top: 0 }
 
 <!-- JAVASCRIPT -->
 <script>
-// Detect iframe embed mode
-const isEmbedded = window !== window.parent;
-if (isEmbedded) {
-  document.documentElement.classList.add('embed-mode');
-}
-
-// Fullscreen Toggle (only works standalone)
+// Fullscreen Toggle
 function toggleFullscreen() {
-  if (isEmbedded) return;
   const html = document.documentElement;
   const label = document.getElementById('fabFullLabel');
   if (html.classList.contains('fullscreen-mode')) {
@@ -749,46 +742,35 @@ function toggleFullscreen() {
   }
 }
 
-// Scrollspy (only standalone)
-if (!isEmbedded) {
-  const sections = document.querySelectorAll('[id^="sec-"]');
-  const navItems = document.querySelectorAll('.nav-item');
-  const navBar = document.getElementById('navBar');
+// Scrollspy
+const sections = document.querySelectorAll('[id^="sec-"]');
+const navItems = document.querySelectorAll('.nav-item');
+const navBar = document.getElementById('navBar');
 
-  function updateScrollspy() {
-    const scrollPos = window.scrollY + 140;
-    let activeIndex = 0;
-    sections.forEach((sec, i) => {
-      if (sec.offsetTop <= scrollPos) activeIndex = i;
-    });
-    navItems.forEach((item, i) => {
-      item.classList.toggle('active', i === activeIndex);
-    });
-    const activeNav = navItems[activeIndex];
-    if (activeNav && navBar) {
-      const navRect = navBar.getBoundingClientRect();
-      const itemRect = activeNav.getBoundingClientRect();
-      if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
-        activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }
+function updateScrollspy() {
+  const scrollPos = window.scrollY + 140;
+  let activeIndex = 0;
+  sections.forEach((sec, i) => {
+    if (sec.offsetTop <= scrollPos) activeIndex = i;
+  });
+  navItems.forEach((item, i) => {
+    item.classList.toggle('active', i === activeIndex);
+  });
+  const activeNav = navItems[activeIndex];
+  if (activeNav && navBar) {
+    const navRect = navBar.getBoundingClientRect();
+    const itemRect = activeNav.getBoundingClientRect();
+    if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+      activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
   }
-  window.addEventListener('scroll', updateScrollspy, { passive: true });
-  updateScrollspy();
 }
+
+window.addEventListener('scroll', updateScrollspy, { passive: true });
+updateScrollspy();
 
 if (window.location.search.includes('fullscreen=true')) {
   document.documentElement.classList.add('fullscreen-mode');
-}
-
-// Embed: notify parent of exact content height
-if (isEmbedded) {
-  function notifyParentHeight() {
-    const height = document.querySelector('.content').scrollHeight;
-    window.parent.postMessage({ type: 'ka-resize', height: height }, '*');
-  }
-  window.addEventListener('load', notifyParentHeight);
-  window.addEventListener('resize', notifyParentHeight);
 }
 </script>
 </body>
