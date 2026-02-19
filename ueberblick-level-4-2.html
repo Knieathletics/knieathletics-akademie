@@ -102,6 +102,8 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 .bg-grad li { color: rgba(255,255,255,.7) }
 .bg-grad h4 { color: #fff }
 .bg-grad .hl { color: rgba(255,255,255,.7) }
+.bg-grad svg [opacity] { opacity: .25 !important }
+.bg-grad svg [fill]:not([fill="none"]):not([fill="#fff"]):not([fill="currentColor"]) { fill: rgba(255,255,255,.25) }
 
 /* === HERO === */
 .hero { background: var(--grad-blue); color: #fff; padding: 56px 44px; position: relative; overflow: hidden; scroll-margin-top: 110px }
@@ -131,9 +133,13 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 .img-placeholder { background: linear-gradient(135deg, rgba(0,68,103,.06) 0%, rgba(42,181,215,.08) 100%); border: 2px dashed rgba(0,135,179,.2); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); min-height: 200px; padding: 24px }
 .img-placeholder svg { opacity: .4 }
 .img-placeholder span { font-size: .78rem; font-weight: 500; text-align: center }
+.img-placeholder .img-format-badge { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: rgba(0,135,179,.1); color: var(--petrol); padding: 3px 10px; border-radius: 50px; margin-top: 4px }
+.img-placeholder-portrait { aspect-ratio: 3/4; min-height: 280px }
+.img-placeholder-landscape { aspect-ratio: 16/9; min-height: 0 }
 .img-hero-placeholder { border-color: rgba(255,255,255,.2); background: rgba(0,30,50,.3) }
 .img-hero-placeholder span { color: rgba(255,255,255,.5) }
 .img-hero-placeholder svg { stroke: rgba(255,255,255,.4) }
+.img-hero-placeholder .img-format-badge { background: rgba(255,255,255,.12); color: rgba(255,255,255,.6) }
 
 /* === NUMBERS === */
 .num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--grad-blue); border-radius: 7px; color: #fff; font-size: .7rem; font-weight: 800; flex-shrink: 0 }
@@ -235,19 +241,19 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 .sol-a { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px }
 .sol-a-card { background: #fff; border-radius: 10px; padding: 16px 18px; border: 1px solid rgba(0,0,0,.04) }
 .sol-a-card h4 { font-size: .82rem; font-weight: 700; color: var(--heading); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(0,0,0,.06) }
-.sol-r { display: flex; gap: 8px; margin-bottom: 5px; align-items: baseline }
-.sol-t { font-size: .62rem; font-weight: 700; color: var(--petrol); text-transform: uppercase; letter-spacing: .3px; flex-shrink: 0; width: 54px }
+.sol-r { display: flex; gap: 12px; margin-bottom: 5px; align-items: baseline }
+.sol-t { font-size: .62rem; font-weight: 700; color: var(--petrol); text-transform: uppercase; letter-spacing: .3px; flex-shrink: 0; min-width: 72px }
 .sol-v { font-size: .78rem; line-height: 1.5; color: var(--txt) }
 
 /* === SOLUTION B === */
 .sol-b { margin-top: 18px; display: flex; flex-direction: column; gap: 10px }
 .sol-b-card { background: #fff; border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(0,0,0,.05); box-shadow: 0 2px 8px rgba(0,68,103,.04) }
 .sol-b-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid rgba(0,68,103,.08) }
-.sol-b-row { display: flex; gap: 12px; padding: 10px 0; align-items: flex-start; border-bottom: 1px solid rgba(0,0,0,.04) }
+.sol-b-row { display: flex; gap: 16px; padding: 10px 0; align-items: flex-start; border-bottom: 1px solid rgba(0,0,0,.04) }
 .sol-b-row:last-child { border-bottom: none; padding-bottom: 0 }
-.sol-b-label { font-size: .62rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; flex-shrink: 0; width: 72px; margin-top: 2px; padding: 4px 8px; border-radius: 6px; text-align: center; line-height: 1.3 }
-.sol-b-label.sol-problem { background: #fff0e6; color: #d35400; border: 1px solid rgba(211,84,0,.12) }
-.sol-b-label.sol-loesung { background: #e6f7ef; color: #1a8a4a; border: 1px solid rgba(26,138,74,.12) }
+.sol-b-label { font-size: .62rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; flex-shrink: 0; min-width: 88px; margin-top: 2px; padding: 4px 10px; border-radius: 6px; text-align: center; line-height: 1.3; white-space: nowrap }
+.sol-b-label.sol-problem { background: #ffe0c2; color: #c43e00; border: 1px solid rgba(211,84,0,.25) }
+.sol-b-label.sol-loesung { background: #c8f0d8; color: #167a3e; border: 1px solid rgba(26,138,74,.25) }
 .sol-b-row p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
 
 /* === KRITERIEN A === */
@@ -527,77 +533,33 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   </section>
 
   <section class="sec bg-ice" id="sec-1">
-    <div class="sec-inner">
-      <div class="sec-label">ZIELE DIESER STUFE</div>
-      <h2 class="sec-title">Was du in Level 4.2 erreichst</h2>
-      <div class="ben-a">
-        <div class="ben-a-card">
-          <div class="ben-a-ico">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#2ab5d7" opacity="0.15"/>
-              <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h4>Steigerung der Laufstrecke</h4>
-            <p>Du baust deine Laufumfänge systematisch weiter aus. Nach den ersten Intervallen in Level 4.1 geht es nun darum, die Distanz schrittweise zu erhöhen. Dein Körper hat sich an die Stoßbelastung gewöhnt und ist bereit für längere Einheiten. Das Ziel ist es, die Strecke schmerzfrei zu verlängern und dabei ein Gefühl für dein individuelles Lauftempo zu entwickeln.</p>
-          </div>
-        </div>
-        <div class="ben-a-card">
-          <div class="ben-a-ico">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/>
-              <path d="M12 6v6l4 2" stroke="#004467" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="12" cy="12" r="10" stroke="#004467" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div>
-            <h4>Verfeinerung der Lauftechnik durch Speed Mechanic Drills</h4>
-            <p>Mit den Speed Mechanic Drills wie A-Skips, B-Skips, Ankle Dribbles, Drop Lunge und Rabbit Run arbeitest du gezielt an deiner Laufmechanik. Diese Übungen verbessern deinen Fußaufsatz, die Beinkoordination und die Bewegungsschnelligkeit, die du für längere Strecken und spätere Tempowechsel brauchst.</p>
-          </div>
-        </div>
-        <div class="ben-a-card">
-          <div class="ben-a-ico">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#2ab5d7" opacity="0.15"/>
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h4>Rotationssprünge, Seitensprünge und Hürdensprünge</h4>
-            <p>Mit dem 90° Rotation Deep Jump, medialen Hürden Jumps und dem einbeinigen Hurdle Jump bringst du deine Sprungkraft auf ein neues Level. Diese Übungen fordern dein Knie in Rotations- und Seitwärtsbewegungen und trainieren die Fähigkeit, Kräfte schnell und kontrolliert in verschiedene Richtungen aufzufangen und wieder abzugeben.</p>
-          </div>
-        </div>
-        <div class="ben-a-card">
-          <div class="ben-a-ico">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="3" width="18" height="18" rx="2" fill="#2ab5d7" opacity="0.15"/>
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="#004467" stroke-width="1.5"/>
-              <path d="M9 12l2 2 4-4" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h4>Mehr Stabilität für die Innenseite deines Knies</h4>
-            <p>Der Side Plank Leg Add kommt als neue Übung hinzu. Im Unterschied zum Side Plank Add aus der vorherigen Stufe muss hier vor allem die Innenseite deines Knies deutlich mehr Stabilisierungsarbeit leisten. Gleichzeitig stärkst du damit deine seitliche Rumpfstabilität, die Basis für saubere Bewegungen bei Sprüngen, Richtungswechseln und beim Laufen.</p>
-          </div>
-        </div>
-        <div class="ben-a-card">
-          <div class="ben-a-ico">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" fill="#2ab5d7" opacity="0.15"/>
-              <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="12" y1="22.08" x2="12" y2="12" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h4>Maximalkraft weiter steigern</h4>
-            <p>Die Progression der Kraftübungen mit Gewichtssteigerung bleibt ein zentraler Bestandteil, um die Belastbarkeit deines Knies weiter zu sichern und auszubauen.</p>
-          </div>
-        </div>
+  <div class="sec-inner">
+    <div class="sec-label">ZIELE DIESER STUFE</div>
+    <h2 class="sec-title">Was du in Level 4.2 erreichst</h2>
+    <div class="ben-b-stack">
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Steigerung der Laufstrecke</h4>
+        <p>Du baust deine Laufumfänge systematisch weiter aus. Nach den ersten Intervallen in Level 4.1 geht es nun darum, die Distanz schrittweise zu erhöhen. Dein Körper hat sich an die Stoßbelastung gewöhnt und ist bereit für längere Einheiten. Das Ziel ist es, die Strecke schmerzfrei zu verlängern und dabei ein Gefühl für dein individuelles Lauftempo zu entwickeln.</p>
+      </div>
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Verfeinerung der Lauftechnik durch Speed Mechanic Drills</h4>
+        <p>Mit den Speed Mechanic Drills wie A-Skips, B-Skips, Ankle Dribbles, Drop Lunge und Rabbit Run arbeitest du gezielt an deiner Laufmechanik. Diese Übungen verbessern deinen Fußaufsatz, die Beinkoordination und die Bewegungsschnelligkeit, die du für längere Strecken und spätere Tempowechsel brauchst.</p>
+      </div>
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Rotationssprünge, Seitensprünge und Hürdensprünge</h4>
+        <p>Mit dem 90° Rotation Deep Jump, medialen Hürden Jumps und dem einbeinigen Hurdle Jump bringst du deine Sprungkraft auf ein neues Level. Diese Übungen fordern dein Knie in Rotations- und Seitwärtsbewegungen und trainieren die Fähigkeit, Kräfte schnell und kontrolliert in verschiedene Richtungen aufzufangen und wieder abzugeben.</p>
+      </div>
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Mehr Stabilität für die Innenseite deines Knies</h4>
+        <p>Der Side Plank Leg Add kommt als neue Übung hinzu. Im Unterschied zum Side Plank Add aus der vorherigen Stufe muss hier vor allem die Innenseite deines Knies deutlich mehr Stabilisierungsarbeit leisten. Gleichzeitig stärkst du damit deine seitliche Rumpfstabilität, die Basis für saubere Bewegungen bei Sprüngen, Richtungswechseln und beim Laufen.</p>
+      </div>
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Maximalkraft weiter steigern</h4>
+        <p>Die Progression der Kraftübungen mit Gewichtssteigerung bleibt ein zentraler Bestandteil, um die Belastbarkeit deines Knies weiter zu sichern und auszubauen.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="sec" id="sec-2">
   <div class="sec-inner">
@@ -655,7 +617,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
         </div>
         <div>
           <h4>Achte auf Untergrund und Schuhwerk</h4>
-          <p>Auch in dieser Phase gilt: Wähle für deine Läufe geeignete Untergründe und überprüfe, ob dein Schuhwerk noch über eine gute Dämpfung verfügt. Barfußschuhe sind weiterhin nicht geeignet.</p>
+          <p>Auch indieser Phase gilt: Wähle für deine Läufe geeignete Untergründe und überprüfe, ob dein Schuhwerk noch über eine gute Dämpfung verfügt. Barfußschuhe sind weiterhin nicht geeignet.</p>
         </div>
       </div>
       <div class="cri-b-row">
@@ -743,32 +705,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <h2 class="sec-title">Fortschritte im Alltag erkennen</h2>
     <p class="sec-intro">Dein Training wird jetzt spürbar athletischer – und das zeigt sich nicht nur im Gym, sondern in deinem gesamten Alltag.</p>
     <div class="ben-a">
-      <div class="ben-a-card">
-        <div class="ben-a-ico">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#2ab5d7" opacity="0.15"/>
-            <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div>
-          <h4>Laufen fühlt sich natürlich an</h4>
-          <p>Du kannst eine längere Strecke am Stück joggen, ohne danach an dein Knie denken zu müssen. Laufen wird vom Trainingsinhalt zur Selbstverständlichkeit.</p>
-        </div>
-      </div>
-      <div class="ben-a-card">
-        <div class="ben-a-ico">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/>
-            <path d="M12 6v6l4 2" stroke="#004467" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="12" cy="12" r="10" stroke="#004467" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <div>
-          <h4>Erste Sportarten machen wieder Spaß</h4>
-          <p>Ob Inlineskaten, eine leichte Kletterroute oder eine Runde auf dem Rad – du merkst, dass dein Körper wieder für mehr bereit ist. Die Bewegung macht Freude statt Sorgen.</p>
-        </div>
-      </div>
-      <div class="ben-a-card">
+      <div class="ben-a-card" style="border-left: 4px solid var(--orange);">
         <div class="ben-a-ico">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 11.08V12a10 10 0 11-5.93-9.14" fill="#2ab5d7" opacity="0.15"/>
@@ -781,7 +718,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           <p>In Alltagssituationen reagierst du plötzlich schnell und sicher – ein spontaner Richtungswechsel, ein schneller Schritt zur Seite, ein Stolperer, den du mühelos abfängst. Dein Knie hält, ohne dass du darüber nachdenken musst.</p>
         </div>
       </div>
-      <div class="ben-a-card">
+      <div class="ben-a-card" style="border-left: 4px solid var(--orange);">
         <div class="ben-a-ico">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="3" y="11" width="18" height="11" rx="2" fill="#2ab5d7" opacity="0.15"/>
@@ -792,6 +729,34 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
         <div>
           <h4>Die Kontrolle liegt bei dir</h4>
           <p>Du hast gelernt, deine Belastung smart zu steuern, auf Warnsignale zu hören und dein Training bewusst anzupassen. Dieses Wissen gibt dir eine Sicherheit, die weit über das Knie hinausgeht.</p>
+        </div>
+      </div>
+    </div>
+    <h2 class="sec-title" style="margin-top: 40px;">Fortschritte im Sport erkennen</h2>
+    <div class="ben-a">
+      <div class="ben-a-card" style="border-left: 4px solid var(--orange);">
+        <div class="ben-a-ico">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" fill="#2ab5d7" opacity="0.15"/>
+            <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Laufen fühlt sich natürlich an</h4>
+          <p>Du kannst eine längere Strecke am Stück joggen, ohne danach an dein Knie denken zu müssen. Laufen wird vom Trainingsinhalt zur Selbstverständlichkeit.</p>
+        </div>
+      </div>
+      <div class="ben-a-card" style="border-left: 4px solid var(--orange);">
+        <div class="ben-a-ico">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/>
+            <path d="M12 6v6l4 2" stroke="#004467" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="10" stroke="#004467" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Erste Sportarten machen wieder Spaß</h4>
+          <p>Ob Inlineskaten, eine leichte Kletterroute oder eine Runde auf dem Rad – du merkst, dass dein Körper wieder für mehr bereit ist. Die Bewegung macht Freude statt Sorgen.</p>
         </div>
       </div>
     </div>
@@ -825,120 +790,56 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <h2 class="sec-title">Benötigte Hilfsmittel</h2>
     <div class="ben-a">
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Miniband</span>
-        </div>
-        <!-- BILD: Miniband -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.00.58.png" alt="Miniband" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Miniband</h4>
           <p>Kleine elastische Bänder für gezieltes Training</p>
         </div>
       </div>
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Resistance Band</span>
-        </div>
-        <!-- BILD:Resistance Band -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.01.12.png" alt="Resistance Band" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Resistance Band</h4>
           <p>Langes Gummiband für vielseitige Übungen</p>
         </div>
       </div>
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Kleine Erhöhung</span>
-        </div>
-        <!-- BILD: Kleine Erhöhung -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.00.52.png" alt="Kleine Erhöhung" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Kleine Erhöhung</h4>
           <p>Kiste, Stufe oder Buch für Calf Lift</p>
         </div>
       </div>
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Hanteln</span>
-        </div>
-        <!-- BILD: Hanteln -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202025-02-22%20um%2020.47.38.png" alt="Hanteln" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Hanteln / Alternative Gewichte</h4>
           <p>Für das Training der Kraftübungen</p>
         </div>
       </div>
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Pezziball</span>
-        </div>
-        <!-- BILD: Pezziball -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.01.32.png" alt="Pezziball" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Pezziball</h4>
           <p>Für Kraftübungen wie den Pezziball-Curl</p>
         </div>
       </div>
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Box/Bank</span>
-        </div>
-        <!-- BILD: Box/Bank -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.01.55.png" alt="Box/Bank" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Box / Hantelbank / Stuhl</h4>
           <p>Für den Box Squat und Elevated Hip Thrust</p>
         </div>
       </div>
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Hürden</span>
-        </div>
-        <!-- BILD: Hürden -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.01.45.png" alt="Athletik Hürden" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Athletik Hürden</h4>
           <p>Für Hürden Drills. Du kannst dir aber auch Minibänder als Markierung hinlegen und dir die Hürden vorstellen.</p>
         </div>
       </div>
       <div class="ben-a-card">
-        <div class="img-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Bild: Laufschuhe</span>
-        </div>
-        <!-- BILD: Laufschuhe -->
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.02.02.png" alt="Laufschuhe" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
         <div>
           <h4>Laufschuhe</h4>
           <p>Für das Joggen und die Athletikübungen</p>
@@ -952,15 +853,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   <div class="sec-inner">
     <div class="sec-label">ERNÄHRUNG</div>
     <h2 class="sec-title">Tipps zur Ernährung</h2>
-    <div class="img-placeholder" style="max-width:600px;margin:0 auto 30px">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <circle cx="8.5" cy="8.5" r="1.5"/>
-        <path d="M21 15l-5-5L5 21"/>
-      </svg>
-      <span>Bild: Ernährungssupplemente</span>
-    </div>
-    <!-- BILD: Ernährungssupplemente -->
+    <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.02.39.png" alt="Ernährungssupplemente" style="max-width:400px;margin:0 auto 30px;display:block;border-radius:12px;">
     <div class="fok-c">
       <div class="fok-c-row">
         <div class="fok-c-num">1</div>
@@ -1014,5 +907,78 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   </button>
 </div>
 
+<script>
+function toggleFullscreen() {
+  var html = document.documentElement;
+  var label = document.getElementById('fabFullLabel');
+  if (window.parent !== window) {
+    window.parent.postMessage({ type: 'ka-fullscreen-toggle' }, '*');
+    return;
+  }
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    return;
+  }
+  if (html.classList.contains('fullscreen-mode')) {
+    html.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+    return;
+  }
+  if (html.requestFullscreen) {
+    html.requestFullscreen().catch(function() {
+      html.classList.add('fullscreen-mode');
+      if (label) label.textContent = 'Normal';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  } else {
+    html.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+document.addEventListener('fullscreenchange', function() {
+  var label = document.getElementById('fabFullLabel');
+  if (document.fullscreenElement) {
+    document.documentElement.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+  } else {
+    document.documentElement.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+  }
+});
+const sections = document.querySelectorAll('[id^="sec-"]');
+const navItems = document.querySelectorAll('.nav-item');
+const navBar = document.getElementById('navBar');
+function updateScrollspy() {
+  const scrollPos = window.scrollY + 140;
+  let activeIndex = 0;
+  sections.forEach((sec, i) => { if (sec.offsetTop <= scrollPos) activeIndex = i; });
+  navItems.forEach((item, i) => { item.classList.toggle('active', i === activeIndex); });
+  const activeNav = navItems[activeIndex];
+  if (activeNav && navBar) {
+    const navRect = navBar.getBoundingClientRect();
+    const itemRect = activeNav.getBoundingClientRect();
+    if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+      activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+}
+window.addEventListener('scroll', updateScrollspy, { passive: true });
+updateScrollspy();
+if (window.location.search.includes('fullscreen=true')) {
+  document.documentElement.classList.add('fullscreen-mode');
+}
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href^="#"]');
+  if (link) {
+    e.preventDefault();
+    var id = link.getAttribute('href').slice(1);
+    var target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+});
+</script>
 </body>
 </html>
