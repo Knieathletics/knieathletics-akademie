@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<base target="_self">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>3er Hürde Continuous – KNIEATHLETICS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+/* === VARIABLES === */
+:root {
+  --dark: #004467;
+  --petrol: #0087B3;
+  --cyan: #2ab5d7;
+  --orange: #ff6d09;
+  --ice: #eef6f9;
+  --offwhite: #f3eee7;
+  --txt: #2d3748;
+  --muted: #718096;
+  --heading: #004467;
+  --grad-blue: linear-gradient(135deg, #004467 0%, #006a8e 40%, #0087B3 70%, #2ab5d7 100%);
+  --grad-orange: linear-gradient(135deg, #ff5500 0%, #ff6d09 30%, #ff8b3c 70%, #ffaa55 100%);
+}
+
+/* === BASE === */
+* { margin: 0; padding: 0; box-sizing: border-box }
+html { scroll-behavior: smooth }
+body { font-family: 'Roboto', 'Arial', sans-serif; color: var(--txt); background: #f5f5f5; font-size: 16px; line-height: 1.6 }
+.content { max-width: 900px; margin: 0 auto; background: #fff; box-shadow: 0 0 40px rgba(0,0,0,.08); transition: max-width .4s ease, box-shadow .4s ease }
+
+/* === FULLSCREEN MODE === */
+html.fullscreen-mode { background: #fff }
+html.fullscreen-mode body { background: #fff }
+html.fullscreen-mode .content { max-width: 100%; box-shadow: none }
+html.fullscreen-mode .sec-inner,
+html.fullscreen-mode .hero-inner { max-width: 1200px; margin: 0 auto }
+html.fullscreen-mode .topbar { padding: 18px 5vw }
+html.fullscreen-mode .topbar-inner { max-width: 1200px; margin: 0 auto }
+html.fullscreen-mode .topbar-logo { height: 36px }
+html.fullscreen-mode .hero { padding: 64px 5vw }
+html.fullscreen-mode .hero h1 { font-size: 2.8rem }
+html.fullscreen-mode .hero-sub { font-size: 1.1rem; max-width: 660px }
+html.fullscreen-mode .sec { padding: 52px 5vw }
+html.fullscreen-mode .sec-title { font-size: 2rem }
+html.fullscreen-mode .sec-intro { font-size: .95rem }
+html.fullscreen-mode .sec-label { font-size: .7rem; letter-spacing: 5px }
+html.fullscreen-mode .stp-b-card h3 { font-size: 1rem }
+html.fullscreen-mode .stp-b-card p { font-size: .92rem }
+html.fullscreen-mode .num { width: 30px; height: 30px; font-size: .78rem }
+html.fullscreen-mode .vid-a-card h4 { font-size: 1rem }
+html.fullscreen-mode .vid-a-card p { font-size: .9rem }
+html.fullscreen-mode .act-card h4 { font-size: .95rem }
+html.fullscreen-mode .act-card p,
+html.fullscreen-mode .act-card li { font-size: .9rem }
+html.fullscreen-mode .pyr-level { padding: 22px 28px }
+html.fullscreen-mode .pyr-level h4 { font-size: .95rem }
+html.fullscreen-mode .pyr-level li { font-size: .88rem }
+html.fullscreen-mode .cri-d-row h4 { font-size: .95rem }
+html.fullscreen-mode .cri-d-row p { font-size: .88rem }
+html.fullscreen-mode .hl { font-size: .92rem; padding: 18px 22px }
+html.fullscreen-mode .img-hero { max-height: 420px }
+html.fullscreen-mode .sec-split-img img { max-height: 400px }
+html.fullscreen-mode .hero-split .img-hero { width: 320px; min-width: 320px; max-height: 400px }
+html.fullscreen-mode .fok-b-item h4 { font-size: .95rem }
+html.fullscreen-mode .fok-b-item p { font-size: .88rem }
+html.fullscreen-mode .fok-b-num { width: 46px; height: 46px; font-size: .9rem }
+html.fullscreen-mode .nav-bar { padding: 0 5vw; top: 73px }
+html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify-content: center }
+
+/* === TOPBAR === */
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 44px; border-bottom: 1px solid rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.97); backdrop-filter: blur(8px); font-family: 'Roboto', 'Arial', sans-serif }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; width: 100% }
+.topbar-logo { height: 32px }
+.topbar-right { display: flex; align-items: center; gap: 12px; font-size: .78rem; color: var(--muted) }
+.badge { background: var(--ice); color: var(--petrol); font-size: .62rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; letter-spacing: .5px; font-family: 'Roboto', 'Arial', sans-serif }
+
+/* === NAV-BAR === */
+.nav-bar { position: sticky; top: 61px; z-index: 99; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); padding: 0 44px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none }
+.nav-bar::-webkit-scrollbar { display: none }
+.nav-bar-inner { display: flex; gap: 0; min-width: max-content; padding-bottom: 2px }
+.nav-item { display: flex; align-items: center; gap: 6px; padding: 10px 16px; font-size: .72rem; font-weight: 700; color: var(--muted); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; position: relative; font-family: 'Roboto', 'Arial', sans-serif }
+.nav-item:hover { color: var(--petrol) }
+.nav-item.active { color: var(--dark); border-bottom-color: var(--cyan) }
+.nav-item .nav-num { width: 18px; height: 18px; background: rgba(0,68,103,.08); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: .58rem; font-weight: 800; color: var(--petrol); flex-shrink: 0; transition: background .2s, color .2s }
+.nav-item.active .nav-num { background: var(--grad-blue); color: #fff }
+
+/* === SECTIONS === */
+.sec { padding: 48px 44px; scroll-margin-top: 110px }
+.sec-inner {}
+.sec + .sec { border-top: 1px solid rgba(0,0,0,.04) }
+.sec-label { font-size: .65rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--petrol); margin-bottom: 6px }
+.sec-title { font-size: 1.7rem; font-weight: 900; color: var(--heading); margin-bottom: 16px; letter-spacing: -.3px; line-height: 1.25 }
+.sec-intro { font-size: .85rem; color: var(--txt); line-height: 1.65; margin-bottom: 20px }
+.bg-ice { background: var(--ice) }
+.bg-off { background: var(--offwhite) }
+.bg-grad { background: var(--grad-blue); color: #fff }
+.bg-grad .sec-label { color: rgba(255,255,255,.3) }
+.bg-grad .sec-title { color: #fff }
+.bg-grad .sec-intro { color: rgba(255,255,255,.55) }
+.bg-grad p { color: rgba(255,255,255,.7) }
+.bg-grad li { color: rgba(255,255,255,.7) }
+.bg-grad h4 { color: #fff }
+.bg-grad .hl { color: rgba(255,255,255,.7) }
+.bg-grad svg [opacity] { opacity: .25 !important }
+.bg-grad svg [fill]:not([fill="none"]):not([fill="#fff"]):not([fill="currentColor"]) { fill: rgba(255,255,255,.25) }
+
+/* === HERO === */
+.hero { background: var(--grad-blue); color: #fff; padding: 56px 44px; position: relative; overflow: hidden; scroll-margin-top: 110px }
+.hero-inner {}
+.hero-label { font-size: .62rem; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--cyan); margin-bottom: 10px }
+.hero h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; letter-spacing: -.5px; line-height: 1.2 }
+.hero-sub { font-size: .95rem; color: rgba(255,255,255,.55); margin-bottom: 32px; max-width: 520px; line-height: 1.6 }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px }
+.hero-split { display: flex; gap: 40px; align-items: center; justify-content: space-between; margin-top: 20px }
+.hero-split .img-hero { width: 320px; min-width: 320px; max-height: 340px; object-fit: cover; object-position: center 25%; border-radius: 14px; margin: 0; opacity: .9 }
+.loom-box { background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; overflow: hidden }
+.loom-video { position: relative; padding-bottom: 56.25%; height: 0 }
+.loom-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100% }
+.loom-meta { padding: 10px 16px; display: flex; justify-content: space-between; font-size: .75rem }
+.loom-meta span { color: rgba(255,255,255,.4) }
+.loom-meta .l-name { color: #fff; font-weight: 500 }
+.loom-print { display: none; background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 24px; text-align: center }
+.loom-print .play-c { width: 44px; height: 44px; background: var(--grad-orange); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px }
+.loom-print p { font-size: .8rem; color: rgba(255,255,255,.45); margin-top: 4px }
+.info-card { background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 22px }
+.info-card h3 { font-size: .88rem; font-weight: 700; color: #fff; margin-bottom: 10px }
+.info-card p { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.6 }
+
+/* === IMAGES === */
+.img-hero { width: 100%; max-height: 360px; object-fit: cover; object-position: center 35%; border-radius: 12px; margin-top: 16px; opacity: .85 }
+.img-section { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top center; border-radius: 12px; margin-bottom: 20px }
+.img-placeholder { background: linear-gradient(135deg, rgba(0,68,103,.06) 0%, rgba(42,181,215,.08) 100%); border: 2px dashed rgba(0,135,179,.2); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--muted); min-height: 200px; padding: 24px }
+.img-placeholder svg { opacity: .4 }
+.img-placeholder span { font-size: .78rem; font-weight: 500; text-align: center }
+.img-placeholder .img-format-badge { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: rgba(0,135,179,.1); color: var(--petrol); padding: 3px 10px; border-radius: 50px; margin-top: 4px }
+.img-placeholder-portrait { aspect-ratio: 3/4; min-height: 280px }
+.img-placeholder-landscape { aspect-ratio: 16/9; min-height: 0 }
+.img-hero-placeholder { border-color: rgba(255,255,255,.2); background: rgba(0,30,50,.3) }
+.img-hero-placeholder span { color: rgba(255,255,255,.5) }
+.img-hero-placeholder svg { stroke: rgba(255,255,255,.4) }
+.img-hero-placeholder .img-format-badge { background: rgba(255,255,255,.12); color: rgba(255,255,255,.6) }
+
+/* === NUMBERS === */
+.num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--grad-blue); border-radius: 7px; color: #fff; font-size: .7rem; font-weight: 800; flex-shrink: 0 }
+.num-accent { background: var(--grad-orange); width: 30px; height: 30px; border-radius: 8px; font-size: .8rem; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 800; flex-shrink: 0 }
+
+/* === BENEFITS A === */
+.ben-a { display: flex; flex-direction: column; gap: 14px; margin-top: 18px }
+.ben-a-card { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid rgba(0,0,0,.05); display: flex; gap: 16px; align-items: flex-start; transition: box-shadow .2s }
+.ben-a-card:hover { box-shadow: 0 4px 20px rgba(0,68,103,.06) }
+.ben-a-ico { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center }
+.ben-a-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 4px }
+.ben-a-card p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+
+/* === BENEFITS B === */
+.ben-b { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 18px }
+.ben-b-label { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 12px }
+.ben-b-stack { display: flex; flex-direction: column; gap: 10px }
+.ben-b-card { background: #fff; border-radius: 10px; padding: 16px 18px; border: 1px solid rgba(0,0,0,.06); border-left: 3px solid var(--cyan); box-shadow: 0 2px 8px rgba(0,68,103,.04) }
+.ben-b-card h4 { font-size: .82rem; font-weight: 700; color: var(--heading); margin-bottom: 3px }
+.ben-b-card p { font-size: .78rem; line-height: 1.55; color: var(--txt) }
+
+/* === FOKUS A === */
+.fok-a { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px }
+.fok-a-card { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 12px; padding: 20px; display: flex; gap: 14px; align-items: center; transition: box-shadow .2s }
+.fok-a-card:hover { box-shadow: 0 4px 20px rgba(0,68,103,.08) }
+.fok-a-ico { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center }
+.fok-a-card p { font-size: .82rem; line-height: 1.5; font-weight: 500; color: var(--heading) }
+
+/* === FOKUS B === */
+.fok-b-wrap { max-width: 720px; margin: 4px auto 0 }
+.fok-b { display: flex; flex-direction: column; gap: 4px; position: relative; padding-left: 44px; margin-top: 18px }
+.fok-b::before { content: ''; position: absolute; left: 17px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--cyan), var(--petrol)) }
+.fok-b-item { text-align: left; position: relative; padding: 10px 0; background: none !important; box-shadow: none !important; border: none !important }
+.fok-b-num { width: 40px; height: 40px; background: var(--grad-blue); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .82rem; font-weight: 800; position: absolute; left: -44px; top: 10px; z-index: 1; border: 3px solid var(--ice); box-shadow: 0 2px 8px rgba(0,68,103,.15) }
+.fok-b-item h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-top: 0; margin-bottom: 4px }
+.fok-b-item p { font-size: .78rem; line-height: 1.45; font-weight: 400; color: var(--txt); margin-top: 4px }
+.bg-grad .fok-b-num { border-color: rgba(0,44,67,.6) }
+.bg-off .fok-b-num { border-color: var(--offwhite) }
+
+/* === FOKUS C === */
+.fok-c { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); margin-top: 18px }
+.fok-c-row { display: flex; align-items: center; gap: 16px; padding: 16px 20px }
+.fok-c-row:nth-child(odd) { background: var(--ice); border-left: 3px solid var(--cyan) }
+.fok-c-row:nth-child(even) { background: #fff; border-left: 3px solid var(--petrol) }
+.fok-c-num { width: 28px; height: 28px; background: var(--grad-blue); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .68rem; font-weight: 800; flex-shrink: 0 }
+.fok-c-row p { font-size: .84rem; font-weight: 500; color: var(--heading) }
+
+/* === STEPS A === */
+.stp-a { margin-top: 18px; display: flex; flex-direction: column; gap: 4px }
+.stp-a-item { display: flex; gap: 16px; padding: 16px 0; align-items: flex-start }
+.stp-a-item h3 { font-size: .88rem; font-weight: 700; color: var(--heading); margin-bottom: 4px }
+.stp-a-item ul { list-style: none; padding: 0; margin: 0 }
+.stp-a-item li { font-size: .82rem; line-height: 1.55; padding-left: 14px; position: relative; margin-bottom: 3px }
+.stp-a-item li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--cyan); border-radius: 50% }
+
+/* === STEPS B === */
+.stp-b { margin-top: 18px; display: flex; flex-direction: column; gap: 12px }
+.stp-b-card { background: var(--ice); border: 1px solid rgba(0,135,179,.08); border-radius: 12px; padding: 20px 22px; border-left: 4px solid var(--cyan) }
+.stp-b-card:nth-child(2) { border-left-color: var(--petrol); background: rgba(238,246,249,.6) }
+.stp-b-card:nth-child(3) { border-left-color: var(--dark); background: rgba(243,238,231,.5) }
+.stp-b-card:nth-child(4) { border-left-color: var(--orange); background: rgba(255,109,9,.04) }
+.stp-b-card:nth-child(5) { border-left-color: var(--cyan); background: var(--ice) }
+.stp-b-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px }
+.stp-b-card h3 { font-size: .88rem; font-weight: 700; color: var(--heading) }
+.stp-b-card p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+.stp-b-card ul { list-style: none; padding: 0; margin: 0 }
+.stp-b-card li { font-size: .82rem; line-height: 1.55; padding-left: 14px; position: relative; margin-bottom: 3px; color: var(--txt) }
+.stp-b-card li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--petrol); border-radius: 50% }
+
+/* === STEPS C === */
+.stp-c { margin-top: 18px; position: relative; padding-left: 44px }
+.stp-c::before { content: ''; position: absolute; left: 13px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(180deg, var(--cyan), var(--petrol)) }
+.stp-c-item { position: relative; padding: 16px 0 }
+.stp-c-item + .stp-c-item { border-top: 1px solid rgba(0,0,0,.04) }
+.stp-c-num { width: 28px; height: 28px; background: var(--grad-blue); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .68rem; font-weight: 800; position: absolute; left: -44px; top: 18px; border: 3px solid var(--offwhite); z-index: 1 }
+.stp-c-item h3 { font-size: .88rem; font-weight: 700; color: var(--heading); margin-bottom: 4px }
+.stp-c-item ul { list-style: none; padding: 0; margin: 0 }
+.stp-c-item li { font-size: .82rem; line-height: 1.55; padding-left: 14px; position: relative; margin-bottom: 3px }
+.stp-c-item li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--cyan); border-radius: 50% }
+
+/* === FEHLER A === */
+.err-a { margin-top: 18px; display: flex; flex-direction: column; gap: 8px }
+.err-a-row { display: flex; align-items: center; gap: 14px; background: var(--ice); border-radius: 8px; padding: 12px 16px }
+.err-a-row span { font-size: .82rem; font-weight: 500 }
+
+/* === FEHLER B === */
+.err-b { margin-top: 18px; display: flex; flex-direction: column; gap: 8px }
+.err-b-row { display: flex; align-items: center; gap: 14px; background: var(--ice); border-radius: 10px; padding: 14px 18px; border-left: 3px solid var(--orange) }
+.err-b-num { width: 24px; height: 24px; background: rgba(255,109,9,.1); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--orange); font-size: .65rem; font-weight: 800; flex-shrink: 0 }
+.err-b-row span { font-size: .82rem; font-weight: 600; color: var(--heading) }
+
+/* === FEHLER C === */
+.err-c { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
+.err-c-card { background: #fff; border-radius: 10px; padding: 16px; border: 1px solid rgba(0,0,0,.05); display: flex; gap: 12px; align-items: center }
+.err-c-ico { flex-shrink: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center }
+.err-c-card span { font-size: .82rem; font-weight: 600; color: var(--heading) }
+
+/* === SOLUTION A === */
+.sol-a { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px }
+.sol-a-card { background: #fff; border-radius: 10px; padding: 16px 18px; border: 1px solid rgba(0,0,0,.04) }
+.sol-a-card h4 { font-size: .82rem; font-weight: 700; color: var(--heading); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(0,0,0,.10) }
+.sol-r { display: flex; gap: 12px; margin-bottom: 5px; align-items: baseline }
+.sol-t { font-size: .62rem; font-weight: 700; color: var(--petrol); text-transform: uppercase; letter-spacing: .3px; flex-shrink: 0; min-width: 72px }
+.sol-v { font-size: .78rem; line-height: 1.5; color: var(--txt) }
+
+/* === SOLUTION B === */
+.sol-b { margin-top: 18px; display: flex; flex-direction: column; gap: 10px }
+.sol-b-card { background: #fff; border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(0,0,0,.05); box-shadow: 0 2px 8px rgba(0,68,103,.04) }
+.sol-b-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid rgba(0,68,103,.15) }
+.sol-b-row { display: flex; gap: 16px; padding: 10px 0; align-items: flex-start; border-bottom: 1px solid rgba(0,0,0,.08) }
+.sol-b-row:last-child { border-bottom: none; padding-bottom: 0 }
+.sol-b-label { font-size: .62rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; flex-shrink: 0; min-width: 88px; margin-top: 2px; padding: 4px 10px; border-radius: 6px; text-align: center; line-height: 1.3; white-space: nowrap }
+.sol-b-label.sol-problem { background: #ffe0c2; color: #c43e00; border: 1px solid rgba(211,84,0,.25) }
+.sol-b-label.sol-loesung { background: #c8f0d8; color: #167a3e; border: 1px solid rgba(26,138,74,.25) }
+.sol-b-row p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+
+/* === KRITERIEN A === */
+.cri-a { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px }
+.cri-a-card { display: flex; gap: 14px; background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 20px; align-items: flex-start }
+.cri-a-card h4 { font-size: .85rem; font-weight: 700; color: #fff; margin-bottom: 3px }
+.cri-a-card p { font-size: .78rem; color: rgba(255,255,255,.6); line-height: 1.5 }
+
+/* === KRITERIEN B === */
+.cri-b { margin-top: 18px; display: flex; flex-direction: column; gap: 10px }
+.cri-b-row { display: flex; gap: 14px; align-items: center; background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 16px 20px }
+.cri-b-check { flex-shrink: 0; width: 28px; height: 28px; background: var(--grad-orange); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center }
+.cri-b-row h4 { font-size: .85rem; font-weight: 600; color: #fff }
+.cri-b-row p { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 2px }
+
+/* === KRITERIEN C === */
+.cri-c { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px }
+.cri-c-card { background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 24px 20px; text-align: center }
+.cri-c-num { font-size: 2rem; font-weight: 900; color: var(--orange); margin-bottom: 6px; line-height: 1 }
+.cri-c-card h4 { font-size: .85rem; font-weight: 700; color: #fff; margin-bottom: 4px }
+.cri-c-card p { font-size: .78rem; color: rgba(255,255,255,.55); line-height: 1.5 }
+
+/* === KRITERIEN D === */
+.cri-d { margin-top: 18px; display: flex; flex-direction: column; gap: 10px }
+.cri-d-row { display: flex; gap: 14px; align-items: center; background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 10px; padding: 16px 20px; box-shadow: 0 2px 8px rgba(0,68,103,.04) }
+.cri-d-check { flex-shrink: 0; width: 28px; height: 28px; background: var(--grad-orange); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center }
+.cri-d-row h4 { font-size: .85rem; font-weight: 700; color: var(--heading) }
+.cri-d-row p { font-size: .78rem; color: var(--txt); margin-top: 2px; line-height: 1.5 }
+
+/* === VIDEO A === */
+.vid-a { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px }
+.vid-a-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); text-decoration: none; color: inherit; display: block; transition: box-shadow .2s, transform .15s }
+.vid-a-card:hover { box-shadow: 0 6px 24px rgba(0,68,103,.1); transform: translateY(-2px) }
+.vid-thumb { position: relative; padding-bottom: 56.25%; background: var(--grad-blue) }
+.vid-thumb iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100% }
+.vid-body { padding: 16px 18px }
+.vid-a-card h4 { font-size: .88rem; font-weight: 700; color: var(--heading); margin-bottom: 6px }
+.vid-a-card p { font-size: .8rem; line-height: 1.55 }
+.vid-link-label { display: inline-flex; align-items: center; gap: 5px; margin-top: 10px; font-size: .75rem; font-weight: 600; color: var(--petrol) }
+.vid-link-label svg { flex-shrink: 0 }
+
+/* === VIDEO B === */
+.vid-b { margin-top: 18px }
+.vid-b-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); display: grid; grid-template-columns: 1.2fr 1fr }
+.vid-b-body { padding: 24px; display: flex; flex-direction: column; justify-content: center }
+.vid-b-body h4 { font-size: .95rem; font-weight: 700; color: var(--heading); margin-bottom: 8px }
+.vid-b-body p { font-size: .82rem; line-height: 1.6 }
+
+/* === BILD+TEXT === */
+.img-text { display: grid; grid-template-columns: 2fr 3fr; gap: 28px; margin-top: 18px; align-items: center }
+.img-box { border-radius: 12px; overflow: hidden; background: var(--ice) }
+.img-box img { width: 100%; height: auto; object-fit: cover; display: block }
+.img-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: 10px }
+.img-body p { font-size: .85rem; line-height: 1.65 }
+.img-body ul { list-style: none; padding: 0; margin: 8px 0 0 }
+.img-body li { font-size: .85rem; line-height: 1.65; padding-left: 14px; position: relative; margin-bottom: 3px }
+.img-body li::before { content: ''; position: absolute; left: 0; top: 9px; width: 4px; height: 4px; background: var(--cyan); border-radius: 50% }
+.img-text-rev { grid-template-columns: 3fr 2fr }
+.img-text-rev .img-box { order: 2 }
+.img-text-rev .img-body { order: 1 }
+.img-full { margin-top: 18px }
+.img-full-box { border-radius: 12px; overflow: hidden; background: var(--ice); height: 240px; margin-bottom: 20px }
+.img-full-box img { width: 100%; height: 100%; object-fit: cover }
+.img-full-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--heading); margin-bottom: 10px }
+.img-full-body p { font-size: .85rem; line-height: 1.65 }
+
+/* === SEC-SPLIT === */
+.sec-split { display: grid; grid-template-columns: 1fr 280px; gap: 32px; align-items: start }
+.sec-split-left { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: start }
+.sec-split.split-40 { grid-template-columns: 1fr 40% }
+.sec-split.split-50 { grid-template-columns: 1fr 1fr }
+.sec-split-left.split-40 { grid-template-columns: 40% 1fr }
+.sec-split-left.split-50 { grid-template-columns: 1fr 1fr }
+.sec-split-img { border-radius: 12px; overflow: hidden }
+.sec-split-img img { width: 100%; height: auto; display: block; object-fit: cover; object-position: top center; border-radius: 12px; max-height: 500px }
+
+/* === PYRAMID === */
+.pyr { margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 2px }
+.pyr-level { display: flex; gap: 16px; align-items: flex-start; padding: 18px 24px; background: var(--grad-blue); color: #fff; border-radius: 12px }
+.pyr-num { width: 30px; height: 30px; background: var(--grad-orange); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .75rem; font-weight: 800; flex-shrink: 0 }
+.pyr-level h4 { font-size: .85rem; font-weight: 700 }
+.pyr-level p { font-size: .78rem; color: rgba(255,255,255,.65); line-height: 1.5; margin-top: 2px }
+.pyr-level ul { list-style: none; padding: 0; margin: 4px 0 0 }
+.pyr-level li { font-size: .78rem; color: rgba(255,255,255,.65); padding-left: 12px; position: relative; margin-bottom: 2px; line-height: 1.5 }
+.pyr-level li::before { content: ''; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; background: rgba(255,255,255,.4); border-radius: 50% }
+
+/* === ACTION === */
+.act-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px }
+.act-card { background: #fff; border-radius: 12px; padding: 22px 20px; border: 1px solid rgba(0,0,0,.05); position: relative; overflow: hidden }
+.act-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad-blue) }
+.act-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 6px }
+.act-card p, .act-card li { font-size: .8rem; line-height: 1.55 }
+.act-card ul { list-style: none; padding: 0; margin: 6px 0 0 }
+.act-card li { padding-left: 14px; position: relative; margin-bottom: 3px }
+.act-card li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 4px; background: var(--cyan); border-radius: 50% }
+
+/* === HIGHLIGHTS === */
+.hl { border-radius: 0 10px 10px 0; padding: 14px 18px; font-size: .82rem; line-height: 1.6; margin-top: 16px }
+.hl-info { background: rgba(42,181,215,.08); border-left: 3px solid var(--cyan) }
+.hl-warn { background: rgba(255,109,9,.06); border-left: 3px solid var(--orange) }
+.hl-dark { background: rgba(42,181,215,.1); border-left: 3px solid var(--cyan); color: rgba(255,255,255,.7) }
+
+/* === FOOTER === */
+.doc-footer { padding: 18px 44px; background: var(--dark); text-align: center }
+.doc-footer p { font-size: .68rem; color: rgba(255,255,255,.25) }
+
+/* === FAB BAR === */
+.fab-bar { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; gap: 8px; background: rgba(0,44,67,.95); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,.25) }
+.fab-bar button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
+.fab-full { background: rgba(255,255,255,.15) }
+.fab-full:hover { background: rgba(255,255,255,.25) }
+.fab-pdf { background: var(--orange) }
+.fab-pdf:hover { background: #ff5500 }
+
+/* === CARD CONTRAST on colored backgrounds (must be after all card base styles) === */
+.bg-off .stp-b-card, .bg-off .stp-b-card:nth-child(n),
+.bg-ice .stp-b-card, .bg-ice .stp-b-card:nth-child(n),
+.bg-off .err-a-row, .bg-ice .err-a-row,
+.bg-off .err-b-row, .bg-ice .err-b-row,
+.bg-off .fok-c-row, .bg-ice .fok-c-row,
+.bg-off .ben-a-card, .bg-off .sol-b-card, .bg-off .act-card,
+.bg-off .cri-d-row, .bg-off .fok-a-card, .bg-off .ben-b-card,
+.bg-ice .ben-b-card { background: #fff }
+.bg-off .hl-info { background: rgba(42,181,215,.12) }
+
+/* === RESPONSIVE: Desktop === */
+@media (min-width: 701px) {
+  .sec-intro { font-size: .95rem }
+  .ben-a-card h4, .sol-b-card h4, .sol-a-card h4, .act-card h4, .fok-b-item h4, .cri-c-card h4, .cri-a-card h4, .cri-b-row h4, .cri-d-row h4 { font-size: .95rem }
+  .ben-a-card p, .ben-b-card p, .fok-a-card p, .stp-b-card p, .stp-c-item p, .stp-a-item p, .sol-b-row p, .sol-a .sol-v, .hl { font-size: .95rem }
+  .stp-b-card li, .stp-c-item li, .stp-a-item li, .sol-b-row li, .act-card p, .act-card li { font-size: .95rem }
+  .stp-b-card h3, .stp-c-item h3, .stp-a-item h3 { font-size: 1rem }
+  .fok-b-item p { font-size: .9rem }
+  .cri-c-card p, .cri-a-card p, .cri-b-row p, .cri-d-row p { font-size: .88rem }
+  .hero-sub { font-size: 1.05rem }
+  .info-card p { font-size: .92rem }
+  .img-body p, .img-body li { font-size: .95rem }
+  .vid-a-card p, .vid-b-body p { font-size: .92rem }
+  .pyr-level p, .pyr-level li { font-size: .88rem }
+  .err-b-row span, .err-a-row span, .err-c-card span { font-size: .92rem }
+}
+
+/* === RESPONSIVE: Mobile === */
+@media (max-width: 700px) {
+  body { font-size: 15px }
+  .sec, .hero { padding: 28px 20px }
+  .hero { padding-top: 20px; padding-bottom: 20px }
+  .hero h1 { font-size: 1.7rem; margin-bottom: 4px }
+  .hero-label { margin-bottom: 4px }
+  .hero-sub { font-size: .85rem; margin-bottom: 0 }
+  .hero-grid, .fok-a, .ben-b, .sol-a, .err-c, .img-text, .img-text-rev { grid-template-columns: 1fr }
+  .sec-split, .sec-split-left, .sec-split.split-40, .sec-split.split-50, .sec-split-left.split-40, .sec-split-left.split-50 { grid-template-columns: 1fr }
+  .sec-split-img { position: static }
+  .sec-split-img img { max-height: 240px; object-position: top center }
+  .sec-split-left .sec-split-img { order: 2 }
+  .vid-a { grid-template-columns: 1fr }
+  .vid-b-card { grid-template-columns: 1fr }
+  .vid-b-card .vid-thumb { min-height: 180px; padding-bottom: 56.25% }
+  .act-grid { grid-template-columns: 1fr }
+  .topbar { padding: 10px 16px }
+  .topbar-logo { height: 26px }
+  .nav-bar { padding: 0 12px; top: 47px }
+  .nav-item { padding: 8px 10px; font-size: .65rem }
+  .nav-item .nav-num { width: 16px; height: 16px; font-size: .52rem }
+  .sec, .hero { scroll-margin-top: 90px }
+  .pyr-level { width: 100% !important }
+  .fok-b-wrap { max-width: 100% }
+  .fok-b-num { width: 34px; height: 34px; font-size: .75rem }
+  .img-hero-placeholder { min-height: 140px }
+  .img-hero { max-height: 200px }
+  .img-section { max-height: 240px; object-fit: cover; object-position: top center }
+  .hero { text-align: left }
+  .hero-split { flex-direction: column; align-items: flex-start; gap: 12px }
+  .hero-split .img-hero { width: 100%; min-width: auto; max-height: 200px }
+  .hero-split .img-hero-placeholder { width: 100% !important; min-width: auto !important }
+  .fab-full { display: none }
+  .fab-bar { bottom: 10px; padding: 6px 10px }
+  .fab-bar button { padding: 7px 12px; font-size: .72rem }
+  html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 28px 20px }
+  html.fullscreen-mode .hero h1 { font-size: 1.6rem }
+  html.fullscreen-mode .topbar { padding: 10px 16px }
+}
+
+/* === RESPONSIVE: Landscape === */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { padding: 32px 40px }
+  .hero h1 { font-size: 1.8rem }
+  .sec { padding: 32px 40px }
+  .topbar { padding: 8px 24px }
+  .topbar-logo { height: 24px }
+  .nav-bar { top: 40px }
+  .nav-item { padding: 6px 10px; font-size: .65rem }
+  .fab-bar { bottom: 8px; padding: 5px 8px }
+  .fab-bar button { padding: 6px 10px; font-size: .7rem }
+  .pyr-level { width: 100% !important }
+}
+
+/* === RESPONSIVE: Tablet === */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .topbar { padding: 12px 28px }
+  .nav-bar { padding: 0 28px }
+  .sec, .hero { padding: 40px 28px }
+  html.fullscreen-mode .sec { padding: 40px 28px }
+  html.fullscreen-mode .hero { padding: 48px 28px }
+  html.fullscreen-mode .hero h1 { font-size: 2.2rem }
+}
+
+/* === PRINT === */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
+  @page { size: A4 portrait; margin: 10mm }
+  html, html.fullscreen-mode { background: #fff !important }
+  body { background: #fff !important; font-size: 11px; line-height: 1.45; margin: 0; padding: 0 }
+  .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0 }
+  .topbar, .nav-bar, .doc-footer, .fab-bar { display: none !important }
+  .sec, .hero, html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 8mm 10mm; page-break-inside: avoid; width: 100% !important; margin: 0; scroll-margin-top: 0 }
+  .hero, html.fullscreen-mode .hero { padding: 10mm 12mm }
+  .hero h1 { font-size: 2rem !important }
+  .hero-sub { font-size: .85rem !important }
+  .sec-title { font-size: 1.4rem !important }
+  .sec-inner, .hero-inner, html.fullscreen-mode .sec-inner, html.fullscreen-mode .hero-inner { max-width: 100% !important }
+  .sec + .sec { border-top: none }
+  .loom-box { display: none !important }
+  .loom-print { display: block !important }
+  .vid-thumb iframe { display: none }
+  .vid-thumb { min-height: 50px }
+  .vid-thumb::after { content: 'Video online ansehen'; color: rgba(255,255,255,.6); font-size: .7rem; font-weight: 600; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) }
+  .pyr-level { width: 100% !important }
+  .fok-b-wrap { max-width: 100% }
+  .fok-b { padding-left: 36px }
+  .fok-b::before { left: 13px }
+  .fok-b-num { width: 24px; height: 24px; font-size: .6rem; left: -36px }
+  .img-placeholder { min-height: 80px; border-width: 1px }
+  .sec-split, .sec-split-left { grid-template-columns: 1fr 200px; gap: 16px }
+}
+</style>
+</head>
+<body>
+<div class="content">
+  <div class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <svg class="topbar-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 231.42" style="enable-background:new 0 0 841.89 231.42;" xml:space="preserve">
+<style type="text/css">.st0{fill:#0087B3;}</style>
+<g>
+<path d="M758.98,133.73c-2.41,1.76-5.61,2.63-9.59,2.63c-4.47,0-8.05-1.04-10.74-3.13c-2.69-2.08-4.04-4.93-4.04-8.53h-4.32c0,3,0.78,5.65,2.34,7.97c1.56,2.32,3.84,4.12,6.85,5.41c3.01,1.29,6.31,1.93,9.92,1.93c5.27,0,9.51-1.22,12.73-3.65c3.22-2.44,4.83-5.67,4.83-9.69c0-2.55-0.6-4.76-1.79-6.64c-1.19-1.87-2.97-3.48-5.34-4.83c-2.36-1.35-5.84-2.65-10.43-3.9c-4.59-1.25-7.92-2.7-10.01-4.34c-2.08-1.64-3.13-3.76-3.13-6.37c0-2.81,1.16-5.09,3.48-6.84c2.32-1.75,5.43-2.62,9.34-2.62c4.03,0,7.23,1.06,9.62,3.19c2.39,2.13,3.58,4.94,3.58,8.43h4.35c0-2.88-0.74-5.49-2.21-7.83c-1.47-2.34-3.55-4.17-6.23-5.48c-2.68-1.31-5.72-1.97-9.11-1.97c-5.01,0-9.12,1.22-12.34,3.67c-3.22,2.45-4.83,5.62-4.83,9.53c0,4.03,1.73,7.28,5.2,9.76c2.43,1.76,6.3,3.38,11.59,4.86c5.29,1.49,8.93,3.05,10.92,4.7c1.99,1.65,2.98,3.89,2.98,6.72C762.59,129.65,761.39,131.98,758.98,133.73 M713.41,123.37c-0.54,4.33-1.95,7.58-4.25,9.74c-2.29,2.17-5.7,3.25-10.22,3.25c-4.56,0-8.19-1.76-10.87-5.27c-2.68-3.51-4.02-8.22-4.02-14.12v-6.26c0-6.11,1.37-10.9,4.13-14.37c2.75-3.47,6.44-5.2,11.08-5.2c8.36,0,13.07,4.34,14.15,13.03h4.35c-0.52-5.22-2.36-9.31-5.53-12.25c-3.17-2.95-7.5-4.42-12.97-4.42c-3.89,0-7.32,0.95-10.31,2.86c-2.98,1.91-5.27,4.62-6.86,8.13c-1.59,3.51-2.39,7.54-2.39,12.08v6.64c0.02,4.47,0.83,8.45,2.42,11.92c1.59,3.48,3.84,6.16,6.76,8.06c2.91,1.9,6.27,2.84,10.06,2.84c5.43,0,9.78-1.43,13.04-4.28c3.27-2.86,5.19-6.97,5.78-12.36H713.41z M662.31,88.19h-4.32v51.12h4.32V88.19z M643.4,88.19h-39.33v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M589.93,111.15h-23.91V91.84h27.32v-3.65H561.7v51.12h31.81v-3.65h-27.49v-20.86h23.91V111.15z M522.78,88.19h-4.35v51.12h29.6v-3.65h-25.25V88.19z M500.04,88.19h-4.35v22.96h-29.21V88.19h-4.32v51.12h4.32v-24.51h29.21v24.51h4.35V88.19z M448.51,88.19h-39.32v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M384.02,93.46l10.25,27.84h-20.5L384.02,93.46z M400.95,139.31h4.49L386.1,88.19h-4.11l-19.35,51.12h4.53l5.27-14.36h23.21L400.95,139.31z M347.47,108.91h-20.23V96.72h23.67v-8.53h-34.2v51.12h34.27v-8.46h-23.74v-13.69h20.23V108.91z M301.56,88.19h-10.53v51.12h10.53V88.19z M275.77,88.19h-10.5v33.71l-20.54-33.71H234.2v51.12h10.53v-33.64l20.51,33.64h10.53V88.19z M212.3,139.31h12.54l-18.68-28.41l18.15-22.72h-12.96l-13.03,16.82l-4.63,6.35V88.19h-10.53v51.12h10.53v-14.61l5.48-5.9L212.3,139.31z"/>
+<path d="M120.08,102.43c-0.37,1.96-1.59,3.31-2.82,4.78c-5.15,6.5-8.59,13.49-7.85,22.08c0.25,3.07,1.96,5.52,3.07,8.22c0.74,1.72,0.37,2.82-0.61,4.17c-6.5,8.95-8.59,18.77-6.62,29.56c0.12,0.37,0.12,0.86,0.61,1.23c0.49-11.04,2.7-21.59,7.6-32.01c0.74,2.21,0.61,4.05,0.25,5.89c-0.61,2.82-1.84,5.4-2.94,8.1c-0.86,2.33-1.84,4.66-1.84,7.24c1.23-4.05,3.56-7.48,5.4-11.16c1.96-3.93,2.58-7.97,1.1-12.14c-0.49-1.35-0.98-2.7-1.59-3.93c-2.45-4.78-2.45-9.81-0.86-14.84c1.47-4.54,3.07-9.08,6.13-12.88C119.96,105.37,120.33,103.9,120.08,102.43"/>
+<path d="M74.94,80.47c9.08,13.98,22.57,21.1,38.64,23.92c-6.87-3.31-13.98-6.01-20.61-9.94C86.35,90.53,80.71,85.38,74.94,80.47"/>
+<path d="M125.11,171.12c4.54-14.11,12.51-26,19.38-38.39c5.52-9.81,10.67-19.87,13-31.03c0.86-3.8,1.23-7.73,0.49-11.65c-0.86-5.03-3.56-8.83-7.85-11.53c-3.07-1.96-6.38-3.31-9.69-4.66c-12.27-4.91-24.65-9.69-36.92-14.6c-0.49-0.25-0.98-0.37-1.59-0.25c0.49,0.25,1.1,0.49,1.59,0.74c13,5.76,26,11.53,39,17.29c1.72,0.74,3.31,1.59,5.03,2.45c6.13,3.43,8.83,8.71,8.34,15.7c-0.61,7.73-3.19,14.96-6.13,22.08c-3.07,7.24-6.87,14.11-10.67,20.97c-4.66,8.59-9.32,17.17-12.39,26.49c-0.61,1.72-0.98,3.56-1.59,5.4C124.99,170.38,124.99,170.63,125.11,171.12"/>
+<path class="st0" d="M147.93,100.59c-5.64,4.05-9.32,3.56-13.98-1.47c-1.47,1.47-1.84,3.31-1.96,5.27c-0.12,2.58,0.49,5.03,0.25,7.48c-0.49,5.03-2.33,9.69-3.92,14.35c-4.91,14.35-10.06,28.7-15.58,42.81c-0.49,1.35-0.25,1.84,1.1,2.21c3.19,0.86,3.19,0.98,4.42-2.09c3.8-8.46,7.48-16.81,11.28-25.27c4.78-10.67,9.57-21.34,14.35-32.01C145.59,108.32,146.94,104.64,147.93,100.59"/>
+<path class="st0" d="M90.77,63.67c-0.74,4.05-1.59,7.97-4.29,11.04c0.37,0.49,0.98,0.61,1.47,0.74c12.88,4.54,25.64,9.44,37.53,16.19c3.07,1.72,6.01,3.8,8.83,5.89c2.21,1.72,4.42,2.94,7.24,3.19c4.29,0.49,8.22-4.66,6.13-8.83c-1.47-3.07-3.8-5.03-6.75-6.38c-2.45-1.1-5.15-1.59-7.73-2.21c-11.77-2.7-22.45-7.97-32.75-13.98C97.14,67.47,93.96,65.63,90.77,63.67"/>
+<path class="st0" d="M148.42,105.86c4.29-4.42,5.15-11.65,1.96-15.7C151.36,95.68,150.62,100.71,148.42,105.86"/>
+</g>
+</svg>
+      <div class="topbar-right"><span class="badge">ÜBUNG</span></div>
+    </div>
+  </div>
+  <nav class="nav-bar" id="navBar">
+    <div class="nav-bar-inner">
+      <a href="#sec-hero" class="nav-item active" data-section="sec-hero"><span class="nav-num">1</span> Überblick</a>
+      <a href="#sec-1" class="nav-item" data-section="sec-1"><span class="nav-num">2</span> Relevanz</a>
+      <a href="#sec-2" class="nav-item" data-section="sec-2"><span class="nav-num">3</span> Bewegungsziel</a>
+      <a href="#sec-3" class="nav-item" data-section="sec-3"><span class="nav-num">4</span> Ausführung</a>
+      <a href="#sec-4" class="nav-item" data-section="sec-4"><span class="nav-num">5</span> Fehler</a>
+      <a href="#sec-5" class="nav-item" data-section="sec-5"><span class="nav-num">6</span> Lösungen</a>
+      <a href="#sec-6" class="nav-item" data-section="sec-6"><span class="nav-num">7</span> Kriterien</a>
+    </div>
+  </nav>
+  <section class="hero" id="sec-hero">
+    <div class="hero-inner">
+      <div class="hero-label">ÜBUNG</div>
+      <h1>3er Hürde Continuous</h1>
+      <p class="hero-sub">Schnelles, wiederholtes Überlaufen von drei kleinen Hindernissen mit hohem Kniehub und sofortigen Richtungswechseln – fortlaufend ohne Pausen.</p>
+      <div class="hero-grid">
+        <div class="loom-box">
+          <div class="loom-video"><iframe src="https://www.loom.com/embed/2169479294204d859605a6b95a87d4a0" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div>
+          <div class="loom-meta"><span class="l-name">3er Hürde Continuous – Übungsdemonstration</span><span>55 Sek</span></div>
+        </div>
+        <div class="loom-print"><div class="play-c">&#9654;</div><p>Video online ansehen</p></div>
+        <div class="info-card"><h3>Zum Anschauen der Übung</h3><p>Klicke auf das Video, um die komplette Bewegungsausführung zu sehen und die wichtigsten Punkte in der Praxis zu erleben.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec bg-ice" id="sec-1">
+    <div class="sec-inner">
+      <div class="sec-label">RELEVANZ</div>
+      <h2 class="sec-title">Warum musst du das können?</h2>
+      <div class="ben-b">
+        <div>
+          <div class="ben-b-label">Im Alltag 🏠</div>
+          <div class="ben-b-stack">
+            <div class="ben-b-card">
+              <h4>Hindernisse überwinden – ohne anzuhalten</h4>
+              <p>Im Alltag musst du manchmal mehrfach hintereinander über Hindernisse steigen und dabei die Richtung wechseln – z.B. in einem vollen Lager über Kisten steigen oder auf einem Spielplatz zwischen Geräten hin und her navigieren. Diese Übung trainiert, das flüssig und ohne Stopp zu tun.</p>
+            </div>
+            <div class="ben-b-card">
+              <h4>Koordination unter Dauerbelastung</h4>
+              <p>Du lernst, deine Füße auch bei Ermüdung präzise und schnell über Hindernisse zu heben, während du gleichzeitig die Richtung wechselst. Das macht dich im Alltag trittsicherer und koordinierter.</p>
+            </div>
+            <div class="ben-b-card">
+              <h4>Reaktionsfähigkeit auf engem Raum</h4>
+              <p>Die Kombination aus Hürden und ständigen Richtungswechseln schult deine Fähigkeit, auf engem Raum flink und sicher zu agieren – ob im Haushalt, beim Wandern über unebenes Gelände oder beim Spielen mit Kindern.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="ben-b-label">Im Sport 🏃</div>
+          <div class="ben-b-stack">
+            <div class="ben-b-card">
+              <h4>Fußschnelligkeit unter Ermüdung</h4>
+              <p>Im Spielsport (Fußball, Basketball, American Football) musst du deine Füße auch nach vielen Sprints noch schnell und präzise über den Boden bewegen. Die Hürden erzwingen einen aktiven Kniehub – genau das, was unter Ermüdung als Erstes nachlässt.</p>
+            </div>
+            <div class="ben-b-card">
+              <h4>Richtungswechsel aus hoher Frequenz – ohne Pause</h4>
+              <p>Beim 3er Hürde Cut (Level 4.1) hast du den einzelnen Richtungswechsel trainiert. Jetzt kommt die Continuous-Komponente dazu: Du wechselst die Richtung sofort wieder, ohne Pause. Das simuliert Spielsituationen, in denen du mehrmals hintereinander reagieren musst.</p>
+            </div>
+            <div class="ben-b-card">
+              <h4>Kontrolle des Körperschwerpunkts bei wechselnden Anforderungen</h4>
+              <p>Da du die Beine über die Hürden heben musst, schwankt dein Schwerpunkt stärker als beim flachen Shuffle. Diesen Schwerpunkt über mehrere Richtungswechsel hinweg stabil zu halten, erfordert höchste Rumpf- und Hüftkontrolle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="sec-2">
+  <div class="sec-inner">
+    <div class="sec-label">BEWEGUNGSZIEL</div>
+    <h2 class="sec-title">Bewegungsziel</h2>
+    <p class="sec-intro">Schnelles, wiederholtes Überlaufen von drei kleinen Hindernissen mit hohem Kniehub, gefolgt von einem sofortigen, fließenden Richtungswechsel – und das Ganze fortlaufend ohne Pausen hin und her.</p>
+    <div class="stp-c">
+      <div class="stp-c-item">
+        <div class="stp-c-num">1</div>
+        <h3>Schnelle, leichte Kontakte</h3>
+        <ul><li>Schnelle, leichte Kontakte zwischen den Hürden (auf dem Vorfuß).</li></ul>
+      </div>
+      <div class="stp-c-item">
+        <div class="stp-c-num">2</div>
+        <h3>Kniehub</h3>
+        <ul><li>Die Füße gehen über die Hürden, nicht drumherum.</li></ul>
+      </div>
+      <div class="stp-c-item">
+        <div class="stp-c-num">3</div>
+        <h3>Fließender Richtungswechsel</h3>
+        <ul><li>Fließender Richtungswechsel am Wendepunkt – kein Stoppen.</li></ul>
+      </div>
+      <div class="stp-c-item">
+        <div class="stp-c-num">4</div>
+        <h3>Oberkörper bleibt ruhig</h3>
+        <ul><li>Der Oberkörper bleibt ruhig, auch wenn die Beine schnell arbeiten.</li></ul>
+      </div>
+      <div class="stp-c-item">
+        <div class="stp-c-num">5</div>
+        <h3>Konstanter Rhythmus</h3>
+        <ul><li>Rhythmus und Fußarbeit bleiben über die gesamte Dauer konstant.</li></ul>
+      </div>
+      <div class="stp-c-item">
+        <div class="stp-c-num">6</div>
+        <h3>Füße überkreuzen sich nie</h3>
+        <ul><li>Füße überkreuzen sich nie.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="sec bg-off" id="sec-3">
+    <div class="sec-inner">
+      <div class="sec-label">AUSFÜHRUNG</div>
+      <h2 class="sec-title">Übungsbeschreibung</h2>
+      <div class="stp-b">
+        <div class="stp-b-card">
+          <div class="stp-b-head"><div class="num">1</div><h3>Positionierung + Ausgangsposition</h3></div>
+          <p><strong>Aufbau:</strong></p>
+          <ul>
+            <li>Stelle 3 Mini-Hürden in einer Reihe auf, mit ca. 50-60 cm Abstand dazwischen.</li>
+            <li>Die Hürden sollten mindestens bis zum unteren Schienbein reichen.</li>
+            <li><strong>Ohne Hürden:</strong> Wenn du mit Mini-Bändern, Hütchen oder Strichen arbeitest, stell dir vor, dass dort Hürden in Schienbein-Höhe stehen – und ziehe die Füße entsprechend hoch.</li>
+          </ul>
+          <p><strong>Ausgangsposition:</strong></p>
+          <ul>
+            <li>Stehe seitlich neben der ersten Hürde.</li>
+            <li>Gewicht auf den Ballen, Knie und Hüfte leicht gebeugt.</li>
+            <li>Oberkörper aufrecht und aufgerichtet, Blick geradeaus, Rumpf angespannt.</li>
+            <li>Arme kompakt und bereit vor dem Körper.</li>
+          </ul>
+        </div>
+        <div class="stp-b-card">
+          <div class="stp-b-head"><div class="num">2</div><h3>Überlaufen der Hürden</h3></div>
+          <p><strong>Überlaufen der Hürden (z.B. nach links):</strong></p>
+          <ul>
+            <li>Bewege dich seitlich über die Hürden. Setze in jedem Zwischenraum zwei schnelle Kontakte (Rhythmus: 1-2, 1-2, 1).</li>
+            <li>Der Kniehub entsteht durch aktives Hochziehen des Knies – nicht dadurch, dass du die Ferse Richtung Gesäß ziehst.</li>
+            <li>Beide Beine liefern einen gleichmäßigen Push.</li>
+            <li>Der Oberkörper bleibt aufgerichtet (nicht tief wie beim Shuffle).</li>
+          </ul>
+        </div>
+        <div class="stp-b-card">
+          <div class="stp-b-head"><div class="num">3</div><h3>Fließender Richtungswechsel</h3></div>
+          <ul>
+            <li>Am Wendepunkt hat der äußere Kontakt die gleiche kurze Bodenkontaktzeit wie zwischen den Hürden – kein langes Aufladen, sondern gleich schnell und reaktiv.</li>
+            <li>Kein Stoppen, kein Aufrichten – die Bewegung fließt direkt in den nächsten Durchgang zurück.</li>
+          </ul>
+        </div>
+        <div class="stp-b-card">
+          <div class="stp-b-head"><div class="num">4</div><h3>Fortlaufend (Continuous)</h3></div>
+          <ul>
+            <li>Nach dem Richtungswechsel folgt sofort das Überlaufen der Hürden in die andere Richtung.</li>
+            <li>Das geht fortlaufend weiter – du stoppst erst, wenn die vorgegebene Anzahl oder Zeit erreicht ist.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="sec-4">
+    <div class="sec-inner">
+      <div class="sec-label">FEHLER</div>
+      <h2 class="sec-title">Typische Fehler</h2>
+      <div class="err-b">
+        <div class="err-b-row"><div class="err-b-num">1</div><span>Füße überkreuzen sich</span></div>
+        <div class="err-b-row"><div class="err-b-num">2</div><span>Zu lange Bodenkontaktzeit zwischen den Hürden</span></div>
+        <div class="err-b-row"><div class="err-b-num">3</div><span>Hängenbleiben an den Hürden (Ferse zum Gesäß statt Knie hoch)</span></div>
+        <div class="err-b-row"><div class="err-b-num">4</div><span>Zu lange Bodenkontaktzeit am Wendepunkt (Aufladen statt reaktiv)</span></div>
+        <div class="err-b-row"><div class="err-b-num">5</div><span>Pause oder Stillstand am Wendepunkt</span></div>
+        <div class="err-b-row"><div class="err-b-num">6</div><span>Oberkörper schwankt oder rotiert mit</span></div>
+        <div class="err-b-row"><div class="err-b-num">7</div><span>Rhythmus und Qualität brechen unter Ermüdung ein</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec bg-ice" id="sec-5">
+    <div class="sec-inner">
+      <div class="sec-label">LÖSUNGEN</div>
+      <h2 class="sec-title">Lösungsvorschläge</h2>
+      <div class="sol-b">
+        <div class="sol-b-card">
+          <h4>Füße überkreuzen sich</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die Schrittweite ist zu eng oder die Koordination fehlt. Hohes Stolperrisiko, besonders bei schnellen Richtungswechseln.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Jeder Fuß hat seine eigene Spur – sie dürfen sich nie kreuzen. Halte immer Abstand zwischen den Füßen, auch über der Hürde.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Zu lange Bodenkontaktzeit zwischen den Hürden</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die Bewegung wirkt schwerfällig und langsam. Die Füße kleben am Boden, die Reaktivität fehlt.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Der Boden zwischen den Hürden ist glühend heiß – nur kurz antippen und wieder hoch! Sei leise und flink wie eine Maus, nicht schwer wie ein Elefant.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Hängenbleiben an den Hürden (Ferse zum Gesäß statt Knie hoch)</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Viele ziehen die Ferse Richtung Gesäß, anstatt das Knie aktiv nach oben zu heben. Dadurch kommt der Fuß nicht hoch genug über die Hürde und bleibt hängen. Besonders bei Mini-Bändern oder Strichen wird die nötige Höhe unterschätzt.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Zieh das Knie aktiv nach oben – die Ferse folgt automatisch. Die Hürden sind aus Glas – berühre sie nicht! Stell dir auch bei Bändern oder Strichen immer Hürden in Schienbein-Höhe vor.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Zu lange Bodenkontaktzeit am Wendepunkt (Aufladen statt reaktiv)</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Am Wendepunkt setzt du den Fuß auf und „lädst" ihn lange auf, bevor du zurückgehst. Die Kontaktzeit ist deutlich länger als zwischen den Hürden – der Rhythmus bricht.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Der äußere Kontakt am Wendepunkt muss genauso kurz und reaktiv sein wie jeder andere Kontakt zwischen den Hürden. Denk: Antippen und sofort zurück – gleicher Rhythmus, gleiche Geschwindigkeit.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Pause oder Stillstand am Wendepunkt</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Du stoppst nach der letzten Hürde komplett, bevor du zurückgehst. Das macht die Übung zum „3er Hürde mit Stopp" statt Continuous.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Denk an einen Flipperball – er trifft die Wand und prallt sofort zurück. Der Wendepunkt ist ein Umkehrpunkt, kein Haltepunkt: Antippen und sofort zurück.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Oberkörper schwankt oder rotiert mit</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Der Oberkörper wackelt bei jedem Hürdenschritt nach links und rechts oder dreht sich beim Richtungswechsel.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Dein Oberkörper gleitet ruhig wie auf Schienen, während deine Beine unter dir arbeiten wie Kolben. Halte die Arme kompakt am Körper, kein wildes Rudern.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Rhythmus und Qualität brechen unter Ermüdung ein</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Nach mehreren Durchgängen werden die Knie niedriger, die Kontakte länger und die Richtungswechsel langsamer.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Sag dir im Kopf bei jedem Wendepunkt: „Knie hoch, schnelle Füße!" Lieber weniger Durchgänge mit perfekter Technik als viele mit schlampiger Fußarbeit. Qualität vor Quantität.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec bg-grad" id="sec-6">
+    <div class="sec-inner">
+      <div class="sec-label">ERFOLGSKRITERIEN</div>
+      <h2 class="sec-title">Wann sind die Kriterien erfüllt?</h2>
+      <div class="cri-b">
+        <div class="cri-b-row">
+          <div class="cri-b-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h4>Saubere Fußarbeit</h4>
+            <p>Die Füße überkreuzen sich nicht und die Hürden werden nicht berührt. Die Kontakte zwischen den Hürden sind kurz und leicht.</p>
+          </div>
+        </div>
+        <div class="cri-b-row">
+          <div class="cri-b-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h4>Fließende, ununterbrochene Richtungswechsel</h4>
+            <p>Die Durchgänge gehen nahtlos ineinander über. Am Wendepunkt gibt es keine Pause – die Bewegung fließt direkt vom letzten Hürdenschritt in den Richtungswechsel und zurück.</p>
+          </div>
+        </div>
+        <div class="cri-b-row">
+          <div class="cri-b-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h4>Aktiver Kniehub und gleichmäßiger Abdruck</h4>
+            <p>Die Knie werden aktiv nach oben gezogen, sodass die Füße sicher über die Hürden kommen. Beide Beine liefern einen gleichmäßigen Push zur Seite. Die Bodenkontaktzeit am Wendepunkt ist genauso kurz wie zwischen den Hürden.</p>
+          </div>
+        </div>
+        <div class="cri-b-row">
+          <div class="cri-b-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div>
+            <h4>Oberkörperkontrolle</h4>
+            <p>Der Oberkörper bleibt während der schnellen Beinbewegung und der Richtungswechsel ruhig und frontal ausgerichtet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="doc-footer"><p>&copy; KNIEATHLETICS &middot; Nur für Mitglieder</p></div>
+</div>
+<div class="fab-bar">
+  <button class="fab-full" onclick="toggleFullscreen()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg> <span id="fabFullLabel">Vollbild</span></button>
+  <button class="fab-pdf" onclick="window.print()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> PDF</button>
+</div>
+<script>
+function toggleFullscreen() {
+  var html = document.documentElement;
+  var label = document.getElementById('fabFullLabel');
+  var inIframe = window.parent !== window;
+  // Notify parent (for generator preview)
+  if (inIframe) {
+    window.parent.postMessage({ type: 'ka-fullscreen-toggle' }, '*');
+  }
+  // Native fullscreen only outside iframes
+  if (!inIframe && document.fullscreenElement) {
+    document.exitFullscreen();
+    return;
+  }
+  if (html.classList.contains('fullscreen-mode')) {
+    html.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+    return;
+  }
+  if (!inIframe && html.requestFullscreen) {
+    html.requestFullscreen().catch(function() {
+      html.classList.add('fullscreen-mode');
+      if (label) label.textContent = 'Normal';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  } else {
+    html.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+document.addEventListener('fullscreenchange', function() {
+  var label = document.getElementById('fabFullLabel');
+  if (document.fullscreenElement) {
+    document.documentElement.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+  } else {
+    document.documentElement.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+  }
+});
+const sections = document.querySelectorAll('[id^="sec-"]');
+const navItems = document.querySelectorAll('.nav-item');
+const navBar = document.getElementById('navBar');
+function updateScrollspy() {
+  const scrollPos = window.scrollY + 140;
+  let activeIndex = 0;
+  sections.forEach((sec, i) => { if (sec.offsetTop <= scrollPos) activeIndex = i; });
+  navItems.forEach((item, i) => { item.classList.toggle('active', i === activeIndex); });
+  const activeNav = navItems[activeIndex];
+  if (activeNav && navBar) {
+    const navRect = navBar.getBoundingClientRect();
+    const itemRect = activeNav.getBoundingClientRect();
+    if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+      activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+}
+window.addEventListener('scroll', updateScrollspy, { passive: true });
+updateScrollspy();
+if (window.location.search.includes('fullscreen=true')) {
+  document.documentElement.classList.add('fullscreen-mode');
+}
+// Prevent anchor links from navigating parent frame (iframe context)
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href^="#"]');
+  if (link) {
+    e.preventDefault();
+    var id = link.getAttribute('href').slice(1);
+    var target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+});
+</script>
+</body>
+</html>
