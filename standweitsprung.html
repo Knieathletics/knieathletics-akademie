@@ -464,19 +464,52 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 /* === PRINT === */
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
-  @page { size: A4 portrait; margin: 15mm 10mm 10mm 10mm }
+  @page { size: 297mm 210mm; margin: 0 }
+
   html, html.fullscreen-mode { background: #fff !important }
-  body { background: #fff !important; font-size: 11px; line-height: 1.45; margin: 0; padding: 0 }
-  .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0 }
-  .topbar, .nav-bar, .doc-footer, .fab-bar { display: none !important }
-  .sec, .hero, html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 8mm 10mm; width: 100% !important; margin: 0; scroll-margin-top: 0 }
-  .hero, html.fullscreen-mode .hero { padding: 10mm 12mm; break-inside: avoid }
-  .hero h1 { font-size: 2rem !important }
-  .hero-sub { font-size: .85rem !important }
-  .sec-title { font-size: 1.4rem !important }
-  .sec-inner, .hero-inner, html.fullscreen-mode .sec-inner, html.fullscreen-mode .hero-inner { max-width: 100% !important }
+  body { background: #fff !important; font-size: 11px; line-height: 1.4; width: 297mm; margin: 0; padding: 0; overflow: visible }
+  .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0; padding: 0 }
+  .topbar, .nav-bar, .doc-footer, .fab-bar, .topbar-pdf { display: none !important }
+
+  /* === JEDE SECTION = VOLLE LANDSCAPE SEITE === */
+  .sec, .hero,
+  html.fullscreen-mode .sec,
+  html.fullscreen-mode .hero {
+    page-break-after: always;
+    width: 100% !important; max-width: 100% !important;
+    height: 210mm !important; min-height: 210mm !important;
+    padding: 14mm 22mm;
+    margin: 0;
+    overflow: hidden;
+    display: flex !important; flex-direction: column !important;
+    scroll-margin-top: 0;
+  }
+  .hero, html.fullscreen-mode .hero { break-inside: avoid; padding: 16mm 24mm }
+  .sec:last-of-type { page-break-after: auto }
   .sec + .sec { border-top: none }
-  /* Einzelne Content-Blöcke: break-inside:avoid */
+
+  /* === HERO === */
+  .hero h1 { font-size: 2.4rem !important; margin-bottom: 10px }
+  .hero-sub { font-size: 1rem !important; margin-bottom: 20px }
+  .hero-grid { gap: 20px; flex: 1 }
+  .loom-box { display: none !important }
+  .loom-print { display: block !important }
+  .loom-print .play-c { width: 50px; height: 50px; margin-bottom: 12px }
+  .loom-print p { font-size: .95rem }
+  .loom-print a { font-size: .8rem }
+  .info-card { padding: 20px }
+  .info-card h3 { font-size: 1rem }
+  .info-card p { font-size: .88rem; line-height: 1.5 }
+
+  /* === SECTION HEADERS === */
+  .sec-label { font-size: .7rem; letter-spacing: 4px; margin-bottom: 6px }
+  .sec-title { font-size: 1.6rem !important; margin-bottom: 14px }
+  .sec-intro { font-size: .85rem; margin-bottom: 12px }
+  .sec-inner, .hero-inner,
+  html.fullscreen-mode .sec-inner,
+  html.fullscreen-mode .hero-inner { max-width: 100% !important }
+
+  /* === CONTENT BLOCKS === */
   .stp-b-card, .stp-a-item, .stp-c-item,
   .ben-a-card, .ben-b-card,
   .fok-a-card, .fok-b-item, .fok-c-row,
@@ -489,15 +522,37 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .hl, .hl-dark,
   .hero-grid,
   .img-text-block, .img-section { break-inside: avoid; page-break-inside: avoid }
+
   /* Flex/Grid in Cards zu Block fuer Druck (Chrome-Bug) */
   .sol-b-row, .sol-a-card .sol-r,
   .stp-b-head, .ben-a-card, .fok-b-item,
   .cri-b-row, .cri-d-row, .err-b-row { display: block !important }
+
   .sec-label, .sec-title { break-after: avoid; page-break-after: avoid }
   h3, h4 { break-after: avoid; page-break-after: avoid }
   p, li { orphans: 2; widows: 2 }
-  .loom-box { display: none !important }
-  .loom-print { display: block !important }
+
+  /* === GRIDS: breiter im Landscape === */
+  .ben-b { gap: 28px; margin-top: 14px; flex: 1 }
+  .ben-b-stack { gap: 10px }
+  .ben-b-card { padding: 12px 16px }
+  .ben-b-card h4 { font-size: .88rem; margin-bottom: 3px }
+  .ben-b-card p { font-size: .78rem; line-height: 1.45 }
+  .sol-a { gap: 12px; margin-top: 12px; flex: 1 }
+  .sol-a-card { padding: 12px 14px }
+  .sol-a-card h4 { font-size: .82rem; margin-bottom: 5px; padding-bottom: 4px }
+  .sol-t { font-size: .58rem; width: 52px }
+  .sol-v { font-size: .7rem; line-height: 1.4 }
+  .cri-a { gap: 14px; margin-top: 16px; flex: 1 }
+  .cri-a-card { padding: 18px; gap: 14px }
+  .err-b { gap: 6px; margin-top: 12px; flex: 1 }
+  .err-b-row { padding: 8px 14px }
+  .stp-b { margin-top: 12px; flex: 1 }
+  .stp-b-card { padding: 10px 16px; margin-bottom: 6px }
+  .stp-b-card h3 { font-size: .88rem }
+  .stp-b-card p, .stp-b-card li { font-size: .78rem; line-height: 1.45 }
+
+  /* Loom/Video */
   .vid-thumb iframe { display: none }
   .vid-thumb { min-height: 50px }
   .vid-thumb::after { content: 'Video online ansehen'; color: rgba(255,255,255,.6); font-size: .7rem; font-weight: 600; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) }
