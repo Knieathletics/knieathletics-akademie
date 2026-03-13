@@ -495,14 +495,30 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .sec:last-of-type { page-break-after: auto }
   .sec + .sec { border-top: none }
 
-  /* === DICHTE SECTIONS: auto-height, mehrseitig erlaubt === */
-  #sec-3, #sec-5,
-  html.fullscreen-mode #sec-3,
-  html.fullscreen-mode #sec-5 {
-    height: auto !important; min-height: 210mm !important;
-    overflow: visible !important;
+  /* === DICHTE SECTIONS: 2-Spalten-Layout damit alles auf eine Seite passt === */
+  #sec-3 .stp-b {
+    columns: 2 !important; column-gap: 16px; display: block !important;
+    margin-top: 10px;
   }
-  #sec-3 .sec-inner, #sec-5 .sec-inner { margin-top: 0 !important; margin-bottom: 0 !important; padding-top: 18mm; padding-bottom: 14mm }
+  #sec-3 .stp-b-card { break-inside: avoid; page-break-inside: avoid; margin-bottom: 6px }
+  #sec-3 .stp-b-card h3 { font-size: .82rem }
+  #sec-3 .stp-b-card p, #sec-3 .stp-b-card li { font-size: .72rem; line-height: 1.35 }
+  #sec-3 .stp-b-card ul { margin: 0 !important; padding-left: 16px !important }
+  #sec-3 .stp-b-card p[style*="margin-bottom:15px"] { margin-bottom: 6px !important }
+  #sec-3 .stp-b-card ul[style*="margin:0 0 20px"] { margin-bottom: 8px !important }
+  #sec-3 .sec-intro { font-size: .88rem; margin-bottom: 10px }
+  #sec-3 .sec-title { font-size: 1.7rem !important; margin-bottom: 10px }
+
+  #sec-5 .sol-b {
+    columns: 2 !important; column-gap: 16px; display: block !important;
+    margin-top: 10px;
+  }
+  #sec-5 .sol-b-card { break-inside: avoid; page-break-inside: avoid; padding: 7px 12px; margin-bottom: 5px }
+  #sec-5 .sol-b-card h4 { font-size: .75rem; margin-bottom: 3px }
+  #sec-5 .sol-b-row p { font-size: .68rem; line-height: 1.3 }
+  #sec-5 .sol-b-label { font-size: .55rem; min-width: 46px }
+  #sec-5 .sec-intro { font-size: .88rem; margin-bottom: 10px }
+  #sec-5 .sec-title { font-size: 1.7rem !important; margin-bottom: 10px }
 
   /* === HERO === */
   .hero h1 { font-size: 2.8rem !important; margin-bottom: 14px }
