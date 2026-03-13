@@ -172,9 +172,10 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
   .sec:last-of-type{page-break-after:auto}
 
   /* === CONTENT BLOCK FRAGMENTATION === */
-  .ben, .stp, .er, .sol, .cri, .f-card, .goal-box, .info-card { break-inside: avoid }
-  .sec-label, .sec-title { break-after: avoid }
-  h3, h4 { break-after: avoid }
+  .ben, .stp, .er, .sol, .cri, .f-card, .goal-box, .info-card { break-inside: avoid; page-break-inside: avoid }
+  .sol-r, .stp, .ben { display: block !important }
+  .sec-label, .sec-title { break-after: avoid; page-break-after: avoid }
+  h3, h4 { break-after: avoid; page-break-after: avoid }
   p, li { orphans: 2; widows: 2 }
 
   /* Fehler + Lösungen auf EINER Seite */
