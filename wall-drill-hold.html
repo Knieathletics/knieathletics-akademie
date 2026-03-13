@@ -161,7 +161,6 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
   /* === JEDE SECTION = VOLLE A4 PORTRAIT SEITE === */
   .sec,.hero{
     page-break-after:always;
-    page-break-inside:avoid;
     width:100%!important;max-width:100%!important;
     height:297mm!important;min-height:297mm!important;
     padding:18mm 20mm;
@@ -169,7 +168,14 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
     overflow:hidden;
     display:flex!important;flex-direction:column!important;
   }
+  .hero{break-inside:avoid}
   .sec:last-of-type{page-break-after:auto}
+
+  /* === CONTENT BLOCK FRAGMENTATION === */
+  .ben, .stp, .er, .sol, .cri, .f-card, .goal-box, .info-card { break-inside: avoid }
+  .sec-label, .sec-title { break-after: avoid }
+  h3, h4 { break-after: avoid }
+  p, li { orphans: 2; widows: 2 }
 
   /* Fehler + Lösungen auf EINER Seite */
   .sec-fehler{page-break-after:avoid!important;height:auto!important;min-height:auto!important;padding-bottom:6mm}
