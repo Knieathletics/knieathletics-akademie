@@ -463,13 +463,29 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   body { background: #fff !important; font-size: 11px; line-height: 1.45; margin: 0; padding: 0 }
   .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0 }
   .topbar, .nav-bar, .doc-footer, .fab-bar { display: none !important }
-  .sec, .hero, html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 8mm 10mm; page-break-inside: avoid; width: 100% !important; margin: 0; scroll-margin-top: 0 }
-  .hero, html.fullscreen-mode .hero { padding: 10mm 12mm }
+  .sec, .hero, html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 8mm 10mm; width: 100% !important; margin: 0; scroll-margin-top: 0 }
+  .hero, html.fullscreen-mode .hero { padding: 10mm 12mm; break-inside: avoid }
   .hero h1 { font-size: 2rem !important }
   .hero-sub { font-size: .85rem !important }
   .sec-title { font-size: 1.4rem !important }
   .sec-inner, .hero-inner, html.fullscreen-mode .sec-inner, html.fullscreen-mode .hero-inner { max-width: 100% !important }
   .sec + .sec { border-top: none }
+  /* Einzelne Content-Blöcke: break-inside:avoid */
+  .stp-b-card, .stp-a-item, .stp-c-item,
+  .ben-a-card, .ben-b-card,
+  .fok-a-card, .fok-b-item, .fok-c-row,
+  .err-a-row, .err-b-row, .err-c-card,
+  .sol-a-card, .sol-b-card,
+  .cri-a-card, .cri-b-row, .cri-c-card, .cri-d-row,
+  .vid-a-card, .vid-b-card,
+  .pyr-level,
+  .info-card,
+  .hl, .hl-dark,
+  .hero-grid,
+  .img-text-block, .img-section { break-inside: avoid }
+  .sec-label, .sec-title { break-after: avoid }
+  h3, h4 { break-after: avoid }
+  p, li { orphans: 2; widows: 2 }
   .loom-box { display: none !important }
   .loom-print { display: block !important }
   .vid-thumb iframe { display: none }
