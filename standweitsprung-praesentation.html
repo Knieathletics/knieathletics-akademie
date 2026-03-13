@@ -152,18 +152,18 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
    ============================================= */
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  @page{size:210mm 297mm;margin:0}
+  @page{size:297mm 210mm;margin:0}
 
-  html,body{width:210mm;background:#fff;font-size:11px;line-height:1.4;margin:0;padding:0;overflow:visible}
+  html,body{width:297mm;background:#fff;font-size:11px;line-height:1.4;margin:0;padding:0;overflow:visible}
   .content{max-width:100%!important;width:100%!important;box-shadow:none;margin:0;padding:0}
   .topbar,.print-btn,.doc-footer,.action-bar,.fab-bar{display:none!important}
 
-  /* === JEDE SECTION = VOLLE A4 PORTRAIT SEITE === */
+  /* === JEDE SECTION = VOLLE A4 LANDSCAPE SEITE === */
   .sec,.hero{
     page-break-after:always;
     width:100%!important;max-width:100%!important;
-    height:297mm!important;min-height:297mm!important;
-    padding:18mm 20mm;
+    height:210mm!important;min-height:210mm!important;
+    padding:14mm 22mm;
     margin:0;
     overflow:hidden;
     display:flex!important;flex-direction:column!important;
@@ -179,9 +179,9 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
   p, li { orphans: 2; widows: 2 }
 
   /* === HERO === */
-  .hero{padding:24mm 22mm}
-  .hero h1{font-size:2.8rem;margin-bottom:14px}
-  .hero-sub{font-size:1.1rem;margin-bottom:28px}
+  .hero{padding:16mm 24mm}
+  .hero h1{font-size:2.6rem;margin-bottom:10px}
+  .hero-sub{font-size:1rem;margin-bottom:20px}
   .hero-grid{gap:20px;flex:1}
   .loom-box{display:none!important}
   .loom-print{display:block!important}
