@@ -92,6 +92,12 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 .sec-label { font-size: .65rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--petrol); margin-bottom: 6px }
 .sec-title { font-size: 1.7rem; font-weight: 900; color: var(--heading); margin-bottom: 16px; letter-spacing: -.3px; line-height: 1.25 }
 .sec-intro { font-size: .85rem; color: var(--txt); line-height: 1.65; margin-bottom: 20px }
+/* === CONTINUATION SECTIONS (Screen: nahtlos, Print: eigener Slide) === */
+.sec-cont { padding-top: 0 !important }
+.sec.sec-cont { border-top: none !important }
+.sec-cont + .sec { border-top: 1px solid rgba(0,0,0,.04) }
+.print-only-header { display: none }
+
 .bg-ice { background: var(--ice) }
 .bg-off { background: var(--offwhite) }
 .bg-grad { background: var(--grad-blue); color: #fff }
@@ -495,30 +501,10 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .sec:last-of-type { page-break-after: auto }
   .sec + .sec { border-top: none }
 
-  /* === DICHTE SECTIONS: 2-Spalten-Layout damit alles auf eine Seite passt === */
-  #sec-3 .stp-b {
-    columns: 2 !important; column-gap: 16px; display: block !important;
-    margin-top: 10px;
-  }
-  #sec-3 .stp-b-card { break-inside: avoid; page-break-inside: avoid; margin-bottom: 6px }
-  #sec-3 .stp-b-card h3 { font-size: .82rem }
-  #sec-3 .stp-b-card p, #sec-3 .stp-b-card li { font-size: .72rem; line-height: 1.35 }
-  #sec-3 .stp-b-card ul { margin: 0 !important; padding-left: 16px !important }
-  #sec-3 .stp-b-card p[style*="margin-bottom:15px"] { margin-bottom: 6px !important }
-  #sec-3 .stp-b-card ul[style*="margin:0 0 20px"] { margin-bottom: 8px !important }
-  #sec-3 .sec-intro { font-size: .88rem; margin-bottom: 10px }
-  #sec-3 .sec-title { font-size: 1.7rem !important; margin-bottom: 10px }
-
-  #sec-5 .sol-b {
-    columns: 2 !important; column-gap: 16px; display: block !important;
-    margin-top: 10px;
-  }
-  #sec-5 .sol-b-card { break-inside: avoid; page-break-inside: avoid; padding: 7px 12px; margin-bottom: 5px }
-  #sec-5 .sol-b-card h4 { font-size: .75rem; margin-bottom: 3px }
-  #sec-5 .sol-b-row p { font-size: .68rem; line-height: 1.3 }
-  #sec-5 .sol-b-label { font-size: .55rem; min-width: 46px }
-  #sec-5 .sec-intro { font-size: .88rem; margin-bottom: 10px }
-  #sec-5 .sec-title { font-size: 1.7rem !important; margin-bottom: 10px }
+  /* === CONTINUATION SLIDES: Header nur im Print sichtbar === */
+  .print-only-header { display: block !important }
+  .sec-cont { padding-top: 14mm !important }
+  .sec.sec-cont + .sec { border-top: none }
 
   /* === HERO === */
   .hero h1 { font-size: 2.8rem !important; margin-bottom: 14px }
@@ -786,6 +772,17 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
             <li>Die Tiefe ist individuell optimal – tief genug für maximale Vordehnung, aber nicht so tief, dass du Geschwindigkeit verlierst.</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec bg-off sec-cont" id="sec-3b">
+    <div class="sec-inner">
+      <div class="print-only-header">
+        <div class="sec-label">ANLEITUNG</div>
+        <h2 class="sec-title">Übungsbeschreibung <span style="font-weight:400;font-size:.7em;color:var(--muted)">(Fortsetzung)</span></h2>
+      </div>
+      <div class="stp-b">
         <div class="stp-b-card">
           <div class="stp-b-head"><div class="num">3</div><h3>Der Absprung – Maximal explosiv nach vorne-oben</h3></div>
           <ul style="margin:0;padding-left:20px;line-height:1.8">
@@ -857,6 +854,17 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die Füße bleiben unter oder hinter dem Körper. Du landest zu kurz, obwohl du genug Schwung hättest.</p></div>
           <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Zieh in der zweiten Hälfte der Flugphase die Knie aktiv nach vorne-oben – die Füße folgen. Stell dir vor, du willst mit den Füßen möglichst weit vor dir auf dem Boden aufkommen.</p></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec bg-ice sec-cont" id="sec-5b">
+    <div class="sec-inner">
+      <div class="print-only-header">
+        <div class="sec-label">KORREKTUR</div>
+        <h2 class="sec-title">Lösungsvorschläge <span style="font-weight:400;font-size:.7em;color:var(--muted)">(Fortsetzung)</span></h2>
+      </div>
+      <div class="sol-b">
         <div class="sol-b-card">
           <h4>Füße knicken bei der Landung nach innen ein</h4>
           <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Das Fußgewölbe bricht bei der Landung nach innen ein (Pronation). Die Knie folgen nach innen und die Landung wird instabil.</p></div>
