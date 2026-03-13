@@ -467,7 +467,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   @page { size: 297mm 210mm; margin: 0 }
 
   html, html.fullscreen-mode { background: #fff !important }
-  body { background: #fff !important; font-size: 11px; line-height: 1.4; width: 297mm; margin: 0; padding: 0; overflow: visible }
+  body { background: #fff !important; font-size: 12px; line-height: 1.45; width: 297mm; margin: 0; padding: 0; overflow: visible }
   .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0; padding: 0 }
   .topbar, .nav-bar, .doc-footer, .fab-bar, .topbar-pdf { display: none !important }
 
@@ -478,33 +478,34 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     page-break-after: always;
     width: 100% !important; max-width: 100% !important;
     height: 210mm !important; min-height: 210mm !important;
-    padding: 14mm 22mm;
+    padding: 16mm 28mm;
     margin: 0;
     overflow: hidden;
     display: flex !important; flex-direction: column !important;
+    justify-content: center !important;
     scroll-margin-top: 0;
   }
-  .hero, html.fullscreen-mode .hero { break-inside: avoid; padding: 16mm 24mm }
+  .hero, html.fullscreen-mode .hero { break-inside: avoid; padding: 18mm 30mm; justify-content: center !important }
   .sec:last-of-type { page-break-after: auto }
   .sec + .sec { border-top: none }
 
   /* === HERO === */
-  .hero h1 { font-size: 2.4rem !important; margin-bottom: 10px }
-  .hero-sub { font-size: 1rem !important; margin-bottom: 20px }
-  .hero-grid { gap: 20px; flex: 1 }
+  .hero h1 { font-size: 2.8rem !important; margin-bottom: 12px }
+  .hero-sub { font-size: 1.1rem !important; margin-bottom: 24px; max-width: 600px }
+  .hero-grid { gap: 24px; flex: 1; align-content: center }
   .loom-box { display: none !important }
-  .loom-print { display: block !important }
-  .loom-print .play-c { width: 50px; height: 50px; margin-bottom: 12px }
-  .loom-print p { font-size: .95rem }
-  .loom-print a { font-size: .8rem }
-  .info-card { padding: 20px }
-  .info-card h3 { font-size: 1rem }
-  .info-card p { font-size: .88rem; line-height: 1.5 }
+  .loom-print { display: flex !important; flex-direction: column; align-items: center; justify-content: center; padding: 28px }
+  .loom-print .play-c { width: 64px; height: 64px; margin-bottom: 16px }
+  .loom-print p { font-size: 1.05rem }
+  .loom-print a { font-size: .9rem; display: inline-block; margin-top: 8px; color: var(--cyan); text-decoration: underline }
+  .info-card { padding: 28px; display: flex; flex-direction: column; justify-content: center }
+  .info-card h3 { font-size: 1.15rem; margin-bottom: 12px }
+  .info-card p { font-size: 1rem; line-height: 1.6 }
 
   /* === SECTION HEADERS === */
-  .sec-label { font-size: .7rem; letter-spacing: 4px; margin-bottom: 6px }
-  .sec-title { font-size: 1.6rem !important; margin-bottom: 14px }
-  .sec-intro { font-size: .85rem; margin-bottom: 12px }
+  .sec-label { font-size: .78rem; letter-spacing: 4px; margin-bottom: 8px }
+  .sec-title { font-size: 1.9rem !important; margin-bottom: 16px }
+  .sec-intro { font-size: .95rem; margin-bottom: 16px }
   .sec-inner, .hero-inner,
   html.fullscreen-mode .sec-inner,
   html.fullscreen-mode .hero-inner { max-width: 100% !important }
@@ -532,35 +533,52 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   h3, h4 { break-after: avoid; page-break-after: avoid }
   p, li { orphans: 2; widows: 2 }
 
-  /* === GRIDS: breiter im Landscape === */
-  .ben-b { gap: 28px; margin-top: 14px; flex: 1 }
-  .ben-b-stack { gap: 10px }
-  .ben-b-card { padding: 12px 16px }
-  .ben-b-card h4 { font-size: .88rem; margin-bottom: 3px }
-  .ben-b-card p { font-size: .78rem; line-height: 1.45 }
-  .sol-a { gap: 12px; margin-top: 12px; flex: 1 }
-  .sol-a-card { padding: 12px 14px }
-  .sol-a-card h4 { font-size: .82rem; margin-bottom: 5px; padding-bottom: 4px }
-  .sol-t { font-size: .58rem; width: 52px }
-  .sol-v { font-size: .7rem; line-height: 1.4 }
-  .cri-a { gap: 14px; margin-top: 16px; flex: 1 }
-  .cri-a-card { padding: 18px; gap: 14px }
-  .err-b { gap: 6px; margin-top: 12px; flex: 1 }
-  .err-b-row { padding: 8px 14px }
-  .stp-b { margin-top: 12px; flex: 1 }
-  .stp-b-card { padding: 10px 16px; margin-bottom: 6px }
-  .stp-b-card h3 { font-size: .88rem }
-  .stp-b-card p, .stp-b-card li { font-size: .78rem; line-height: 1.45 }
+  /* === BENEFITS (Warum) === */
+  .ben-b { gap: 32px; margin-top: 18px; flex: 1 }
+  .ben-b-label { font-size: 1.05rem; margin-bottom: 12px }
+  .ben-b-stack { gap: 14px }
+  .ben-b-card { padding: 16px 20px }
+  .ben-b-card h4 { font-size: .95rem; margin-bottom: 4px }
+  .ben-b-card p { font-size: .85rem; line-height: 1.5 }
+
+  /* === SOLUTIONS === */
+  .sol-a { gap: 14px; margin-top: 16px; flex: 1 }
+  .sol-a-card { padding: 14px 18px }
+  .sol-a-card h4 { font-size: .9rem; margin-bottom: 6px; padding-bottom: 5px }
+  .sol-t { font-size: .65rem; width: 56px }
+  .sol-v { font-size: .78rem; line-height: 1.45 }
+
+  /* === KRITERIEN === */
+  .cri-a { gap: 18px; margin-top: 20px; flex: 1 }
+  .cri-a-card { padding: 22px; gap: 16px }
+  .cri-a-card h4 { font-size: 1rem }
+  .cri-a-card p { font-size: .85rem }
+
+  /* === FEHLER === */
+  .err-b { gap: 10px; margin-top: 16px; flex: 1 }
+  .err-b-row { padding: 12px 18px; border-radius: 10px }
+  .err-b-row .num { width: 30px; height: 30px; font-size: .8rem }
+  .err-b-row span { font-size: .95rem }
+
+  /* === STEPS === */
+  .stp-b { margin-top: 14px; flex: 1; gap: 6px }
+  .stp-b-card { padding: 12px 18px; margin-bottom: 4px }
+  .stp-b-card h3 { font-size: .95rem }
+  .stp-b-card p, .stp-b-card li { font-size: .85rem; line-height: 1.5 }
+
+  /* === FOKUS === */
+  .fok-b-wrap { max-width: 100% }
+  .fok-b { padding-left: 36px }
+  .fok-b::before { left: 13px }
+  .fok-b-num { width: 28px; height: 28px; font-size: .7rem; left: -36px }
+  .fok-b-item h4 { font-size: .95rem }
+  .fok-b-item p { font-size: .85rem }
 
   /* Loom/Video */
   .vid-thumb iframe { display: none }
   .vid-thumb { min-height: 50px }
   .vid-thumb::after { content: 'Video online ansehen'; color: rgba(255,255,255,.6); font-size: .7rem; font-weight: 600; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) }
   .pyr-level { width: 100% !important }
-  .fok-b-wrap { max-width: 100% }
-  .fok-b { padding-left: 36px }
-  .fok-b::before { left: 13px }
-  .fok-b-num { width: 24px; height: 24px; font-size: .6rem; left: -36px }
   .img-placeholder { min-height: 80px; border-width: 1px }
   .sec-split, .sec-split-left { grid-template-columns: 1fr 200px; gap: 16px }
 }
@@ -607,7 +625,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           <div class="loom-video"><iframe src="https://www.loom.com/embed/356340452fc7438a88cf4cf212b736a1" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div>
           <div class="loom-meta"><span class="l-name">Standweitsprung – Übungsdemonstration</span><span>56 Sek</span></div>
         </div>
-        <div class="loom-print"><div class="play-c">&#9654;</div><p>Video online ansehen</p></div>
+        <div class="loom-print"><a href="https://www.loom.com/share/356340452fc7438a88cf4cf212b736a1" target="_blank" style="text-decoration:none;color:inherit"><div class="play-c">&#9654;</div><p>Video online ansehen</p><span style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px;display:block">loom.com/share/356340...</span></a></div>
         <div class="info-card"><h3>Übung anschauen</h3><p>In diesem Video siehst du die komplette Ausführung des Standweitsprungs mit allen wichtigen Phasen.</p></div>
       </div>
     </div>
