@@ -64,6 +64,11 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
 .info-tip p{font-size:.75rem;color:rgba(255,255,255,.6)}
 
 /* ===== WARUM ===== */
+/* === CONTINUATION SECTIONS (Screen: nahtlos, Print: eigener Slide) === */
+.sec-cont { padding-top: 0 !important }
+.sec.sec-cont { border-top: none !important }
+.sec-cont + .sec { border-top: 1px solid rgba(0,0,0,.04) }
+.print-only-header { display: none }
 .bg-ice{background:var(--ice)}
 .warum-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}
 .cat-label{font-size:.9rem;font-weight:700;color:var(--heading);margin-bottom:10px}
@@ -152,9 +157,9 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
    ============================================= */
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  @page{size:210mm 297mm;margin:0}
+  @page{size:297mm 210mm;margin:0}
 
-  html,body{width:210mm;background:#fff;font-size:11px;line-height:1.4;margin:0;padding:0;overflow:visible}
+  html,body{width:297mm;background:#fff;font-size:11px;line-height:1.4;margin:0;padding:0;overflow:visible}
   .content{max-width:100%!important;width:100%!important;box-shadow:none;margin:0;padding:0}
   .topbar,.print-btn,.doc-footer,.action-bar,.fab-bar{display:none!important}
 
@@ -162,13 +167,16 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
   .sec,.hero{
     page-break-after:always;
     width:100%!important;max-width:100%!important;
-    height:297mm!important;min-height:297mm!important;
+    height:210mm!important;min-height:210mm!important;
     padding:18mm 20mm;
     margin:0;
     overflow:hidden;
     display:flex!important;flex-direction:column!important;
   }
   .hero{break-inside:avoid}
+  /* Vertikale Zentrierung (Chrome Print Fix) */
+  .sec-inner, .hero-inner { margin-top: auto !important; margin-bottom: auto !important; max-width: 100% !important }
+  .hero-inner { display: block !important; width: 100% }
   .sec:last-of-type{page-break-after:auto}
 
   /* === CONTENT BLOCK FRAGMENTATION === */
@@ -248,6 +256,10 @@ body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5
   .cri h4{font-size:1rem;margin-bottom:4px}
   .cri p{font-size:.82rem;line-height:1.5}
   .cri p{font-size:.58rem;line-height:1.35}
+
+  /* Continuation Slides */
+  .print-only-header { display: block !important }
+  .sec-cont { padding-top: 14mm !important }
 }
 </style>
 </head>
