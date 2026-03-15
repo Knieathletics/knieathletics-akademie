@@ -92,6 +92,11 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 .sec-label { font-size: .65rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--petrol); margin-bottom: 6px }
 .sec-title { font-size: 1.7rem; font-weight: 900; color: var(--heading); margin-bottom: 16px; letter-spacing: -.3px; line-height: 1.25 }
 .sec-intro { font-size: .85rem; color: var(--txt); line-height: 1.65; margin-bottom: 20px }
+/* === CONTINUATION SECTIONS (Screen: nahtlos, Print: eigener Slide) === */
+.sec-cont { padding-top: 0 !important }
+.sec.sec-cont { border-top: none !important }
+.sec-cont + .sec { border-top: 1px solid rgba(0,0,0,.04) }
+.print-only-header { display: none }
 .bg-ice { background: var(--ice) }
 .bg-off { background: var(--offwhite) }
 .bg-grad { background: var(--grad-blue); color: #fff }
@@ -464,13 +469,16 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 /* === PRINT === */
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
-  @page { size: A4 portrait; margin: 15mm 10mm 10mm 10mm }
+  @page { size: 297mm 210mm; margin: 15mm 10mm 10mm 10mm }
   html, html.fullscreen-mode { background: #fff !important }
   body { background: #fff !important; font-size: 11px; line-height: 1.45; margin: 0; padding: 0 }
   .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0 }
   .topbar, .nav-bar, .doc-footer, .fab-bar { display: none !important }
   .sec, .hero, html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 8mm 10mm; width: 100% !important; margin: 0; scroll-margin-top: 0 }
   .hero, html.fullscreen-mode .hero { padding: 10mm 12mm; break-inside: avoid }
+  /* Vertikale Zentrierung (Chrome Print Fix) */
+  .sec-inner, .hero-inner { margin-top: auto !important; margin-bottom: auto !important; max-width: 100% !important }
+  .hero-inner { display: block !important; width: 100% }
   .hero h1 { font-size: 2rem !important }
   .hero-sub { font-size: .85rem !important }
   .sec-title { font-size: 1.4rem !important }
@@ -508,6 +516,10 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .fok-b-num { width: 24px; height: 24px; font-size: .6rem; left: -36px }
   .img-placeholder { min-height: 80px; border-width: 1px }
   .sec-split, .sec-split-left { grid-template-columns: 1fr 200px; gap: 16px }
+
+  /* Continuation Slides */
+  .print-only-header { display: block !important }
+  .sec-cont { padding-top: 14mm !important }
 }
 </style>
 </head>
