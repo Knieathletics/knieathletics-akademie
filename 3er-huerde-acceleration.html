@@ -370,6 +370,8 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 .fab-bar { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; gap: 8px; background: rgba(0,44,67,.95); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,.25) }
 .fab-bar button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
 .fab-full { background: rgba(255,255,255,.15) }
+.fab-open { background: rgba(255,255,255,.15); display: inline-flex !important }
+.fab-open:hover { background: rgba(255,255,255,.25) }
 .fab-full:hover { background: rgba(255,255,255,.25) }
 .fab-pdf { background: var(--orange) }
 .fab-pdf:hover { background: #ff5500 }
@@ -939,7 +941,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   <div class="doc-footer"><p>&copy; KNIEATHLETICS &middot; Nur für Mitglieder</p></div>
 </div>
 <div class="fab-bar">
-  <a href="https://knieathletics.github.io/knieathletics-akademie/3er-huerde-acceleration.html" target="_blank" class="fab-full" style="text-decoration:none;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> Vollansicht</a>
+  <a href="https://knieathletics.github.io/knieathletics-akademie/3er-huerde-acceleration.html" target="_blank" class="fab-open" style="text-decoration:none;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> Vollansicht</a>
   <button class="fab-pdf" onclick="window.print()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> PDF</button>
 </div>
 <script>
