@@ -368,10 +368,10 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 
 /* === FAB BAR === */
 .fab-bar { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; gap: 8px; background: rgba(0,44,67,.95); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,.25) }
-.fab-bar button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
-.fab-full { background: rgba(255,255,255,.15) }
+.fab-bar button, .fab-bar a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
 .fab-open { background: rgba(255,255,255,.15); display: inline-flex !important }
 .fab-open:hover { background: rgba(255,255,255,.25) }
+.fab-full { background: rgba(255,255,255,.15) }
 .fab-full:hover { background: rgba(255,255,255,.25) }
 .fab-pdf { background: var(--orange) }
 .fab-pdf:hover { background: #ff5500 }
@@ -439,7 +439,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .hero-split .img-hero-placeholder { width: 100% !important; min-width: auto !important }
   .fab-full { display: none }
   .fab-bar { bottom: 10px; padding: 6px 10px }
-  .fab-bar button { padding: 7px 12px; font-size: .72rem }
+  .fab-bar button, .fab-bar a { padding: 7px 12px; font-size: .72rem }
   html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 28px 20px }
   html.fullscreen-mode .hero h1 { font-size: 1.6rem }
   html.fullscreen-mode .topbar { padding: 10px 16px }
@@ -455,7 +455,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .nav-bar { top: 40px }
   .nav-item { padding: 6px 10px; font-size: .65rem }
   .fab-bar { bottom: 8px; padding: 5px 8px }
-  .fab-bar button { padding: 6px 10px; font-size: .7rem }
+  .fab-bar button, .fab-bar a { padding: 6px 10px; font-size: .7rem }
   .pyr-level { width: 100% !important }
 }
 
@@ -643,7 +643,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
       <a href="#sec-hero" class="nav-item active" data-section="sec-hero"><span class="nav-num">1</span> Überblick</a>
       <a href="#sec-1" class="nav-item" data-section="sec-1"><span class="nav-num">2</span> Warum?</a>
       <a href="#sec-2" class="nav-item" data-section="sec-2"><span class="nav-num">3</span> Bewegungsziel</a>
-      <a href="#sec-3" class="nav-item" data-section="sec-3"><span class="nav-num">4</span> Beurteilung</a>
+      <a href="#sec-3" class="nav-item" data-section="sec-3"><span class="nav-num">4</span> Ausführung</a>
       <a href="#sec-4" class="nav-item" data-section="sec-4"><span class="nav-num">5</span> Fehler</a>
       <a href="#sec-5" class="nav-item" data-section="sec-5"><span class="nav-num">6</span> Lösungen</a>
       <a href="#sec-6" class="nav-item" data-section="sec-6"><span class="nav-num">7</span> Kriterien</a>
@@ -654,14 +654,14 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="hero-inner">
       <div class="hero-label">ÜBUNG</div>
       <h1>Harmonische Laufbewegung</h1>
-      <p class="hero-sub">Ein Beobachtungskriterium: Dein Laufen wird beurteilt nach Symmetrie, Armschwung und Natürlichkeit, ohne sichtbare Schonhaltung oder Kompensation.</p>
+      <p class="hero-sub">Ein Beobachtungskriterium: Dein Laufen soll flüssig, symmetrisch und natürlich aussehen, ohne sichtbare Schonhaltung oder Kompensation.</p>
       <div class="hero-grid">
         <div class="loom-box">
           <div class="loom-video"><iframe src="https://www.loom.com/embed/051e707a2abd4b8ba9ba40d521278c3f" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div>
-          <div class="loom-meta"><span class="l-name">Harmonische Laufbewegung</span><span></span></div>
+          <div class="loom-meta"><span class="l-name">Harmonische Laufbewegung – Beobachtungskriterium</span><span></span></div>
         </div>
         <div class="loom-print"><a href="https://www.loom.com/share/051e707a2abd4b8ba9ba40d521278c3f" target="_blank" style="text-decoration:none;color:inherit"><div class="play-c">&#9654;</div><p>Video online ansehen</p><span style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px;display:block">loom.com/share/051e70...</span></a></div>
-        <div class="info-card"><h3>Kriterium anschauen</h3><p>In diesem Video siehst du, worauf es bei einer harmonischen Laufbewegung ankommt und wie dein Coach dein Laufen beurteilt.</p></div>
+        <div class="info-card"><h3>Video anschauen</h3><p>In diesem Video siehst du, worauf es bei einer harmonischen Laufbewegung ankommt und was dein Coach beobachtet.</p></div>
       </div>
     </div>
   </section>
@@ -670,10 +670,10 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="sec-inner">
       <div class="sec-label">RELEVANZ</div>
       <h2 class="sec-title">Warum musst du das können?</h2>
-      <p class="sec-intro">Laufen ist eine der grundlegendsten Bewegungen. Eine harmonische Laufbewegung zeigt, dass dein Knie belastbar ist, deine Muskulatur symmetrisch arbeitet und dein Nervensystem der Bewegung vertraut.</p>
+      <p class="sec-intro">Laufen ist eine der grundlegendsten Bewegungen. Eine harmonische Laufbewegung zeigt, dass dein Körper symmetrisch und natürlich arbeitet.</p>
       <div class="ben-b">
         <div>
-          <div class="ben-b-label">Im Alltag</div>
+          <div class="ben-b-label">Im Alltag 🏠</div>
           <div class="ben-b-stack">
             <div class="ben-b-card">
               <h4>Laufen ohne nachzudenken</h4>
@@ -690,7 +690,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           </div>
         </div>
         <div>
-          <div class="ben-b-label">Im Sport</div>
+          <div class="ben-b-label">Im Sport 🏃</div>
           <div class="ben-b-stack">
             <div class="ben-b-card">
               <h4>Grundlage für jede Sportart</h4>
@@ -718,35 +718,42 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="stp-c">
       <div class="stp-c-item">
         <div class="stp-c-num">1</div>
-        <h3>Symmetrie</h3>
+        <h3>Symmetrische Schrittlänge und Schrittfrequenz</h3>
         <ul>
-          <li>Symmetrische Schrittlänge und Schrittfrequenz (kein Hinken).</li>
+          <li>Kein Hinken. Beide Seiten arbeiten im gleichen Takt.</li>
         </ul>
       </div>
       <div class="stp-c-item">
         <div class="stp-c-num">2</div>
-        <h3>Armschwung</h3>
+        <h3>Symmetrische Kniebeugung beim Aufkommen</h3>
+        <ul>
+          <li>Das Knie sinkt auf beiden Seiten gleich tief ein, keine Seite knickt deutlich stärker ein als die andere.</li>
+        </ul>
+      </div>
+      <div class="stp-c-item">
+        <div class="stp-c-num">3</div>
+        <h3>Fußaufsatz unter dem Körperschwerpunkt</h3>
+        <ul>
+          <li>Fußaufsatz annähernd unter dem Körperschwerpunkt (kein Overstriding).</li>
+        </ul>
+      </div>
+      <div class="stp-c-item">
+        <div class="stp-c-num">4</div>
+        <h3>Freier Armschwung</h3>
         <ul>
           <li>Armschwung gegengleich und frei (nicht steif oder asymmetrisch).</li>
         </ul>
       </div>
       <div class="stp-c-item">
-        <div class="stp-c-num">3</div>
-        <h3>Fußaufsatz</h3>
-        <ul>
-          <li>Fußaufsatz unter dem Körperschwerpunkt.</li>
-        </ul>
-      </div>
-      <div class="stp-c-item">
-        <div class="stp-c-num">4</div>
-        <h3>Oberkörper</h3>
+        <div class="stp-c-num">5</div>
+        <h3>Aufrechter Oberkörper</h3>
         <ul>
           <li>Aufrechter Oberkörper mit leichter Vorlage.</li>
         </ul>
       </div>
       <div class="stp-c-item">
-        <div class="stp-c-num">5</div>
-        <h3>Kniehub</h3>
+        <div class="stp-c-num">6</div>
+        <h3>Gleichmäßiger Kniehub</h3>
         <ul>
           <li>Knie hebt sich bei jedem Schritt gleichmäßig.</li>
         </ul>
@@ -759,7 +766,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="sec-inner">
       <div class="sec-label">BEURTEILUNG</div>
       <h2 class="sec-title">Was wird beurteilt?</h2>
-      <p class="sec-intro">Dieses Kriterium wird nicht wie eine klassische Übung ausgeführt, sondern beobachtet. So läuft die Beurteilung ab.</p>
+      <p class="sec-intro">So wird deine Laufbewegung beurteilt und was dein Coach dabei beobachtet.</p>
       <div class="stp-b">
         <div class="stp-b-card">
           <div class="stp-b-head"><div class="num">1</div><h3>Durchführung</h3></div>
@@ -773,6 +780,8 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           <div class="stp-b-head"><div class="num">2</div><h3>Was dein Coach beobachtet</h3></div>
           <ul style="margin:0;padding-left:20px;line-height:1.8">
             <li>Ist die Schrittlänge links und rechts gleich?</li>
+            <li>Sinkt das Knie beim Aufkommen auf beiden Seiten gleich tief ein? Knickt eine Seite deutlich stärker ein?</li>
+            <li>Kommt der Fuß annähernd unter dem Körperschwerpunkt auf (kein Overstriding)?</li>
             <li>Hebt sich das Knie auf beiden Seiten gleich hoch?</li>
             <li>Schwingen die Arme symmetrisch und frei?</li>
             <li>Ist der Oberkörper aufrecht und stabil?</li>
@@ -817,14 +826,15 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="sec-inner">
       <div class="sec-label">FEHLERANALYSE</div>
       <h2 class="sec-title">Typische Fehler</h2>
-      <p class="sec-intro">Diese 6 Fehler werden beim Laufen am häufigsten beobachtet.</p>
+      <p class="sec-intro">Diese 7 Fehler werden bei der harmonischen Laufbewegung am häufigsten beobachtet.</p>
       <div class="err-b">
         <div class="err-b-row"><div class="err-b-num">1</div><span>Sichtbares Hinken oder Schonhinken (unterschiedliche Bodenkontaktzeit links/rechts)</span></div>
-        <div class="err-b-row"><div class="err-b-num">2</div><span>Asymmetrischer Armschwung (ein Arm schwingt weniger)</span></div>
-        <div class="err-b-row"><div class="err-b-num">3</div><span>Steifer Oberkörper (Rumpf dreht nicht mit, Schultern hochgezogen)</span></div>
-        <div class="err-b-row"><div class="err-b-num">4</div><span>Overstriding (Fuß landet deutlich vor dem Körperschwerpunkt)</span></div>
-        <div class="err-b-row"><div class="err-b-num">5</div><span>Knie des betroffenen Beins hebt sich weniger</span></div>
-        <div class="err-b-row"><div class="err-b-num">6</div><span>Ausweichbewegung im Becken (Becken kippt zur Seite)</span></div>
+        <div class="err-b-row"><div class="err-b-num">2</div><span>Asymmetrische Kniebeugung beim Aufkommen (eine Seite sinkt deutlich stärker ein)</span></div>
+        <div class="err-b-row"><div class="err-b-num">3</div><span>Overstriding (Fuß landet deutlich vor dem Körperschwerpunkt)</span></div>
+        <div class="err-b-row"><div class="err-b-num">4</div><span>Asymmetrischer Armschwung (ein Arm schwingt weniger)</span></div>
+        <div class="err-b-row"><div class="err-b-num">5</div><span>Steifer Oberkörper (Rumpf dreht nicht mit, Schultern hochgezogen)</span></div>
+        <div class="err-b-row"><div class="err-b-num">6</div><span>Knie des betroffenen Beins hebt sich weniger</span></div>
+        <div class="err-b-row"><div class="err-b-num">7</div><span>Ausweichbewegung im Becken (Becken kippt zur Seite)</span></div>
       </div>
     </div>
   </section>
@@ -833,7 +843,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="sec-inner">
       <div class="sec-label">KORREKTUR</div>
       <h2 class="sec-title">Lösungsvorschläge</h2>
-      <p class="sec-intro">Für jeden Fehler gibt es eine konkrete Lösung, damit dein Laufen harmonischer wird.</p>
+      <p class="sec-intro">Für jeden Fehler gibt es eine konkrete Lösung, so verbesserst du dein Laufbild Schritt für Schritt.</p>
       <div class="sol-b">
         <div class="sol-b-card">
           <h4>Sichtbares Hinken oder Schonhinken</h4>
@@ -841,14 +851,19 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Beide Füße verbringen gleich lang am Boden. Zähle im Kopf: links-rechts-links-rechts, gleicher Takt. Lauf mit einem Metronom (App) und passe deinen Rhythmus an. Wenn du nicht sicher bist, ob du hinkst: lass dich filmen.</p></div>
         </div>
         <div class="sol-b-card">
+          <h4>Asymmetrische Kniebeugung beim Aufkommen</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Das Knie sinkt auf einer Seite deutlich stärker ein als auf der anderen. Das deutet auf eine Kraftdifferenz oder Schonhaltung hin.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Lass dich von vorne filmen und vergleiche, wie tief das Knie links und rechts beim Aufkommen einsinkt. Wenn eine Seite stärker einknickt: gezielte Kräftigung dieser Seite (SL Box Squat, SL Leg Extension). Bewusstes Laufen mit Fokus auf gleichmäßiges Einsinken beider Knie.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Overstriding</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Der Fuß landet zu weit vor dem Körper. Das bremst bei jedem Schritt und belastet das Knie stärker.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Fuß landet unter dir, nicht vor dir. Kurze, schnelle Schritte statt langer. Stell dir vor, du läufst auf heißem Sand: kurze, leichte Kontakte. Erhöhe die Schrittfrequenz leicht, dann werden die Schritte automatisch kürzer.</p></div>
+        </div>
+        <div class="sol-b-card">
           <h4>Asymmetrischer Armschwung</h4>
           <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Ein Arm schwingt weniger weit oder steifer als der andere.</p></div>
           <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Arme schwingen locker wie Pendel, jede Seite gleich weit. Konzentriere dich bewusst auf den "schwächeren" Arm und gib ihm mehr Schwung. Die Arme folgen den Beinen: wenn die Beine symmetrisch arbeiten, tun es die Arme auch.</p></div>
-        </div>
-        <div class="sol-b-card">
-          <h4>Steifer Oberkörper</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Der Rumpf dreht nicht mit, die Schultern sind hochgezogen, die Bewegung sieht verkrampft aus.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Lauf, als hättest du nie eine OP gehabt. Schultern fallen lassen. Dein Rumpf dreht leicht mit, das ist normal und gewollt. Schüttele vor dem Laufen die Arme und Schultern locker aus.</p></div>
         </div>
       </div>
     </div>
@@ -862,9 +877,9 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
       </div>
       <div class="sol-b">
         <div class="sol-b-card">
-          <h4>Overstriding</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Der Fuß landet zu weit vor dem Körper. Das bremst und belastet das Knie.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Fuß landet unter dir, nicht vor dir. Kurze, schnelle Schritte statt langer. Stell dir vor, du läufst auf heißem Sand: kurze, leichte Kontakte. Erhöhe die Schrittfrequenz leicht, dann werden die Schritte automatisch kürzer.</p></div>
+          <h4>Steifer Oberkörper</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Der Rumpf dreht nicht mit, die Schultern sind hochgezogen, die Bewegung sieht verkrampft aus.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Lauf, als hättest du nie eine OP gehabt. Schultern fallen lassen. Dein Rumpf dreht leicht mit, das ist normal und gewollt. Schüttele vor dem Laufen die Arme und Schultern locker aus.</p></div>
         </div>
         <div class="sol-b-card">
           <h4>Knie hebt sich weniger auf der betroffenen Seite</h4>
@@ -884,7 +899,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   <div class="sec-inner">
     <div class="sec-label">ERFOLGSKRITERIEN</div>
     <h2 class="sec-title">Wann sind die Kriterien erfüllt?</h2>
-    <p class="sec-intro">Diese 3 Kriterien zeigen dir, ob deine Laufbewegung harmonisch ist.</p>
+    <p class="sec-intro">Diese 5 Kriterien zeigen dir, ob deine Laufbewegung harmonisch und symmetrisch ist.</p>
     <div class="cri-b">
       <div class="cri-b-row">
         <div class="cri-b-check">
@@ -895,6 +910,28 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
         <div>
           <h4>Symmetrisches Laufbild</h4>
           <p>Keine sichtbare Seitendifferenz in Schrittlänge, Kniehub oder Bodenkontaktzeit.</p>
+        </div>
+      </div>
+      <div class="cri-b-row">
+        <div class="cri-b-check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Symmetrische Kniebeugung beim Aufkommen</h4>
+          <p>Das Knie sinkt beim Aufkommen auf beiden Seiten gleich tief ein. Keine Seite knickt deutlich stärker ein als die andere.</p>
+        </div>
+      </div>
+      <div class="cri-b-row">
+        <div class="cri-b-check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Fußaufsatz annähernd unter dem Körperschwerpunkt</h4>
+          <p>Der Fuß kommt beim Aufkommen annähernd unter dem Körper auf, nicht deutlich davor (kein Overstriding).</p>
         </div>
       </div>
       <div class="cri-b-row">
@@ -927,6 +964,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 </div>
 <div class="fab-bar">
   <a href="https://knieathletics.github.io/knieathletics-akademie/harmonische-laufbewegung.html" target="_blank" class="fab-open" style="text-decoration:none;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg> Vollansicht</a>
+  <button class="fab-full" onclick="toggleFullscreen()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg> <span id="fabFullLabel">Vollbild</span></button>
   <button class="fab-pdf" onclick="window.print()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> PDF</button>
 </div>
 <script>

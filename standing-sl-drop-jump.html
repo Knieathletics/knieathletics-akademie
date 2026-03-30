@@ -368,11 +368,11 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 
 /* === FAB BAR === */
 .fab-bar { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; gap: 8px; background: rgba(0,44,67,.95); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,.25) }
-.fab-bar button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
+.fab-bar button, .fab-bar a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
 .fab-full { background: rgba(255,255,255,.15) }
+.fab-full:hover { background: rgba(255,255,255,.25) }
 .fab-open { background: rgba(255,255,255,.15); display: inline-flex !important }
 .fab-open:hover { background: rgba(255,255,255,.25) }
-.fab-full:hover { background: rgba(255,255,255,.25) }
 .fab-pdf { background: var(--orange) }
 .fab-pdf:hover { background: #ff5500 }
 
@@ -439,7 +439,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .hero-split .img-hero-placeholder { width: 100% !important; min-width: auto !important }
   .fab-full { display: none }
   .fab-bar { bottom: 10px; padding: 6px 10px }
-  .fab-bar button { padding: 7px 12px; font-size: .72rem }
+  .fab-bar button, .fab-bar a { padding: 7px 12px; font-size: .72rem }
   html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 28px 20px }
   html.fullscreen-mode .hero h1 { font-size: 1.6rem }
   html.fullscreen-mode .topbar { padding: 10px 16px }
@@ -455,7 +455,7 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .nav-bar { top: 40px }
   .nav-item { padding: 6px 10px; font-size: .65rem }
   .fab-bar { bottom: 8px; padding: 5px 8px }
-  .fab-bar button { padding: 6px 10px; font-size: .7rem }
+  .fab-bar button, .fab-bar a { padding: 6px 10px; font-size: .7rem }
   .pyr-level { width: 100% !important }
 }
 
@@ -654,14 +654,14 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="hero-inner">
       <div class="hero-label">ÜBUNG</div>
       <h1>Standing SL Drop Jump</h1>
-      <p class="hero-sub">Einbeinig von einer Erhöhung kontrolliert landen und die Position stabil einfrieren, für sichere Aufprallkontrolle im Alltag und Sport.</p>
+      <p class="hero-sub">Die einbeinige Progression des Standing Drop Jump: Ein schneller, kontrollierter Drop auf einem Bein mit sofortigem, maximal explosivem vertikalem Einbeinsprung.</p>
       <div class="hero-grid">
         <div class="loom-box">
           <div class="loom-video"><iframe src="https://www.loom.com/embed/c4b01496b96545c2a94e438360531709" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div>
           <div class="loom-meta"><span class="l-name">Standing SL Drop Jump – Übungsdemonstration</span></div>
         </div>
         <div class="loom-print"><a href="https://www.loom.com/share/c4b01496b96545c2a94e438360531709" target="_blank" style="text-decoration:none;color:inherit"><div class="play-c">&#9654;</div><p>Video online ansehen</p><span style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:6px;display:block">loom.com/share/c4b014...</span></a></div>
-        <div class="info-card"><h3>Übung anschauen</h3><p>In diesem Video siehst du die komplette Ausführung des Standing SL Drop Jumps mit allen wichtigen Phasen.</p></div>
+        <div class="info-card"><h3>Übung anschauen</h3><p>In diesem Video siehst du die komplette Ausführung des Standing SL Drop Jump mit allen wichtigen Phasen: Drop, Absprung und Landung auf einem Bein.</p></div>
       </div>
     </div>
   </section>
@@ -670,39 +670,39 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="sec-inner">
       <div class="sec-label">RELEVANZ</div>
       <h2 class="sec-title">Warum musst du das können?</h2>
-      <p class="sec-intro">Der Standing SL Drop Jump trainiert die Fähigkeit, vertikale Aufprallkräfte einbeinig sicher abzufangen, kontrolliert zu landen und sofort stabil zu stehen.</p>
+      <p class="sec-intro">Der Standing SL Drop Jump trainiert einbeinige Explosivkraft und reaktive Schnellkraft, die du im Alltag und im Sport ständig brauchst.</p>
       <div class="ben-b">
         <div>
-          <div class="ben-b-label">Im Alltag 🏠</div>
+          <div class="ben-b-label">Im Alltag</div>
           <div class="ben-b-stack">
             <div class="ben-b-card">
-              <h4>Von einer Stufe oder einem Bordstein heruntersteigen</h4>
-              <p>Du trainierst, die Aufprallkräfte beim Heruntersteigen von einer Erhöhung einbeinig sicher abzufangen. Ob du eine Treppenstufe verpasst, von einem Bordstein springst oder beim Wandern über einen Felsvorsprung steigst: Dein Knie muss die vertikalen Kräfte kontrolliert abfangen.</p>
+              <h4>Einbeinig schnell reagieren und abspringen</h4>
+              <p>Du trainierst die Fähigkeit, auf einem Bein blitzschnell zu "laden" und sofort Kraft nach oben zu entwickeln. Das brauchst du, wenn du z.B. aus einem Schritt heraus schnell über ein Hindernis springen oder im letzten Moment einem Gegenstand ausweichen musst.</p>
             </div>
             <div class="ben-b-card">
-              <h4>Reaktion auf unerwartete Höhenunterschiede</h4>
-              <p>Im Alltag triffst du ständig auf kleine Höhenunterschiede: eine Stufe, die du nicht gesehen hast, ein unebener Untergrund, ein Gehweg, der plötzlich abfällt. Der SL Drop Jump trainiert genau diese Fähigkeit: einbeinig landen und sofort stabil stehen.</p>
+              <h4>Elastische Energie auf einem Bein nutzen</h4>
+              <p>Beim beidbeinigen Drop Jump hast du gelernt, die natürliche Federwirkung deiner Muskeln und Sehnen zu nutzen. Jetzt muss ein einzelnes Bein die gesamte elastische Energie speichern und explosiv wieder abgeben. Im Alltag landest und springst du ständig einbeinig, ob beim Treppensteigen, Laufen oder Ausweichen.</p>
             </div>
             <div class="ben-b-card">
-              <h4>Vertrauen in dein Knie aufbauen</h4>
-              <p>Die kontrollierte Landung von einer Erhöhung erzeugt höhere Kräfte als ein Sprung vom Boden. Wenn du das sicher kannst, wächst dein Vertrauen in die Belastbarkeit deines Knies spürbar.</p>
+              <h4>Höhere Aufprallkräfte einbeinig kontrollieren</h4>
+              <p>Ein einbeiniger Drop Jump erzeugt deutlich höhere Kräfte pro Bein als die beidbeinige Version. Wenn dein Knie das sicher bewältigt, wächst dein Vertrauen in die Belastbarkeit bei allen Alltagsbewegungen spürbar.</p>
             </div>
           </div>
         </div>
         <div>
-          <div class="ben-b-label">Im Sport 🏃</div>
+          <div class="ben-b-label">Im Sport</div>
           <div class="ben-b-stack">
             <div class="ben-b-card">
-              <h4>Landekräfte einbeinig kontrollieren</h4>
-              <p>In nahezu jeder Sportart landest du nach Sprüngen auf einem Bein: nach einem Kopfball, nach einem Layup, nach einem Richtungswechsel. Der SL Drop Jump trainiert isoliert die Fähigkeit, vertikale Aufprallkräfte einbeinig und stabil zu absorbieren.</p>
+              <h4>Einbeiniger Dehnungs-Verkürzungs-Zyklus (DVZ)</h4>
+              <p>Im beidbeinigen Standing Drop Jump hast du den DVZ mit zwei Beinen trainiert. Jetzt muss ein Bein allein die gesamte elastische Energie speichern und explosiv umsetzen. Im Sport landest und springst du fast nie beidbeinig: der Absprung beim Laufen, der Richtungswechsel, die Landung nach einem Kopfball. All das passiert einbeinig.</p>
             </div>
             <div class="ben-b-card">
-              <h4>Vorbereitung auf höhere Sprungbelastungen</h4>
-              <p>Der Drop Jump ist die Vorstufe zu reaktiven Sprüngen: erst lernst du, Kräfte aufzufangen, dann lernst du, sie sofort wieder in einen Sprung umzuwandeln. Ohne saubere Landung keine saubere Reaktivkraft.</p>
+              <h4>Progression zum beidbeinigen Drop Jump</h4>
+              <p>Die Anforderung an Kraft, Stabilität und neuromuskuläre Kontrolle ist erheblich höher als beim beidbeinigen Standing Drop Jump. Dein Knie, deine Hüfte und dein Sprunggelenk müssen die gesamten Aufprallkräfte allein abfangen und sofort in explosiven Abdruck umwandeln.</p>
             </div>
             <div class="ben-b-card">
-              <h4>Exzentrische Kraft unter Geschwindigkeit</h4>
-              <p>Die Landung erfordert eine schnelle, exzentrische Muskelarbeit von Quadrizeps, Gluteus und Wade. Das ist die gleiche Belastung, die beim Abbremsen im Sprint oder bei einem Richtungswechsel auf dein Knie wirkt.</p>
+              <h4>Schnelle Kraftentwicklung auf einem Bein</h4>
+              <p>Der kurze Bodenkontakt beim einbeinigen Drop und sofortigen Absprung trainiert dein Nervensystem, in kürzester Zeit maximale Kraft aus einem einzelnen Bein zu produzieren. Das ist die Grundlage für einbeinige Explosivität im Sprint, bei Richtungswechseln und bei Sprüngen.</p>
             </div>
           </div>
         </div>
@@ -714,41 +714,35 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   <div class="sec-inner">
     <div class="sec-label">ZIEL</div>
     <h2 class="sec-title">Bewegungsziel</h2>
-    <div class="hl hl-info" style="margin-bottom:30px">&#128161; Einbeinig von einer kleinen Erhöhung (10-20 cm) heruntersteppen und auf demselben Bein weich und stabil landen, die Aufprallkräfte kontrolliert abfangen und die Position für 2-3 Sekunden einfrieren.</div>
+    <div class="hl hl-info" style="margin-bottom:30px">&#128161; Ein schnelles, kontrolliertes Fallenlassen (Drop) auf einem Bein aus dem aufrechten einbeinigen Stand, gefolgt von einem sofortigen, maximal explosiven vertikalen Einbeinsprung mit kurzem Bodenkontakt und einer weichen, stabilen Landung auf demselben Bein.</div>
     <div class="stp-c">
       <div class="stp-c-item">
         <div class="stp-c-num">1</div>
-        <h3>Kein aktiver Absprung</h3>
+        <h3>Ausgangsposition</h3>
         <ul>
-          <li>Kein aktiver Absprung von der Box, nur kontrolliertes Herunterfallen lassen.</li>
+          <li>Arme starten oben (ca. 90° Ellbogen, leicht angehoben) oder kompakt vor dem Körper.</li>
         </ul>
       </div>
       <div class="stp-c-item">
         <div class="stp-c-num">2</div>
-        <h3>Weiche Landung</h3>
+        <h3>Drop</h3>
         <ul>
-          <li>Landung auf Vorfuß/Mittelfuß, weich und leise.</li>
+          <li>Schnell auf dem Standbein fallen lassen, Vorfuß aktiv anziehen, kurze Mini-Flugphase.</li>
+          <li>Landung auf Vorfuß des Standbeins, sofort Absprung einleiten, kein Stoppen am tiefsten Punkt.</li>
         </ul>
       </div>
       <div class="stp-c-item">
         <div class="stp-c-num">3</div>
-        <h3>Stabile Beinachse</h3>
+        <h3>Absprung</h3>
         <ul>
-          <li>Knie stabil über dem Fuß (kein Valgus).</li>
+          <li>Maximale Streckung in Hüfte, Knie und Sprunggelenk beim Absprung (Triple Extension).</li>
         </ul>
       </div>
       <div class="stp-c-item">
         <div class="stp-c-num">4</div>
-        <h3>Stick the Landing</h3>
+        <h3>Landung</h3>
         <ul>
-          <li>Sofort "einfrieren" nach der Landung (Stick the Landing, 2-3 Sek).</li>
-        </ul>
-      </div>
-      <div class="stp-c-item">
-        <div class="stp-c-num">5</div>
-        <h3>Federnde Dämpfung</h3>
-        <ul>
-          <li>Hüfte und Knie geben bei der Landung kontrolliert nach (federnde Dämpfung).</li>
+          <li>Weiche Landung auf demselben Bein mit Stick (2-3 Sek stabil halten).</li>
         </ul>
       </div>
     </div>
@@ -759,22 +753,24 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="sec-inner">
       <div class="sec-label">ANLEITUNG</div>
       <h2 class="sec-title">Übungsbeschreibung</h2>
-      <p class="sec-intro">So führst du den Standing SL Drop Jump korrekt aus, von der Ausgangsposition bis zur stabilen Landung.</p>
+      <p class="sec-intro">So führst du den Standing SL Drop Jump korrekt aus, von der Ausgangsposition bis zur Landung.</p>
       <div class="stp-b">
         <div class="stp-b-card">
           <div class="stp-b-head"><div class="num">1</div><h3>Positionierung</h3></div>
           <ul style="margin:0;padding-left:20px;line-height:1.8">
-            <li>Stelle dich auf eine kleine Erhöhung (Step, Box, stabile Stufe, ca. 10-20 cm hoch).</li>
-            <li>Vor dir ist genügend Platz zum Landen (ca. 1 Meter).</li>
+            <li>Stelle dich einbeinig auf einer ebenen, festen Fläche auf.</li>
+            <li>Genügend Platz um dich herum (ca. 1 Meter in alle Richtungen).</li>
+            <li>Blick geradeaus auf einen festen Punkt (Ankerpunkt für Balance).</li>
           </ul>
         </div>
         <div class="stp-b-card">
           <div class="stp-b-head"><div class="num">2</div><h3>Ausgangsposition</h3></div>
           <ul style="margin:0;padding-left:20px;line-height:1.8">
-            <li>Stehe einbeinig auf der Erhöhung, Standbein leicht gebeugt.</li>
-            <li>Das freie Bein hängt locker neben der Box.</li>
-            <li>Oberkörper aufrecht, Blick geradeaus, Rumpf angespannt.</li>
-            <li>Arme locker neben dem Körper oder leicht vor dem Körper für Balance.</li>
+            <li>Du stehst komplett aufrecht auf einem Bein, Hüfte und Knie gestreckt.</li>
+            <li>Das freie Bein ist leicht angewinkelt neben dem Standbein, Fuß in der Luft.</li>
+            <li>Arme sind oben (Ellbogen ca. 90° gebeugt, Oberarme leicht angehoben) oder kompakt vor dem Körper.</li>
+            <li>Rumpf angespannt, Gewicht auf dem Vorfuß des Standbeins.</li>
+            <li>Dein Körper ist bereit, sich fallen zu lassen.</li>
           </ul>
         </div>
       </div>
@@ -789,28 +785,31 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
       </div>
       <div class="stp-b">
         <div class="stp-b-card">
-          <div class="stp-b-head"><div class="num">3</div><h3>Das kontrollierte Fallenlassen</h3></div>
+          <div class="stp-b-head"><div class="num">3</div><h3>Der Drop auf einem Bein</h3></div>
           <ul style="margin:0;padding-left:20px;line-height:1.8">
-            <li>Bewege das freie Bein nach vorne (als würdest du einen Schritt machen).</li>
-            <li>Lass dich kontrolliert von der Box fallen. Nicht abspringen! Kein aktiver Push nach oben.</li>
-            <li>Dein Körper fällt gerade nach unten.</li>
+            <li>Lass dich auf dem Standbein schnell und aktiv nach unten fallen, indem du Knie und Hüfte zügig beugst.</li>
+            <li>Ziehe dabei den Vorfuß aktiv nach oben an. Durch das Fallenlassen und gleichzeitige Anziehen des Fußes hebst du für einen kurzen Moment minimal vom Boden ab, eine kleine Mini-Flugphase entsteht.</li>
+            <li>Lande auf dem Vorfuß des Standbeins. Dieser drückt beim Aufkommen kraftvoll in den Boden und leitet sofort die Aufwärtsbewegung ein.</li>
+            <li>Die Tiefe ist individuell optimal, ca. etwas mehr als ein Viertel-Squat. Nicht zu flach (zu wenig Vordehnung), nicht zu tief (zu langsam).</li>
+            <li>Die Arme schwingen gleichzeitig aktiv nach hinten/unten.</li>
           </ul>
         </div>
         <div class="stp-b-card">
-          <div class="stp-b-head"><div class="num">4</div><h3>Die Landung</h3></div>
+          <div class="stp-b-head"><div class="num">4</div><h3>Der Absprung auf einem Bein</h3></div>
           <ul style="margin:0;padding-left:20px;line-height:1.8">
-            <li>Lande auf dem Standbein. Der Vorfuß berührt zuerst den Boden.</li>
-            <li>Sofort geben Knie und Hüfte kontrolliert nach, wie eine Feder, die sich zusammendrückt.</li>
-            <li>Die Bewegung stoppt weich und leise.</li>
+            <li>Ohne Pause drückst du dich sofort maximal explosiv vom Standbein ab.</li>
+            <li>Knie, Hüfte und Sprunggelenk strecken sich kraftvoll und vollständig (Triple Extension).</li>
+            <li>Die Arme und das freie Bein schwingen dynamisch nach oben, um maximale Sprunghöhe zu unterstützen.</li>
+            <li>In der Flugphase: Fuß des Standbeins aktiv anziehen (Fußspitze Richtung Schienbein).</li>
           </ul>
         </div>
         <div class="stp-b-card">
-          <div class="stp-b-head"><div class="num">5</div><h3>Endposition</h3></div>
+          <div class="stp-b-head"><div class="num">5</div><h3>Die Landung</h3></div>
           <ul style="margin:0;padding-left:20px;line-height:1.8">
-            <li>Du stehst einbeinig, stabil, mit leicht gebeugtem Knie.</li>
-            <li>Knie ist direkt über dem Fuß (kein Einknicken).</li>
-            <li>Oberkörper aufrecht.</li>
-            <li>Halte diese Position 2-3 Sekunden. Dann absetzen.</li>
+            <li>Lande weich und leise auf demselben Bein (Vorfuß/Ballen zuerst).</li>
+            <li>Knie und Hüfte beugen sich sofort, um den Aufprall abzufedern.</li>
+            <li>Stabilisiere dich in einer kontrollierten Position und halte den Stick für 2-3 Sekunden.</li>
+            <li>Kein Nachhüpfen, kein Aufsetzen des freien Beins.</li>
           </ul>
         </div>
       </div>
@@ -821,14 +820,15 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     <div class="sec-inner">
       <div class="sec-label">FEHLERANALYSE</div>
       <h2 class="sec-title">Typische Fehler</h2>
-      <p class="sec-intro">Diese 6 Fehler passieren beim Standing SL Drop Jump am häufigsten.</p>
+      <p class="sec-intro">Diese 7 Fehler passieren beim Standing SL Drop Jump am häufigsten.</p>
       <div class="err-b">
-        <div class="err-b-row"><div class="err-b-num">1</div><span>Aktiver Absprung statt kontrolliertes Fallenlassen (zu viel Höhe)</span></div>
-        <div class="err-b-row"><div class="err-b-num">2</div><span>Knie knickt bei Landung nach innen (Valgus)</span></div>
-        <div class="err-b-row"><div class="err-b-num">3</div><span>Harte, laute Landung (fehlende Dämpfung)</span></div>
-        <div class="err-b-row"><div class="err-b-num">4</div><span>Oberkörper kippt nach vorne oder zur Seite</span></div>
-        <div class="err-b-row"><div class="err-b-num">5</div><span>Nachhüpfen oder Nachsteppen (instabile Landung)</span></div>
-        <div class="err-b-row"><div class="err-b-num">6</div><span>Knie "schießt" über die Zehenspitzen nach vorne</span></div>
+        <div class="err-b-row"><div class="err-b-num">1</div><span>Zu langsamer Drop (kontrolliertes Absenken statt fallen lassen)</span></div>
+        <div class="err-b-row"><div class="err-b-num">2</div><span>Pause am tiefsten Punkt (wird zum SL Squat Jump statt Drop Jump)</span></div>
+        <div class="err-b-row"><div class="err-b-num">3</div><span>Fuß wird nicht aktiv angezogen (keine Mini-Flugphase)</span></div>
+        <div class="err-b-row"><div class="err-b-num">4</div><span>Keine vollständige Streckung in der Flugphase (Triple Extension fehlt)</span></div>
+        <div class="err-b-row"><div class="err-b-num">5</div><span>Knie knickt bei Drop oder Landung nach innen (Valgus)</span></div>
+        <div class="err-b-row"><div class="err-b-num">6</div><span>Hüfte sinkt auf der Spielbeinseite ab</span></div>
+        <div class="err-b-row"><div class="err-b-num">7</div><span>Landung zu hart oder instabil (Nachhüpfen, Aufsetzen des freien Beins)</span></div>
       </div>
     </div>
   </section>
@@ -840,14 +840,14 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
       <p class="sec-intro">Für jeden Fehler gibt es eine konkrete Lösung, so verbesserst du deine Technik Schritt für Schritt.</p>
       <div class="sol-b">
         <div class="sol-b-card">
-          <h4>Aktiver Absprung statt Fallenlassen</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Du springst aktiv von der Box ab, erzeugst dadurch unnötig hohe Landekräfte.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Nicht springen! Einfach fallen lassen wie ein Stein, der von der Kante rollt. Dein freies Bein macht einen "Schritt ins Leere" und der Rest folgt. Wenn du höher landest als die Box hoch ist, springst du zu aktiv ab.</p></div>
+          <h4>Zu langsamer Drop</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Du gehst kontrolliert in die einbeinige Hocke, anstatt dich schnell fallen zu lassen. Der elastische Gummiband-Effekt geht verloren.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Stell dir vor, jemand zieht dir blitzschnell den Stuhl weg, dein Körper fällt kurz nach unten. Denk an "loslassen", nicht an "runtergehen". Die Schwerkraft macht die Arbeit.</p></div>
         </div>
         <div class="sol-b-card">
-          <h4>Knie knickt nach innen (Valgus)</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Bei der Landung driftet das Knie nach innen, die Beinachse bricht zusammen.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Deine Kniescheibe ist ein Scheinwerfer, der geradeaus über die Fußspitze leuchtet. Drück die Fußaußenkante aktiv in den Boden. Spanne den Gesäßmuskel bei der Landung bewusst an, das stabilisiert das Knie von außen.</p></div>
+          <h4>Pause am tiefsten Punkt</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Du hältst am tiefsten Punkt kurz inne. Damit wird es ein SL Squat Jump, die gespeicherte elastische Energie geht verloren.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Der tiefste Punkt ist kein Ziel, sondern ein Wendepunkt. Du fällst durch ihn hindurch wie ein Ball, der vom Boden abprallt. Denk an das Geräusch: "Bumm-Hoch!" Ein einziger, fließender Rhythmus.</p></div>
         </div>
       </div>
     </div>
@@ -861,14 +861,19 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
       </div>
       <div class="sol-b">
         <div class="sol-b-card">
-          <h4>Harte, laute Landung</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die Landung klingt wie ein Aufprall, Knie und Hüfte geben nicht nach.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Leise wie eine Katze von der Mauer. Wenn du dich hörst, bist du zu hart. Dein Bein ist eine Sprungfeder, die sanft nachgibt. Lass Knie und Hüfte bewusst "weich werden" im Moment des Kontakts.</p></div>
+          <h4>Fuß wird nicht aktiv angezogen</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Ohne angezogenen Fuß fehlt die Vorspannung für den Drop und den Bodenkontakt. Der Abdruck über den Vorfuß wird ineffizient.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Zieh die Fußspitze kraftvoll Richtung Schienbein hoch, vor dem Drop UND in der Flugphase. Stell dir vor, du willst mit den Zehenspitzen etwas vor dir antippen.</p></div>
         </div>
         <div class="sol-b-card">
-          <h4>Oberkörper kippt</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Bei der Landung fällt der Oberkörper nach vorne oder zur Seite.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Nase bleibt über dem Knie. Aufrecht wie ein Fahrstuhl, der nach unten fährt. Bauch anspannen, als würde jemand leicht in deine Seite boxen.</p></div>
+          <h4>Keine vollständige Streckung in der Flugphase</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Der Sprung wird "abgeschnitten", das volle Kraftpotenzial nicht ausgeschöpft.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Mach dich in der Luft so groß und lang wie eine gespannte Feder. Stell dir vor, du willst mit dem Kopf einen Ballon an der Decke treffen.</p></div>
+        </div>
+        <div class="sol-b-card">
+          <h4>Knie knickt nach innen (Valgus)</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die schnellen, hohen Kräfte auf einem Bein drücken das Knie nach innen.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Deine Kniescheibe ist ein Scheinwerfer, der geradeaus über die Fußspitze leuchtet. Drück die Fußaußenkante aktiv in den Boden. Spanne den Gesäßmuskel bei Drop und Landung bewusst an.</p></div>
         </div>
       </div>
     </div>
@@ -882,14 +887,14 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
       </div>
       <div class="sol-b">
         <div class="sol-b-card">
-          <h4>Nachhüpfen oder Nachsteppen</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die Landung ist instabil, du hüpfst nach oder machst einen kleinen Schritt.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Am Boden festkleben, als wäre da Klebstoff. Einfrieren wie eine Statue. Wenn du nachhüpfst, reduziere die Höhe der Box, bis du stabil landen kannst.</p></div>
+          <h4>Hüfte sinkt auf der Spielbeinseite ab</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die Hüfte kippt zur Seite des freien Beins, die Stabilität geht verloren.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Dein Gürtel sitzt auf beiden Seiten gleich hoch. Drück die Standbein-Hüfte aktiv nach oben und außen.</p></div>
         </div>
         <div class="sol-b-card">
-          <h4>Knie "schießt" über die Zehenspitzen</h4>
-          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Zu viel Vorwärtsbewegung bei der Landung, das Knie wandert zu weit nach vorne.</p></div>
-          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Hüfte nach hinten schieben, nicht nur Knie nach vorne lassen. Stell dir vor, du willst dich auf einen unsichtbaren Stuhl hinter dir setzen.</p></div>
+          <h4>Landung zu hart oder instabil</h4>
+          <div class="sol-b-row"><span class="sol-b-label sol-problem">Problem:</span><p>Die Landung klingt laut, du hüpfst nach oder musst das freie Bein aufsetzen.</p></div>
+          <div class="sol-b-row"><span class="sol-b-label sol-loesung">Lösung:</span><p>Lande leise wie ein Ninja. Wenn du dich hörst, war es zu hart. Dein Bein ist ein Stoßdämpfer, der weich einsinkt. Wenn du regelmäßig nachhüpfst oder den freien Fuß aufsetzt: Reduziere die Sprunghöhe, bis die Landung stabil ist. Dann steigere. Statue auf einem Bein, bombenfest für 3 Sekunden.</p></div>
         </div>
       </div>
     </div>
@@ -908,8 +913,8 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           </svg>
         </div>
         <div>
-          <h4>Stabile Landung</h4>
-          <p>Du stehst nach der Landung 2-3 Sekunden einbeinig sicher, ohne nachzuhüpfen oder den anderen Fuß abzusetzen.</p>
+          <h4>Schneller Drop mit Mini-Flugphase</h4>
+          <p>Das einbeinige Absenken ist ein deutlich sichtbares, schnelles Fallenlassen. Der Vorfuß wird angezogen, sodass eine kurze Mini-Flugphase entsteht. Die Landung erfolgt aktiv auf dem Vorfuß.</p>
         </div>
       </div>
       <div class="cri-b-row">
@@ -919,8 +924,8 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           </svg>
         </div>
         <div>
-          <h4>Saubere Beinachse</h4>
-          <p>Dein Knie bleibt stabil über dem Fuß. Kein Einknicken nach innen bei der Landung.</p>
+          <h4>Sofortiger Richtungswechsel ohne Pause</h4>
+          <p>Am tiefsten Punkt gibt es keine Haltephase. Die Bewegung fließt direkt vom Drop in den Absprung über, wie ein Ball, der vom Boden abprallt.</p>
         </div>
       </div>
       <div class="cri-b-row">
@@ -930,8 +935,8 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           </svg>
         </div>
         <div>
-          <h4>Kontrollierte Dämpfung</h4>
-          <p>Die Landung ist leise und weich. Knie und Hüfte geben fließend nach.</p>
+          <h4>Explosiver Absprung mit vollständiger Streckung</h4>
+          <p>Der einbeinige Absprung ist sichtbar explosiv und führt zu einer vollständigen Streckung in Hüfte, Knie und Sprunggelenk (Triple Extension).</p>
         </div>
       </div>
       <div class="cri-b-row">
@@ -941,8 +946,8 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           </svg>
         </div>
         <div>
-          <h4>Kein aktiver Absprung</h4>
-          <p>Du lässt dich kontrolliert von der Erhöhung fallen, ohne aktiv nach oben abzuspringen.</p>
+          <h4>Stabile Beinachse und Landung mit Stick</h4>
+          <p>Das Knie bleibt bei Drop, Absprung und Landung stabil über der Fußspitze, kein Valgus. Die Hüfte bleibt gerade. Die Landung ist weich, leise und wird einbeinig für 2-3 Sekunden stabil gehalten, ohne Nachhüpfen oder Aufsetzen des freien Beins.</p>
         </div>
       </div>
     </div>
