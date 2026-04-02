@@ -463,22 +463,56 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
 /* === PRINT === */
 @media print {
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
-  @page { size: 297mm 210mm; margin: 15mm 10mm 10mm 10mm }
+  @page { size: 297mm 210mm; margin: 0 }
+
   html, html.fullscreen-mode { background: #fff !important }
-  body { background: #fff !important; font-size: 11px; line-height: 1.45; margin: 0; padding: 0 }
-  .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0 }
-  .topbar, .nav-bar, .doc-footer, .fab-bar { display: none !important }
-  .sec, .hero, html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 8mm 10mm; width: 100% !important; margin: 0; scroll-margin-top: 0 }
-  .hero, html.fullscreen-mode .hero { padding: 10mm 12mm; break-inside: avoid }
-  /* Vertikale Zentrierung (Chrome Print Fix) */
-  .sec-inner, .hero-inner { margin-top: auto !important; margin-bottom: auto !important; max-width: 100% !important }
-  .hero-inner { display: block !important; width: 100% }
-  .hero h1 { font-size: 2rem !important }
-  .hero-sub { font-size: .85rem !important }
-  .sec-title { font-size: 1.4rem !important }
-  .sec-inner, .hero-inner, html.fullscreen-mode .sec-inner, html.fullscreen-mode .hero-inner { max-width: 100% !important }
+  body { background: #fff !important; font-size: 13px; line-height: 1.5; width: 297mm; margin: 0; padding: 0; overflow: visible }
+  .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0; padding: 0 }
+  .topbar, .nav-bar, .doc-footer, .fab-bar, .topbar-pdf { display: none !important }
+
+  /* === JEDE SECTION = VOLLE LANDSCAPE SEITE === */
+  .sec, .hero,
+  html.fullscreen-mode .sec,
+  html.fullscreen-mode .hero {
+    page-break-after: always;
+    width: 100% !important; max-width: 100% !important;
+    height: 210mm !important; min-height: 210mm !important;
+    padding: 14mm 28mm;
+    margin: 0;
+    overflow: hidden;
+    display: flex !important; flex-direction: column !important;
+    scroll-margin-top: 0;
+  }
+  /* Vertikale Zentrierung: margin:auto auf Inner-Element (Chrome ignoriert justify-content im Print) */
+  .sec-inner, .hero-inner,
+  html.fullscreen-mode .sec-inner,
+  html.fullscreen-mode .hero-inner {
+    margin-top: auto !important; margin-bottom: auto !important;
+    max-width: 100% !important;
+  }
+  .hero, html.fullscreen-mode .hero { break-inside: avoid; padding: 16mm 30mm }
+  .sec:last-of-type { page-break-after: auto }
   .sec + .sec { border-top: none }
-  /* Einzelne Content-Blöcke: break-inside:avoid */
+
+  /* === CONTINUATION SLIDES: Header nur im Print sichtbar === */
+  .print-only-header { display: block !important }
+  .sec-cont { padding-top: 14mm !important }
+  .sec.sec-cont + .sec { border-top: none }
+
+  /* === HERO === */
+  .hero-inner { display: block !important; width: 100% }
+  .hero h1 { font-size: 2.4rem !important; margin-bottom: 14px }
+  .hero-sub { font-size: 1.15rem !important; margin-bottom: 28px; max-width: 640px }
+  .info-card { padding: 36px; display: flex; flex-direction: column; justify-content: center }
+  .info-card h3 { font-size: 1.3rem; margin-bottom: 16px }
+  .info-card p { font-size: 1.1rem; line-height: 1.7 }
+
+  /* === SECTION HEADERS === */
+  .sec-label { font-size: .8rem; letter-spacing: 4px; margin-bottom: 10px }
+  .sec-title { font-size: 2rem !important; margin-bottom: 18px }
+  .sec-intro { font-size: 1rem; margin-bottom: 20px }
+
+  /* === CONTENT BLOCKS: break-inside:avoid === */
   .stp-b-card, .stp-a-item, .stp-c-item,
   .ben-a-card, .ben-b-card,
   .fok-a-card, .fok-b-item, .fok-c-row,
@@ -491,29 +525,78 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
   .hl, .hl-dark,
   .hero-grid,
   .img-text-block, .img-section { break-inside: avoid; page-break-inside: avoid }
+
   /* Flex/Grid in Cards zu Block fuer Druck (Chrome-Bug) */
   .sol-b-row, .sol-a-card .sol-r,
   .stp-b-head, .ben-a-card, .fok-b-item,
   .cri-b-row, .cri-d-row, .err-b-row { display: block !important }
+
   .sec-label, .sec-title { break-after: avoid; page-break-after: avoid }
   h3, h4 { break-after: avoid; page-break-after: avoid }
   p, li { orphans: 2; widows: 2 }
+
+  /* === BENEFITS (Therapieformen 2x2 Grid) === */
+  .ben-b { gap: 28px; margin-top: 18px }
+  .ben-b-label { font-size: 1.1rem; margin-bottom: 12px; font-weight: 700 }
+  .ben-b-stack { gap: 14px }
+  .ben-b-card { padding: 16px 20px }
+  .ben-b-card h4 { font-size: 1rem; margin-bottom: 4px }
+  .ben-b-card p { font-size: .88rem; line-height: 1.5 }
+
+  /* === KRITERIEN / ABLAUF (cri-b-row) === */
+  .cri-b { gap: 10px; margin-top: 12px }
+  .cri-b-row { padding: 12px 18px }
+  .cri-b-row h4 { font-size: .95rem; margin-bottom: 3px }
+  .cri-b-row p { font-size: .82rem; line-height: 1.45 }
+
+  /* === SOLUTIONS / NUTZEN / KOSTEN (sol-b) === */
+  .sol-b { gap: 6px; margin-top: 10px }
+  .sol-b-card { padding: 8px 14px; margin-bottom: 0; border-radius: 8px }
+  .sol-b-card h4 { font-size: .85rem; margin-bottom: 2px; padding-bottom: 4px; border-bottom-width: 1px }
+  .sol-b-row { margin-bottom: 1px }
+  .sol-b-row p { font-size: .75rem; line-height: 1.35; margin: 0 }
+  .sol-b-label { font-size: .58rem; min-width: 48px; padding: 2px 6px }
+
+  /* === FEHLER / RISIKEN (err-b) === */
+  .err-b { gap: 12px; margin-top: 18px }
+  .err-b-row { padding: 14px 20px; border-radius: 10px }
+  .err-b-row .num, .err-b-num { width: 32px; height: 32px; font-size: .85rem }
+  .err-b-row span { font-size: .88rem }
+
+  /* === FOKUS / VORTEILE (fok-b) === */
+  .fok-b-wrap { max-width: 100% }
+  .fok-b { padding-left: 36px }
+  .fok-b::before { left: 13px }
+  .fok-b-num { width: 28px; height: 28px; font-size: .7rem; left: -36px }
+  .fok-b-item h4 { font-size: 1rem }
+  .fok-b-item p { font-size: .85rem; line-height: 1.4 }
+
+  /* === STEPS / EVIDENZ (stp-b) === */
+  .stp-b { margin-top: 14px; gap: 6px }
+  .stp-b-card { padding: 12px 18px; margin-bottom: 4px }
+  .stp-b-card h3 { font-size: .92rem }
+  .stp-b-card p { font-size: .82rem; line-height: 1.45 }
+
+  /* === PYRAMIDE (Hierarchie) === */
+  .pyr-level { width: 100% !important; padding: 10px 16px }
+  .pyr-level h4 { font-size: .88rem }
+  .pyr-level li { font-size: .78rem; line-height: 1.4 }
+
+  /* === HIGHLIGHT === */
+  .hl { font-size: .88rem; padding: 14px 18px }
+
+  /* === QUELLEN (kleinere Schrift) === */
+  #sec-quellen .sec-inner div[style] p { font-size: 11px !important; line-height: 1.5 !important }
+
+  /* === Loom/Video === */
   .loom-box { display: none !important }
   .loom-print { display: block !important }
   .vid-thumb iframe { display: none }
   .vid-thumb { min-height: 50px }
   .vid-thumb::after { content: 'Video online ansehen'; color: rgba(255,255,255,.6); font-size: .7rem; font-weight: 600; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) }
-  .pyr-level { width: 100% !important }
-  .fok-b-wrap { max-width: 100% }
-  .fok-b { padding-left: 36px }
-  .fok-b::before { left: 13px }
-  .fok-b-num { width: 24px; height: 24px; font-size: .6rem; left: -36px }
+
   .img-placeholder { min-height: 80px; border-width: 1px }
   .sec-split, .sec-split-left { grid-template-columns: 1fr 200px; gap: 16px }
-
-  /* Continuation Slides */
-  .print-only-header { display: block !important }
-  .sec-cont { padding-top: 14mm !important }
 }
 </style>
 </head>
@@ -682,6 +765,17 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
             <p>Kurzfristig kann ROM/Schmerz verbessert werden. Kann sinnvoll bei jungen, fitten Patienten sein – kein Unterschied nach 6-12 Monaten. Kann bei jungen Patienten chondroprotektiv wirken (1). Empfehlung eventuell für Frühphase.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-cont" id="sec-nutzen-2">
+    <div class="sec-inner">
+      <div class="print-only-header">
+        <div class="sec-label">NUTZEN BEI ACLR/MENISKUS</div>
+      </div>
+      <h2 class="sec-title">Was zeigt die Forschung? (Fortsetzung)</h2>
+      <div class="sol-b">
         <div class="sol-b-card">
           <h4>Stammzellen (MSC/MPC)</h4>
           <div class="sol-b-row">
@@ -801,6 +895,17 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
           <p>Geringer Langzeitnutzen</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-cont bg-ice" id="sec-kosten-2">
+  <div class="sec-inner">
+    <div class="print-only-header">
+      <div class="sec-label">KOSTEN</div>
+    </div>
+    <h2 class="sec-title">Kosten & Selbstzahler-Problematik (Fortsetzung)</h2>
+    <div class="sol-b">
       <div class="sol-b-card">
         <h4>Stammzellen</h4>
         <div class="sol-b-row">
@@ -850,6 +955,17 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
         <p><strong>Evidenzgrad: Moderat</strong></p>
         <p>Einige gute Studien vorhanden, diese belegen jedoch den geringen Langzeitnutzen. In der Frühphase kann es ROM, Schmerz und Erholung verbessern – aber ohne Langzeitnutzen. Kann bei jungen Patienten chondroprotektiv wirken.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-cont" id="sec-evidenz-2">
+  <div class="sec-inner">
+    <div class="print-only-header">
+      <div class="sec-label">EVIDENZ</div>
+    </div>
+    <h2 class="sec-title">Evidenzlage pro Therapieform (Fortsetzung)</h2>
+    <div class="stp-b">
       <div class="stp-b-card">
         <div class="stp-b-head">
           <div class="num">3</div>
@@ -920,7 +1036,15 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
         </div>
       </div>
     </div>
-    <h3 style="color:#fff;margin-top:40px;margin-bottom:20px">Was bedeutet das für dich?</h3>
+  </div>
+</section>
+
+<section class="sec sec-cont bg-grad" id="sec-takeaways-2">
+  <div class="sec-inner">
+    <div class="print-only-header">
+      <div class="sec-label">KEY-TAKEAWAYS</div>
+    </div>
+    <h2 class="sec-title">Was bedeutet das für dich?</h2>
     <div class="stp-b">
       <div class="stp-b-card">
         <div class="stp-b-head">
@@ -1045,6 +1169,78 @@ html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify
     PDF
   </button>
 </div>
-
+<script>
+function toggleFullscreen() {
+  var html = document.documentElement;
+  var label = document.getElementById('fabFullLabel');
+  var inIframe = window.parent !== window;
+  if (inIframe) {
+    window.parent.postMessage({ type: 'ka-fullscreen-toggle' }, '*');
+  }
+  if (!inIframe && document.fullscreenElement) {
+    document.exitFullscreen();
+    return;
+  }
+  if (html.classList.contains('fullscreen-mode')) {
+    html.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+    return;
+  }
+  if (!inIframe && html.requestFullscreen) {
+    html.requestFullscreen().catch(function() {
+      html.classList.add('fullscreen-mode');
+      if (label) label.textContent = 'Normal';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  } else {
+    html.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+document.addEventListener('fullscreenchange', function() {
+  var label = document.getElementById('fabFullLabel');
+  if (document.fullscreenElement) {
+    document.documentElement.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+  } else {
+    document.documentElement.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+  }
+});
+const sections = document.querySelectorAll('[id^="sec-"]');
+const navItems = document.querySelectorAll('.nav-item');
+const navBar = document.getElementById('navBar');
+function updateScrollspy() {
+  const scrollPos = window.scrollY + 140;
+  let activeIndex = 0;
+  sections.forEach((sec, i) => { if (sec.offsetTop <= scrollPos) activeIndex = i; });
+  navItems.forEach((item, i) => { item.classList.toggle('active', i === activeIndex); });
+  const activeNav = navItems[activeIndex];
+  if (activeNav && navBar) {
+    const navRect = navBar.getBoundingClientRect();
+    const itemRect = activeNav.getBoundingClientRect();
+    if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+      activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+}
+window.addEventListener('scroll', updateScrollspy, { passive: true });
+updateScrollspy();
+if (window.location.search.includes('fullscreen=true')) {
+  document.documentElement.classList.add('fullscreen-mode');
+}
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href^="#"]');
+  if (link) {
+    e.preventDefault();
+    var id = link.getAttribute('href').slice(1);
+    var target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+});
+</script>
 </body>
 </html>
