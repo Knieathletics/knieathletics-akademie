@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<base target="_self">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Überblick Level 1.1 – KNIEATHLETICS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+/* === VARIABLES === */
+:root {
+  --dark: #004467;
+  --petrol: #0087B3;
+  --cyan: #2ab5d7;
+  --orange: #ff6d09;
+  --ice: #eef6f9;
+  --offwhite: #f3eee7;
+  --txt: #2d3748;
+  --muted: #718096;
+  --heading: #004467;
+  --grad-blue: linear-gradient(135deg, #004467 0%, #006a8e 40%, #0087B3 70%, #2ab5d7 100%);
+  --grad-orange: linear-gradient(135deg, #ff5500 0%, #ff6d09 30%, #ff8b3c 70%, #ffaa55 100%);
+}
+
+/* === BASE === */
+* { margin: 0; padding: 0; box-sizing: border-box }
+html { scroll-behavior: smooth }
+body { font-family: 'Roboto', 'Arial', sans-serif; color: var(--txt); background: #f5f5f5; font-size: 16px; line-height: 1.6 }
+.content { max-width: 900px; margin: 0 auto; background: #fff; box-shadow: 0 0 40px rgba(0,0,0,.08); transition: max-width .4s ease, box-shadow .4s ease }
+
+/* === FULLSCREEN MODE === */
+html.fullscreen-mode { background: #fff }
+html.fullscreen-mode body { background: #fff }
+html.fullscreen-mode .content { max-width: 100%; box-shadow: none }
+html.fullscreen-mode .sec-inner,
+html.fullscreen-mode .hero-inner { max-width: 1200px; margin: 0 auto }
+html.fullscreen-mode .topbar { padding: 18px 5vw }
+html.fullscreen-mode .topbar-inner { max-width: 1200px; margin: 0 auto }
+html.fullscreen-mode .topbar-logo { height: 36px }
+html.fullscreen-mode .hero { padding: 64px 5vw }
+html.fullscreen-mode .hero h1 { font-size: 2.8rem }
+html.fullscreen-mode .hero-sub { font-size: 1.1rem; max-width: 660px }
+html.fullscreen-mode .sec { padding: 52px 5vw }
+html.fullscreen-mode .sec-title { font-size: 2rem }
+html.fullscreen-mode .sec-intro { font-size: .95rem }
+html.fullscreen-mode .sec-label { font-size: .7rem; letter-spacing: 5px }
+html.fullscreen-mode .stp-b-card h3 { font-size: 1rem }
+html.fullscreen-mode .stp-b-card p { font-size: .92rem }
+html.fullscreen-mode .num { width: 30px; height: 30px; font-size: .78rem }
+html.fullscreen-mode .vid-a-card h4 { font-size: 1rem }
+html.fullscreen-mode .vid-a-card p { font-size: .9rem }
+html.fullscreen-mode .act-card h4 { font-size: .95rem }
+html.fullscreen-mode .act-card p,
+html.fullscreen-mode .act-card li { font-size: .9rem }
+html.fullscreen-mode .pyr-level { padding: 22px 28px }
+html.fullscreen-mode .pyr-level h4 { font-size: .95rem }
+html.fullscreen-mode .pyr-level li { font-size: .88rem }
+html.fullscreen-mode .cri-d-row h4 { font-size: .95rem }
+html.fullscreen-mode .cri-d-row p { font-size: .88rem }
+html.fullscreen-mode .hl { font-size: .92rem; padding: 18px 22px }
+html.fullscreen-mode .img-hero { max-height: 420px }
+html.fullscreen-mode .sec-split-img img { max-height: 400px }
+html.fullscreen-mode .hero-split .img-hero { width: 320px; min-width: 320px; max-height: 400px }
+html.fullscreen-mode .fok-b-item h4 { font-size: .95rem }
+html.fullscreen-mode .fok-b-item p { font-size: .88rem }
+html.fullscreen-mode .fok-b-num { width: 46px; height: 46px; font-size: .9rem }
+html.fullscreen-mode .nav-bar { padding: 0 5vw; top: 73px }
+html.fullscreen-mode .nav-bar-inner { max-width: 1200px; margin: 0 auto; justify-content: center }
+
+/* === TOPBAR === */
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 44px; border-bottom: 1px solid rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.97); backdrop-filter: blur(8px); font-family: 'Roboto', 'Arial', sans-serif }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; width: 100% }
+.topbar-logo { height: 32px }
+.topbar-right { display: flex; align-items: center; gap: 12px; font-size: .78rem; color: var(--muted) }
+.badge { background: var(--ice); color: var(--petrol); font-size: .62rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; letter-spacing: .5px; font-family: 'Roboto', 'Arial', sans-serif }
+
+/* === NAV-BAR === */
+.nav-bar { position: sticky; top: 61px; z-index: 99; background: #fff; border-bottom: 1px solid rgba(0,0,0,.06); padding: 0 44px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none }
+.nav-bar::-webkit-scrollbar { display: none }
+.nav-bar-inner { display: flex; gap: 0; min-width: max-content; padding-bottom: 2px }
+.nav-item { display: flex; align-items: center; gap: 6px; padding: 10px 16px; font-size: .72rem; font-weight: 700; color: var(--muted); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; position: relative; font-family: 'Roboto', 'Arial', sans-serif }
+.nav-item:hover { color: var(--petrol) }
+.nav-item.active { color: var(--dark); border-bottom-color: var(--cyan) }
+.nav-item .nav-num { width: 18px; height: 18px; background: rgba(0,68,103,.08); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: .58rem; font-weight: 800; color: var(--petrol); flex-shrink: 0; transition: background .2s, color .2s }
+.nav-item.active .nav-num { background: var(--grad-blue); color: #fff }
+
+/* === SECTIONS === */
+.sec { padding: 48px 44px; scroll-margin-top: 110px }
+.sec-inner {}
+.sec + .sec { border-top: 1px solid rgba(0,0,0,.04) }
+.sec-label { font-size: .65rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--petrol); margin-bottom: 6px }
+.sec-title { font-size: 1.7rem; font-weight: 900; color: var(--heading); margin-bottom: 16px; letter-spacing: -.3px; line-height: 1.25 }
+.sec-intro { font-size: .85rem; color: var(--txt); line-height: 1.65; margin-bottom: 20px }
+.sec-cont { padding-top: 0 !important }
+.sec.sec-cont { border-top: none !important }
+.sec-cont + .sec { border-top: 1px solid rgba(0,0,0,.04) }
+.print-only-header { display: none }
+.bg-ice { background: var(--ice) }
+.bg-off { background: var(--offwhite) }
+.bg-grad { background: var(--grad-blue); color: #fff }
+.bg-grad .sec-label { color: rgba(255,255,255,.3) }
+.bg-grad .sec-title { color: #fff }
+.bg-grad .sec-intro { color: rgba(255,255,255,.55) }
+.bg-grad p { color: rgba(255,255,255,.7) }
+.bg-grad li { color: rgba(255,255,255,.7) }
+.bg-grad h4 { color: #fff }
+.bg-grad .hl { color: rgba(255,255,255,.7) }
+
+/* === HERO === */
+.hero { background: var(--grad-blue); color: #fff; padding: 56px 44px; position: relative; overflow: hidden; scroll-margin-top: 110px }
+.hero-inner {}
+.hero-label { font-size: .62rem; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: var(--cyan); margin-bottom: 10px }
+.hero h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; letter-spacing: -.5px; line-height: 1.2 }
+.hero-sub { font-size: .95rem; color: rgba(255,255,255,.55); margin-bottom: 32px; max-width: 520px; line-height: 1.6 }
+
+/* === NUMBERS === */
+.num { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--grad-blue); border-radius: 7px; color: #fff; font-size: .7rem; font-weight: 800; flex-shrink: 0 }
+
+/* === BENEFITS A === */
+.ben-a { display: flex; flex-direction: column; gap: 14px; margin-top: 18px }
+.ben-a-card { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid rgba(0,0,0,.05); display: flex; gap: 16px; align-items: flex-start; transition: box-shadow .2s }
+.ben-a-card:hover { box-shadow: 0 4px 20px rgba(0,68,103,.06) }
+.ben-a-ico { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center }
+.ben-a-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 4px }
+.ben-a-card p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+
+/* === BENEFITS B === */
+.ben-b { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 18px }
+.ben-b-label { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 12px }
+.ben-b-stack { display: flex; flex-direction: column; gap: 10px }
+.ben-b-card { background: #fff; border-radius: 10px; padding: 16px 18px; border: 1px solid rgba(0,0,0,.06); border-left: 3px solid var(--cyan); box-shadow: 0 2px 8px rgba(0,68,103,.04) }
+.ben-b-card h4 { font-size: .82rem; font-weight: 700; color: var(--heading); margin-bottom: 3px }
+.ben-b-card p { font-size: .78rem; line-height: 1.55; color: var(--txt) }
+
+/* === FOKUS B === */
+.fok-b-wrap { max-width: 720px; margin: 4px auto 0 }
+.fok-b { display: flex; flex-direction: column; gap: 4px; position: relative; padding-left: 44px; margin-top: 18px }
+.fok-b::before { content: ''; position: absolute; left: 17px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--cyan), var(--petrol)) }
+.fok-b-item { text-align: left; position: relative; padding: 10px 0; background: none !important; box-shadow: none !important; border: none !important }
+.fok-b-num { width: 40px; height: 40px; background: var(--grad-blue); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .82rem; font-weight: 800; position: absolute; left: -44px; top: 10px; z-index: 1; border: 3px solid var(--ice); box-shadow: 0 2px 8px rgba(0,68,103,.15) }
+.fok-b-item h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-top: 0; margin-bottom: 4px }
+.fok-b-item p { font-size: .78rem; line-height: 1.45; font-weight: 400; color: var(--txt); margin-top: 4px }
+.bg-grad .fok-b-num { border-color: rgba(0,44,67,.6) }
+.bg-off .fok-b-num { border-color: var(--offwhite) }
+
+/* === FOKUS C === */
+.fok-c { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); margin-top: 18px }
+.fok-c-row { display: flex; align-items: center; gap: 16px; padding: 16px 20px }
+.fok-c-row:nth-child(odd) { background: var(--ice); border-left: 3px solid var(--cyan) }
+.fok-c-row:nth-child(even) { background: #fff; border-left: 3px solid var(--petrol) }
+.fok-c-num { width: 28px; height: 28px; background: var(--grad-blue); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: .68rem; font-weight: 800; flex-shrink: 0 }
+.fok-c-row p { font-size: .84rem; font-weight: 500; color: var(--heading) }
+
+/* === KRITERIEN B === */
+.cri-b { margin-top: 18px; display: flex; flex-direction: column; gap: 10px }
+.cri-b-row { display: flex; gap: 14px; align-items: center; background: rgba(0,30,50,.5); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; padding: 16px 20px }
+.cri-b-check { flex-shrink: 0; width: 28px; height: 28px; background: var(--grad-orange); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center }
+.cri-b-row h4 { font-size: .85rem; font-weight: 600; color: #fff }
+.cri-b-row p { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 2px }
+
+/* === SOLUTION B === */
+.sol-b { margin-top: 18px; display: flex; flex-direction: column; gap: 10px }
+.sol-b-card { background: #fff; border-radius: 12px; padding: 20px 22px; border: 1px solid rgba(0,0,0,.05); box-shadow: 0 2px 8px rgba(0,68,103,.04) }
+.sol-b-card h4 { font-size: .85rem; font-weight: 700; color: var(--heading); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid rgba(0,68,103,.08) }
+.sol-b-row { display: flex; gap: 16px; padding: 10px 0; align-items: flex-start; border-bottom: 1px solid rgba(0,0,0,.04) }
+.sol-b-row:last-child { border-bottom: none; padding-bottom: 0 }
+.sol-b-label { font-size: .62rem; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; flex-shrink: 0; min-width: 88px; margin-top: 2px; padding: 4px 10px; border-radius: 6px; text-align: center; line-height: 1.3; white-space: nowrap }
+.sol-b-label.sol-problem { background: #ffe0c2; color: #c43e00; border: 1px solid rgba(211,84,0,.25) }
+.sol-b-label.sol-loesung { background: #c8f0d8; color: #167a3e; border: 1px solid rgba(26,138,74,.25) }
+.sol-b-row p { font-size: .82rem; line-height: 1.55; color: var(--txt) }
+
+/* === FOOTER === */
+.doc-footer { padding: 18px 44px; background: var(--dark); text-align: center }
+.doc-footer p { font-size: .68rem; color: rgba(255,255,255,.25) }
+
+/* === FAB BAR === */
+.fab-bar { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; gap: 8px; background: rgba(0,44,67,.95); backdrop-filter: blur(8px); padding: 8px 12px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0,0,0,.25) }
+.fab-bar button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: .78rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; color: #fff; transition: background .2s }
+.fab-full { background: rgba(255,255,255,.15) }
+.fab-full:hover { background: rgba(255,255,255,.25) }
+.fab-pdf { background: var(--orange) }
+.fab-pdf:hover { background: #ff5500 }
+
+/* === CARD CONTRAST === */
+.bg-off .sol-b-card, .bg-off .ben-a-card, .bg-off .ben-b-card { background: #fff }
+.bg-ice .ben-b-card { background: #fff }
+.bg-off .hl-info { background: rgba(42,181,215,.12) }
+
+/* === RESPONSIVE: Desktop === */
+@media (min-width: 701px) {
+  .sec-intro { font-size: .95rem }
+  .ben-a-card h4, .sol-b-card h4, .fok-b-item h4, .cri-b-row h4 { font-size: .95rem }
+  .ben-a-card p, .ben-b-card p, .stp-b-card p, .sol-b-row p { font-size: .95rem }
+  .fok-b-item p { font-size: .9rem }
+  .cri-b-row p { font-size: .88rem }
+  .hero-sub { font-size: 1.05rem }
+}
+
+/* === RESPONSIVE: Mobile === */
+@media (max-width: 700px) {
+  body { font-size: 15px }
+  .sec, .hero { padding: 28px 20px }
+  .hero { padding-top: 20px; padding-bottom: 20px }
+  .hero h1 { font-size: 1.7rem; margin-bottom: 4px }
+  .hero-label { margin-bottom: 4px }
+  .hero-sub { font-size: .85rem; margin-bottom: 0 }
+  .ben-b, .sol-a { grid-template-columns: 1fr }
+  .topbar { padding: 10px 16px }
+  .topbar-logo { height: 26px }
+  .nav-bar { padding: 0 12px; top: 47px }
+  .nav-item { padding: 8px 10px; font-size: .65rem }
+  .nav-item .nav-num { width: 16px; height: 16px; font-size: .52rem }
+  .sec, .hero { scroll-margin-top: 90px }
+  .fok-b-wrap { max-width: 100% }
+  .fok-b-num { width: 34px; height: 34px; font-size: .75rem }
+  .hero { text-align: left }
+  .fab-full { display: none }
+  .fab-bar { bottom: 10px; padding: 6px 10px }
+  .fab-bar button { padding: 7px 12px; font-size: .72rem }
+  html.fullscreen-mode .sec, html.fullscreen-mode .hero { padding: 28px 20px }
+  html.fullscreen-mode .hero h1 { font-size: 1.6rem }
+  html.fullscreen-mode .topbar { padding: 10px 16px }
+}
+
+/* === RESPONSIVE: Tablet === */
+@media (min-width: 701px) and (max-width: 1024px) {
+  .topbar { padding: 12px 28px }
+  .nav-bar { padding: 0 28px }
+  .sec, .hero { padding: 40px 28px }
+  html.fullscreen-mode .sec { padding: 40px 28px }
+  html.fullscreen-mode .hero { padding: 48px 28px }
+  html.fullscreen-mode .hero h1 { font-size: 2.2rem }
+}
+
+/* === PRINT === */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important }
+  @page { size: 297mm 210mm; margin: 10mm 10mm 8mm 10mm }
+  html, html.fullscreen-mode { background: #fff !important }
+  body { background: #fff !important; font-size: 12px; line-height: 1.45; margin: 0; padding: 0 }
+  .content, html.fullscreen-mode .content { max-width: 100% !important; width: 100% !important; box-shadow: none !important; margin: 0 }
+  .topbar, .nav-bar, .doc-footer, .fab-bar { display: none !important }
+  .sec + .sec { border-top: none }
+
+  /* === Jede Section = eigene Seite, vertikal zentriert === */
+  .sec {
+    break-before: page;
+    padding: 0 12mm !important;
+    width: 100% !important;
+    margin: 0;
+    scroll-margin-top: 0;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 185mm;
+  }
+  .sec-inner { max-width: 100% !important }
+
+  /* === Seite 1: Logo + Hero + Ziele 1-2 als ein zentrierter Block === */
+  .page1-wrap {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 185mm;
+  }
+  .print-logo-bar { display: block !important; padding: 0 12mm 3mm; background: transparent }
+  .print-logo-bar svg { height: 22px }
+  .print-logo { display: none !important }
+  .hero {
+    break-before: auto !important;
+    padding: 8mm 12mm !important;
+    border-radius: 8px;
+    min-height: auto !important;
+    display: block !important;
+  }
+  .hero-inner { display: block !important; width: 100% }
+  .hero h1 { font-size: 1.6rem !important; margin-bottom: 4px !important }
+  .hero-sub { font-size: .88rem !important; margin-bottom: 0 !important }
+  #sec-1 {
+    break-before: auto !important;
+    padding-top: 3mm !important;
+    min-height: auto !important;
+    display: block !important;
+  }
+  #sec-1 .sec-inner { padding-top: 3mm }
+  .sec-title { font-size: 1.25rem !important; margin-bottom: 8px !important }
+  .sec-label { margin-bottom: 3px !important; font-size: .62rem !important }
+  .ben-b-card { padding: 10px 16px !important; break-inside: avoid }
+  .ben-b-card h4 { font-size: .9rem !important; margin-bottom: 2px !important }
+  .ben-b-card p { font-size: .82rem !important; line-height: 1.45 !important }
+  .ben-b-stack { gap: 5px !important }
+
+  /* Einzelne Content-Bloecke: break-inside:avoid */
+  .ben-a-card, .ben-b-card,
+  .fok-b-item, .fok-c-row,
+  .sol-b-card, .cri-b-row { break-inside: avoid; page-break-inside: avoid }
+
+  /* Flex in Cards zu Block fuer Druck */
+  .sol-b-row, .fok-b-item,
+  .cri-b-row, .err-b-row { display: block !important }
+
+  .sec-label, .sec-title { break-after: avoid; page-break-after: avoid }
+  h3, h4 { break-after: avoid; page-break-after: avoid }
+  p, li { orphans: 2; widows: 2 }
+
+  /* Steigerung */
+  .fok-b-wrap { max-width: 100% }
+  .fok-b { padding-left: 36px }
+  .fok-b::before { left: 13px }
+  .fok-b-num { width: 24px; height: 24px; font-size: .6rem; left: -36px }
+  /* Grad-Sections: blauer Bereich NICHT ganze Seite, weisser Rahmen drumherum */
+  .bg-grad.sec {
+    background: #fff !important;
+    padding: 0 12mm !important;
+  }
+  .bg-grad .sec-inner {
+    background: var(--grad-blue);
+    border-radius: 10px;
+    padding: 10mm 14mm;
+    color: #fff;
+  }
+  .cri-b { gap: 6px !important }
+  .cri-b-row { padding: 12px 16px !important }
+  .cri-b-row h4 { font-size: .88rem !important }
+  .cri-b-row p { font-size: .8rem !important; line-height: 1.4 !important }
+
+  /* Probleme kompakter */
+  .sol-b { gap: 6px !important }
+  .sol-b-card { padding: 12px 16px !important }
+  .sol-b-card h4 { font-size: .9rem !important; margin-bottom: 8px !important; padding-bottom: 6px !important }
+  .sol-b-row { padding: 6px 0 !important; gap: 12px !important }
+  .sol-b-row p { font-size: .8rem !important; line-height: 1.4 !important }
+  .sol-b-label { font-size: .58rem !important; min-width: 72px !important; padding: 3px 8px !important }
+
+  /* Fortschritte kompakter */
+  .ben-a { gap: 8px !important }
+  .ben-a-card { padding: 12px !important }
+  .ben-a-card h4 { font-size: .9rem !important }
+  .ben-a-card p { font-size: .82rem !important }
+  .sec-intro { font-size: .85rem !important; margin-bottom: 12px !important }
+
+  /* Motivation kompakter */
+  .fok-c { gap: 0 !important }
+  .fok-c-row { padding: 10px 16px !important }
+  .fok-c-row p { font-size: .82rem !important; line-height: 1.4 !important }
+
+  /* Hilfsmittel kompakter */
+  #sec-7 { padding-top: 2mm !important }
+  #sec-7 .ben-a { gap: 4px !important }
+  #sec-7 .ben-a-card { padding: 6px 14px !important }
+  #sec-7 .ben-a-card img { width: 44px !important; height: 44px !important }
+  #sec-7 .ben-a-card h4 { font-size: .82rem !important; margin-bottom: 0 !important }
+  #sec-7 .ben-a-card p { font-size: .72rem !important }
+
+  /* Ernaehrung: Bild kleiner im Print */
+  #sec-8 img { max-width: 160px !important; margin-bottom: 6px !important }
+
+  /* Steigerung */
+  .fok-b-item h4 { font-size: .95rem !important }
+  .fok-b-item p { font-size: .85rem !important; line-height: 1.45 !important }
+}
+</style>
+</head>
+<body>
+<div class="content">
+  <div class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <svg class="topbar-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 231.42" style="enable-background:new 0 0 841.89 231.42;" xml:space="preserve">
+<style type="text/css">.st0{fill:#0087B3;}</style>
+<g>
+<path d="M758.98,133.73c-2.41,1.76-5.61,2.63-9.59,2.63c-4.47,0-8.05-1.04-10.74-3.13c-2.69-2.08-4.04-4.93-4.04-8.53h-4.32c0,3,0.78,5.65,2.34,7.97c1.56,2.32,3.84,4.12,6.85,5.41c3.01,1.29,6.31,1.93,9.92,1.93c5.27,0,9.51-1.22,12.73-3.65c3.22-2.44,4.83-5.67,4.83-9.69c0-2.55-0.6-4.76-1.79-6.64c-1.19-1.87-2.97-3.48-5.34-4.83c-2.36-1.35-5.84-2.65-10.43-3.9c-4.59-1.25-7.92-2.7-10.01-4.34c-2.08-1.64-3.13-3.76-3.13-6.37c0-2.81,1.16-5.09,3.48-6.84c2.32-1.75,5.43-2.62,9.34-2.62c4.03,0,7.23,1.06,9.62,3.19c2.39,2.13,3.58,4.94,3.58,8.43h4.35c0-2.88-0.74-5.49-2.21-7.83c-1.47-2.34-3.55-4.17-6.23-5.48c-2.68-1.31-5.72-1.97-9.11-1.97c-5.01,0-9.12,1.22-12.34,3.67c-3.22,2.45-4.83,5.62-4.83,9.53c0,4.03,1.73,7.28,5.2,9.76c2.43,1.76,6.3,3.38,11.59,4.86c5.29,1.49,8.93,3.05,10.92,4.7c1.99,1.65,2.98,3.89,2.98,6.72C762.59,129.65,761.39,131.98,758.98,133.73 M713.41,123.37c-0.54,4.33-1.95,7.58-4.25,9.74c-2.29,2.17-5.7,3.25-10.22,3.25c-4.56,0-8.19-1.76-10.87-5.27c-2.68-3.51-4.02-8.22-4.02-14.12v-6.26c0-6.11,1.37-10.9,4.13-14.37c2.75-3.47,6.44-5.2,11.08-5.2c8.36,0,13.07,4.34,14.15,13.03h4.35c-0.52-5.22-2.36-9.31-5.53-12.25c-3.17-2.95-7.5-4.42-12.97-4.42c-3.89,0-7.32,0.95-10.31,2.86c-2.98,1.91-5.27,4.62-6.86,8.13c-1.59,3.51-2.39,7.54-2.39,12.08v6.64c0.02,4.47,0.83,8.45,2.42,11.92c1.59,3.48,3.84,6.16,6.76,8.06c2.91,1.9,6.27,2.84,10.06,2.84c5.43,0,9.78-1.43,13.04-4.28c3.27-2.86,5.19-6.97,5.78-12.36H713.41z M662.31,88.19h-4.32v51.12h4.32V88.19z M643.4,88.19h-39.33v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M589.93,111.15h-23.91V91.84h27.32v-3.65H561.7v51.12h31.81v-3.65h-27.49v-20.86h23.91V111.15z M522.78,88.19h-4.35v51.12h29.6v-3.65h-25.25V88.19z M500.04,88.19h-4.35v22.96h-29.21V88.19h-4.32v51.12h4.32v-24.51h29.21v24.51h4.35V88.19z M448.51,88.19h-39.32v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M384.02,93.46l10.25,27.84h-20.5L384.02,93.46z M400.95,139.31h4.49L386.1,88.19h-4.11l-19.35,51.12h4.53l5.27-14.36h23.21L400.95,139.31z M347.47,108.91h-20.23V96.72h23.67v-8.53h-34.2v51.12h34.27v-8.46h-23.74v-13.69h20.23V108.91z M301.56,88.19h-10.53v51.12h10.53V88.19z M275.77,88.19h-10.5v33.71l-20.54-33.71H234.2v51.12h10.53v-33.64l20.51,33.64h10.53V88.19z M212.3,139.31h12.54l-18.68-28.41l18.15-22.72h-12.96l-13.03,16.82l-4.63,6.35V88.19h-10.53v51.12h10.53v-14.61l5.48-5.9L212.3,139.31z"/>
+<path d="M120.08,102.43c-0.37,1.96-1.59,3.31-2.82,4.78c-5.15,6.5-8.59,13.49-7.85,22.08c0.25,3.07,1.96,5.52,3.07,8.22c0.74,1.72,0.37,2.82-0.61,4.17c-6.5,8.95-8.59,18.77-6.62,29.56c0.12,0.37,0.12,0.86,0.61,1.23c0.49-11.04,2.7-21.59,7.6-32.01c0.74,2.21,0.61,4.05,0.25,5.89c-0.61,2.82-1.84,5.4-2.94,8.1c-0.86,2.33-1.84,4.66-1.84,7.24c1.23-4.05,3.56-7.48,5.4-11.16c1.96-3.93,2.58-7.97,1.1-12.14c-0.49-1.35-0.98-2.7-1.59-3.93c-2.45-4.78-2.45-9.81-0.86-14.84c1.47-4.54,3.07-9.08,6.13-12.88C119.96,105.37,120.33,103.9,120.08,102.43"/>
+<path d="M74.94,80.47c9.08,13.98,22.57,21.1,38.64,23.92c-6.87-3.31-13.98-6.01-20.61-9.94C86.35,90.53,80.71,85.38,74.94,80.47"/>
+<path d="M125.11,171.12c4.54-14.11,12.51-26,19.38-38.39c5.52-9.81,10.67-19.87,13-31.03c0.86-3.8,1.23-7.73,0.49-11.65c-0.86-5.03-3.56-8.83-7.85-11.53c-3.07-1.96-6.38-3.31-9.69-4.66c-12.27-4.91-24.65-9.69-36.92-14.6c-0.49-0.25-0.98-0.37-1.59-0.25c0.49,0.25,1.1,0.49,1.59,0.74c13,5.76,26,11.53,39,17.29c1.72,0.74,3.31,1.59,5.03,2.45c6.13,3.43,8.83,8.71,8.34,15.7c-0.61,7.73-3.19,14.96-6.13,22.08c-3.07,7.24-6.87,14.11-10.67,20.97c-4.66,8.59-9.32,17.17-12.39,26.49c-0.61,1.72-0.98,3.56-1.59,5.4C124.99,170.38,124.99,170.63,125.11,171.12"/>
+<path class="st0" d="M147.93,100.59c-5.64,4.05-9.32,3.56-13.98-1.47c-1.47,1.47-1.84,3.31-1.96,5.27c-0.12,2.58,0.49,5.03,0.25,7.48c-0.49,5.03-2.33,9.69-3.92,14.35c-4.91,14.35-10.06,28.7-15.58,42.81c-0.49,1.35-0.25,1.84,1.1,2.21c3.19,0.86,3.19,0.98,4.42-2.09c3.8-8.46,7.48-16.81,11.28-25.27c4.78-10.67,9.57-21.34,14.35-32.01C145.59,108.32,146.94,104.64,147.93,100.59"/>
+<path class="st0" d="M90.77,63.67c-0.74,4.05-1.59,7.97-4.29,11.04c0.37,0.49,0.98,0.61,1.47,0.74c12.88,4.54,25.64,9.44,37.53,16.19c3.07,1.72,6.01,3.8,8.83,5.89c2.21,1.72,4.42,2.94,7.24,3.19c4.29,0.49,8.22-4.66,6.13-8.83c-1.47-3.07-3.8-5.03-6.75-6.38c-2.45-1.1-5.15-1.59-7.73-2.21c-11.77-2.7-22.45-7.97-32.75-13.98C97.14,67.47,93.96,65.63,90.77,63.67"/>
+<path class="st0" d="M148.42,105.86c4.29-4.42,5.15-11.65,1.96-15.7C151.36,95.68,150.62,100.71,148.42,105.86"/>
+</g>
+</svg>
+      <div class="topbar-right"><span class="badge">ÜBERBLICK</span></div>
+    </div>
+  </div>
+  <nav class="nav-bar" id="navBar">
+    <div class="nav-bar-inner">
+      <a href="#sec-hero" class="nav-item active" data-section="sec-hero"><span class="nav-num">1</span> Überblick</a>
+      <a href="#sec-1" class="nav-item" data-section="sec-1"><span class="nav-num">2</span> Ziele</a>
+      <a href="#sec-2" class="nav-item" data-section="sec-2"><span class="nav-num">3</span> Tag der OP</a>
+      <a href="#sec-3" class="nav-item" data-section="sec-3"><span class="nav-num">4</span> Erste Tage</a>
+      <a href="#sec-4" class="nav-item" data-section="sec-4"><span class="nav-num">5</span> Probleme</a>
+      <a href="#sec-5" class="nav-item" data-section="sec-5"><span class="nav-num">6</span> Fortschritte</a>
+      <a href="#sec-6" class="nav-item" data-section="sec-6"><span class="nav-num">7</span> Motivation</a>
+      <a href="#sec-7" class="nav-item" data-section="sec-7"><span class="nav-num">8</span> Hilfsmittel</a>
+      <a href="#sec-8" class="nav-item" data-section="sec-8"><span class="nav-num">9</span> Ernährung</a>
+    </div>
+  </nav>
+
+  <!-- Seite 1 Wrapper: Logo + Hero + Ziele 1-2 zentriert -->
+  <div class="page1-wrap">
+  <!-- Logo-Bar: nur im Print sichtbar, UEBER dem blauen Hero -->
+  <div class="print-logo-bar" style="display:none;">
+    <svg height="32" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 231.42" xml:space="preserve">
+<style type="text/css">.pst0{fill:#0087B3;}</style>
+<g>
+<path d="M758.98,133.73c-2.41,1.76-5.61,2.63-9.59,2.63c-4.47,0-8.05-1.04-10.74-3.13c-2.69-2.08-4.04-4.93-4.04-8.53h-4.32c0,3,0.78,5.65,2.34,7.97c1.56,2.32,3.84,4.12,6.85,5.41c3.01,1.29,6.31,1.93,9.92,1.93c5.27,0,9.51-1.22,12.73-3.65c3.22-2.44,4.83-5.67,4.83-9.69c0-2.55-0.6-4.76-1.79-6.64c-1.19-1.87-2.97-3.48-5.34-4.83c-2.36-1.35-5.84-2.65-10.43-3.9c-4.59-1.25-7.92-2.7-10.01-4.34c-2.08-1.64-3.13-3.76-3.13-6.37c0-2.81,1.16-5.09,3.48-6.84c2.32-1.75,5.43-2.62,9.34-2.62c4.03,0,7.23,1.06,9.62,3.19c2.39,2.13,3.58,4.94,3.58,8.43h4.35c0-2.88-0.74-5.49-2.21-7.83c-1.47-2.34-3.55-4.17-6.23-5.48c-2.68-1.31-5.72-1.97-9.11-1.97c-5.01,0-9.12,1.22-12.34,3.67c-3.22,2.45-4.83,5.62-4.83,9.53c0,4.03,1.73,7.28,5.2,9.76c2.43,1.76,6.3,3.38,11.59,4.86c5.29,1.49,8.93,3.05,10.92,4.7c1.99,1.65,2.98,3.89,2.98,6.72C762.59,129.65,761.39,131.98,758.98,133.73 M713.41,123.37c-0.54,4.33-1.95,7.58-4.25,9.74c-2.29,2.17-5.7,3.25-10.22,3.25c-4.56,0-8.19-1.76-10.87-5.27c-2.68-3.51-4.02-8.22-4.02-14.12v-6.26c0-6.11,1.37-10.9,4.13-14.37c2.75-3.47,6.44-5.2,11.08-5.2c8.36,0,13.07,4.34,14.15,13.03h4.35c-0.52-5.22-2.36-9.31-5.53-12.25c-3.17-2.95-7.5-4.42-12.97-4.42c-3.89,0-7.32,0.95-10.31,2.86c-2.98,1.91-5.27,4.62-6.86,8.13c-1.59,3.51-2.39,7.54-2.39,12.08v6.64c0.02,4.47,0.83,8.45,2.42,11.92c1.59,3.48,3.84,6.16,6.76,8.06c2.91,1.9,6.27,2.84,10.06,2.84c5.43,0,9.78-1.43,13.04-4.28c3.27-2.86,5.19-6.97,5.78-12.36H713.41z M662.31,88.19h-4.32v51.12h4.32V88.19z M643.4,88.19h-39.33v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M589.93,111.15h-23.91V91.84h27.32v-3.65H561.7v51.12h31.81v-3.65h-27.49v-20.86h23.91V111.15z M522.78,88.19h-4.35v51.12h29.6v-3.65h-25.25V88.19z M500.04,88.19h-4.35v22.96h-29.21V88.19h-4.32v51.12h4.32v-24.51h29.21v24.51h4.35V88.19z M448.51,88.19h-39.32v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M384.02,93.46l10.25,27.84h-20.5L384.02,93.46z M400.95,139.31h4.49L386.1,88.19h-4.11l-19.35,51.12h4.53l5.27-14.36h23.21L400.95,139.31z M347.47,108.91h-20.23V96.72h23.67v-8.53h-34.2v51.12h34.27v-8.46h-23.74v-13.69h20.23V108.91z M301.56,88.19h-10.53v51.12h10.53V88.19z M275.77,88.19h-10.5v33.71l-20.54-33.71H234.2v51.12h10.53v-33.64l20.51,33.64h10.53V88.19z M212.3,139.31h12.54l-18.68-28.41l18.15-22.72h-12.96l-13.03,16.82l-4.63,6.35V88.19h-10.53v51.12h10.53v-14.61l5.48-5.9L212.3,139.31z"/>
+<path d="M120.08,102.43c-0.37,1.96-1.59,3.31-2.82,4.78c-5.15,6.5-8.59,13.49-7.85,22.08c0.25,3.07,1.96,5.52,3.07,8.22c0.74,1.72,0.37,2.82-0.61,4.17c-6.5,8.95-8.59,18.77-6.62,29.56c0.12,0.37,0.12,0.86,0.61,1.23c0.49-11.04,2.7-21.59,7.6-32.01c0.74,2.21,0.61,4.05,0.25,5.89c-0.61,2.82-1.84,5.4-2.94,8.1c-0.86,2.33-1.84,4.66-1.84,7.24c1.23-4.05,3.56-7.48,5.4-11.16c1.96-3.93,2.58-7.97,1.1-12.14c-0.49-1.35-0.98-2.7-1.59-3.93c-2.45-4.78-2.45-9.81-0.86-14.84c1.47-4.54,3.07-9.08,6.13-12.88C119.96,105.37,120.33,103.9,120.08,102.43"/>
+<path d="M74.94,80.47c9.08,13.98,22.57,21.1,38.64,23.92c-6.87-3.31-13.98-6.01-20.61-9.94C86.35,90.53,80.71,85.38,74.94,80.47"/>
+<path d="M125.11,171.12c4.54-14.11,12.51-26,19.38-38.39c5.52-9.81,10.67-19.87,13-31.03c0.86-3.8,1.23-7.73,0.49-11.65c-0.86-5.03-3.56-8.83-7.85-11.53c-3.07-1.96-6.38-3.31-9.69-4.66c-12.27-4.91-24.65-9.69-36.92-14.6c-0.49-0.25-0.98-0.37-1.59-0.25c0.49,0.25,1.1,0.49,1.59,0.74c13,5.76,26,11.53,39,17.29c1.72,0.74,3.31,1.59,5.03,2.45c6.13,3.43,8.83,8.71,8.34,15.7c-0.61,7.73-3.19,14.96-6.13,22.08c-3.07,7.24-6.87,14.11-10.67,20.97c-4.66,8.59-9.32,17.17-12.39,26.49c-0.61,1.72-0.98,3.56-1.59,5.4C124.99,170.38,124.99,170.63,125.11,171.12"/>
+<path class="pst0" d="M147.93,100.59c-5.64,4.05-9.32,3.56-13.98-1.47c-1.47,1.47-1.84,3.31-1.96,5.27c-0.12,2.58,0.49,5.03,0.25,7.48c-0.49,5.03-2.33,9.69-3.92,14.35c-4.91,14.35-10.06,28.7-15.58,42.81c-0.49,1.35-0.25,1.84,1.1,2.21c3.19,0.86,3.19,0.98,4.42-2.09c3.8-8.46,7.48-16.81,11.28-25.27c4.78-10.67,9.57-21.34,14.35-32.01C145.59,108.32,146.94,104.64,147.93,100.59"/>
+<path class="pst0" d="M90.77,63.67c-0.74,4.05-1.59,7.97-4.29,11.04c0.37,0.49,0.98,0.61,1.47,0.74c12.88,4.54,25.64,9.44,37.53,16.19c3.07,1.72,6.01,3.8,8.83,5.89c2.21,1.72,4.42,2.94,7.24,3.19c4.29,0.49,8.22-4.66,6.13-8.83c-1.47-3.07-3.8-5.03-6.75-6.38c-2.45-1.1-5.15-1.59-7.73-2.21c-11.77-2.7-22.45-7.97-32.75-13.98C97.14,67.47,93.96,65.63,90.77,63.67"/>
+<path class="pst0" d="M148.42,105.86c4.29-4.42,5.15-11.65,1.96-15.7C151.36,95.68,150.62,100.71,148.42,105.86"/>
+</g>
+</svg>
+  </div>
+
+  <section class="hero bg-grad" id="sec-hero">
+    <div class="hero-inner">
+      <svg class="print-logo" style="display:none; height: 32px; margin-bottom: 16px;" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 231.42" xml:space="preserve">
+<g>
+<path fill="#fff" d="M758.98,133.73c-2.41,1.76-5.61,2.63-9.59,2.63c-4.47,0-8.05-1.04-10.74-3.13c-2.69-2.08-4.04-4.93-4.04-8.53h-4.32c0,3,0.78,5.65,2.34,7.97c1.56,2.32,3.84,4.12,6.85,5.41c3.01,1.29,6.31,1.93,9.92,1.93c5.27,0,9.51-1.22,12.73-3.65c3.22-2.44,4.83-5.67,4.83-9.69c0-2.55-0.6-4.76-1.79-6.64c-1.19-1.87-2.97-3.48-5.34-4.83c-2.36-1.35-5.84-2.65-10.43-3.9c-4.59-1.25-7.92-2.7-10.01-4.34c-2.08-1.64-3.13-3.76-3.13-6.37c0-2.81,1.16-5.09,3.48-6.84c2.32-1.75,5.43-2.62,9.34-2.62c4.03,0,7.23,1.06,9.62,3.19c2.39,2.13,3.58,4.94,3.58,8.43h4.35c0-2.88-0.74-5.49-2.21-7.83c-1.47-2.34-3.55-4.17-6.23-5.48c-2.68-1.31-5.72-1.97-9.11-1.97c-5.01,0-9.12,1.22-12.34,3.67c-3.22,2.45-4.83,5.62-4.83,9.53c0,4.03,1.73,7.28,5.2,9.76c2.43,1.76,6.3,3.38,11.59,4.86c5.29,1.49,8.93,3.05,10.92,4.7c1.99,1.65,2.98,3.89,2.98,6.72C762.59,129.65,761.39,131.98,758.98,133.73 M713.41,123.37c-0.54,4.33-1.95,7.58-4.25,9.74c-2.29,2.17-5.7,3.25-10.22,3.25c-4.56,0-8.19-1.76-10.87-5.27c-2.68-3.51-4.02-8.22-4.02-14.12v-6.26c0-6.11,1.37-10.9,4.13-14.37c2.75-3.47,6.44-5.2,11.08-5.2c8.36,0,13.07,4.34,14.15,13.03h4.35c-0.52-5.22-2.36-9.31-5.53-12.25c-3.17-2.95-7.5-4.42-12.97-4.42c-3.89,0-7.32,0.95-10.31,2.86c-2.98,1.91-5.27,4.62-6.86,8.13c-1.59,3.51-2.39,7.54-2.39,12.08v6.64c0.02,4.47,0.83,8.45,2.42,11.92c1.59,3.48,3.84,6.16,6.76,8.06c2.91,1.9,6.27,2.84,10.06,2.84c5.43,0,9.78-1.43,13.04-4.28c3.27-2.86,5.19-6.97,5.78-12.36H713.41z M662.31,88.19h-4.32v51.12h4.32V88.19z M643.4,88.19h-39.33v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M589.93,111.15h-23.91V91.84h27.32v-3.65H561.7v51.12h31.81v-3.65h-27.49v-20.86h23.91V111.15z M522.78,88.19h-4.35v51.12h29.6v-3.65h-25.25V88.19z M500.04,88.19h-4.35v22.96h-29.21V88.19h-4.32v51.12h4.32v-24.51h29.21v24.51h4.35V88.19z M448.51,88.19h-39.32v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M384.02,93.46l10.25,27.84h-20.5L384.02,93.46z M400.95,139.31h4.49L386.1,88.19h-4.11l-19.35,51.12h4.53l5.27-14.36h23.21L400.95,139.31z M347.47,108.91h-20.23V96.72h23.67v-8.53h-34.2v51.12h34.27v-8.46h-23.74v-13.69h20.23V108.91z M301.56,88.19h-10.53v51.12h10.53V88.19z M275.77,88.19h-10.5v33.71l-20.54-33.71H234.2v51.12h10.53v-33.64l20.51,33.64h10.53V88.19z M212.3,139.31h12.54l-18.68-28.41l18.15-22.72h-12.96l-13.03,16.82l-4.63,6.35V88.19h-10.53v51.12h10.53v-14.61l5.48-5.9L212.3,139.31z"/>
+<path fill="#fff" d="M120.08,102.43c-0.37,1.96-1.59,3.31-2.82,4.78c-5.15,6.5-8.59,13.49-7.85,22.08c0.25,3.07,1.96,5.52,3.07,8.22c0.74,1.72,0.37,2.82-0.61,4.17c-6.5,8.95-8.59,18.77-6.62,29.56c0.12,0.37,0.12,0.86,0.61,1.23c0.49-11.04,2.7-21.59,7.6-32.01c0.74,2.21,0.61,4.05,0.25,5.89c-0.61,2.82-1.84,5.4-2.94,8.1c-0.86,2.33-1.84,4.66-1.84,7.24c1.23-4.05,3.56-7.48,5.4-11.16c1.96-3.93,2.58-7.97,1.1-12.14c-0.49-1.35-0.98-2.7-1.59-3.93c-2.45-4.78-2.45-9.81-0.86-14.84c1.47-4.54,3.07-9.08,6.13-12.88C119.96,105.37,120.33,103.9,120.08,102.43"/>
+<path fill="#fff" d="M74.94,80.47c9.08,13.98,22.57,21.1,38.64,23.92c-6.87-3.31-13.98-6.01-20.61-9.94C86.35,90.53,80.71,85.38,74.94,80.47"/>
+<path fill="#fff" d="M125.11,171.12c4.54-14.11,12.51-26,19.38-38.39c5.52-9.81,10.67-19.87,13-31.03c0.86-3.8,1.23-7.73,0.49-11.65c-0.86-5.03-3.56-8.83-7.85-11.53c-3.07-1.96-6.38-3.31-9.69-4.66c-12.27-4.91-24.65-9.69-36.92-14.6c-0.49-0.25-0.98-0.37-1.59-0.25c0.49,0.25,1.1,0.49,1.59,0.74c13,5.76,26,11.53,39,17.29c1.72,0.74,3.31,1.59,5.03,2.45c6.13,3.43,8.83,8.71,8.34,15.7c-0.61,7.73-3.19,14.96-6.13,22.08c-3.07,7.24-6.87,14.11-10.67,20.97c-4.66,8.59-9.32,17.17-12.39,26.49c-0.61,1.72-0.98,3.56-1.59,5.4C124.99,170.38,124.99,170.63,125.11,171.12"/>
+<path fill="rgba(255,255,255,.6)" d="M147.93,100.59c-5.64,4.05-9.32,3.56-13.98-1.47c-1.47,1.47-1.84,3.31-1.96,5.27c-0.12,2.58,0.49,5.03,0.25,7.48c-0.49,5.03-2.33,9.69-3.92,14.35c-4.91,14.35-10.06,28.7-15.58,42.81c-0.49,1.35-0.25,1.84,1.1,2.21c3.19,0.86,3.19,0.98,4.42-2.09c3.8-8.46,7.48-16.81,11.28-25.27c4.78-10.67,9.57-21.34,14.35-32.01C145.59,108.32,146.94,104.64,147.93,100.59"/>
+<path fill="rgba(255,255,255,.6)" d="M90.77,63.67c-0.74,4.05-1.59,7.97-4.29,11.04c0.37,0.49,0.98,0.61,1.47,0.74c12.88,4.54,25.64,9.44,37.53,16.19c3.07,1.72,6.01,3.8,8.83,5.89c2.21,1.72,4.42,2.94,7.24,3.19c4.29,0.49,8.22-4.66,6.13-8.83c-1.47-3.07-3.8-5.03-6.75-6.38c-2.45-1.1-5.15-1.59-7.73-2.21c-11.77-2.7-22.45-7.97-32.75-13.98C97.14,67.47,93.96,65.63,90.77,63.67"/>
+<path fill="rgba(255,255,255,.6)" d="M148.42,105.86c4.29-4.42,5.15-11.65,1.96-15.7C151.36,95.68,150.62,100.71,148.42,105.86"/>
+</g>
+</svg>
+      <div class="hero-label">ÜBERBLICK</div>
+      <h1>Level 1.1</h1>
+      <p class="hero-sub">Frühe Mobilisierung und Aktivierung</p>
+    </div>
+  </section>
+
+  <section class="sec bg-ice" id="sec-1">
+  <div class="sec-inner">
+    <div class="sec-label">ZIELE DIESER STUFE</div>
+    <h2 class="sec-title">Was du in Level 1.1 erreichst</h2>
+    <div style="background: rgba(0,68,103,.06); border-left: 3px solid var(--petrol); border-radius: 0 10px 10px 0; padding: 14px 18px; margin-bottom: 16px;">
+      <h4 style="font-size: .95rem; font-weight: 700; color: var(--heading); margin-bottom: 4px;">Die Grundlage für eine erfolgreiche Heilung schaffen</h4>
+      <p style="font-size: .88rem; color: var(--txt); line-height: 1.55;">Durch gezielte erste Maßnahmen aktivierst du den Heilungsprozess und bereitest dein Knie auf die kommenden Belastungen vor.</p>
+    </div>
+    <div class="ben-b-stack">
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Verbesserung des Stoffwechsels</h4>
+        <p>Die Blutzirkulation wird durch sanfte Bewegung gefördert, was für die Wundheilung essenziell ist.</p>
+      </div>
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Frühe Mobilisierung der Streckung</h4>
+        <p>Der Fokus liegt auf der vollen Streckung, um Bewegungseinschränkungen und Narbengewebe vorzubeugen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  </div><!-- /page1-wrap -->
+
+<section class="sec bg-ice" id="sec-1b">
+  <div class="sec-inner">
+    <div class="ben-b-stack">
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Aktivierung des Quadrizeps</h4>
+        <p>Du lernst, den vorderen Oberschenkelmuskel wieder bewusst anzusteuern, was für die Stabilisierung der Kniescheibe entscheidend ist.</p>
+      </div>
+      <div class="ben-b-card" style="border: 2px solid var(--cyan); border-radius: 10px;">
+        <h4 style="font-size: 1.05rem;">Erste Belastbarkeit</h4>
+        <p>Du arbeitest daran, im Stehen wieder die erlaubte Belastung zu erreichen, um dem Muskelabbau entgegenzuwirken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="sec bg-grad" id="sec-2">
+  <div class="sec-inner">
+    <div class="sec-label">AM TAG DER OP</div>
+    <h2 class="sec-title">Worauf musst du achten</h2>
+    <div class="cri-b">
+      <div class="cri-b-row">
+        <div class="cri-b-check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Kontaktaufnahme</h4>
+          <p>Kontaktiere uns, sobald du nach der Operation wach bist. Teile uns nach dem Arztgespräch mit, welche Maßnahmen durchgeführt wurden (falls möglich, lade den OP-Bericht hoch).</p>
+        </div>
+      </div>
+      <div class="cri-b-row">
+        <div class="cri-b-check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Unmittelbar nach der OP</h4>
+          <p>Es könnte zu Narkosenachwirkungen wie Schwindel, Übelkeit oder Erbrechen kommen. Trinke ausreichend Wasser, idealerweise mit Elektrolyten oder einer Prise Salz angereichert. Kühle maßvoll: Maximal 5 Minuten mit kalten (nicht gefrorenen) Kompressen.</p>
+        </div>
+      </div>
+      <div class="cri-b-row">
+        <div class="cri-b-check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Erste Bewegungen</h4>
+          <p>Beginne mit den vorgegebenen Mobilisationsübungen soweit erlaubt gemäß deinem Plan. Konzentriere dich zunächst auf die isolierte Ansteuerung des Quadrizeps.</p>
+        </div>
+      </div>
+      <div class="cri-b-row">
+        <div class="cri-b-check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Wichtige Vorsichtsmaßnahmen</h4>
+          <p>Achte bei Verbänden darauf, dass diese nicht zu fest sitzen, da das Bein noch anschwellen kann. Beim ersten Aufstehen: Bleibe zunächst sitzen, um den Kreislauf zu stabilisieren. Der Druck und Schmerz im Bein kann dabei vorübergehend zunehmen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="sec" id="sec-3">
+  <div class="sec-inner">
+    <div class="sec-label">DIE ERSTEN TAGE NACH DER OP</div>
+    <h2 class="sec-title">Worauf musst du achten</h2>
+    <div class="fok-b-wrap">
+      <div class="fok-b">
+        <div class="fok-b-item">
+          <div class="fok-b-num">1</div>
+          <div>
+            <h4>Bewegung und Belastung</h4>
+            <p>Achte auf eine gute Balance zwischen Aktivität und Ruhe. Eine übermäßige Schwellung des Knies ist ein Zeichen für zu viel Belastung. Die Gelenkflüssigkeit braucht etwa drei Wochen zur Regeneration. Passe deine Alltagsaktivitäten entsprechend an.</p>
+          </div>
+        </div>
+        <div class="fok-b-item">
+          <div class="fok-b-num">2</div>
+          <div>
+            <h4>Übungen und Mobilisation</h4>
+            <p>Fokussiere besonders auf die Streckung des Knies. Übe regelmäßig die isolierte Quadrizeps-Anspannung. Die Beugung kann anfangs noch entspannter trainiert werden. Bodenübungen können auch im Bett durchgeführt werden.</p>
+          </div>
+        </div>
+        <div class="fok-b-item">
+          <div class="fok-b-num">3</div>
+          <div>
+            <h4>Belastungsmanagement</h4>
+            <p>Bei verordneter Teilbelastung: Übe regelmäßig mit der Waage. Der Fuß darf dabei vollen Bodenkontakt haben. Ohne Teilbelastungsvorgabe: Steigere die Belastung schrittweise und schmerzadaptiert.</p>
+          </div>
+        </div>
+        <div class="fok-b-item">
+          <div class="fok-b-num">4</div>
+          <div>
+            <h4>Schmerzmanagement und Medikation</h4>
+            <p>Kühle gezielt: maximal 5 Minuten mit kalten Kompressen. Nimm Schmerzmittel nur so viel wie nötig, da sie die Schmerzwahrnehmung beim Training verändern können. Thrombosespritzen müssen bis zur Vollbelastung genommen werden.</p>
+          </div>
+        </div>
+        <div class="fok-b-item">
+          <div class="fok-b-num">5</div>
+          <div>
+            <h4>Praktische Tipps</h4>
+            <p>Übe bewusstes Aufstehen und Hinsetzen zur Kreislaufregulation. Achte auf eine kontrollierte Bewegungsausführung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sec-4">
+  <div class="sec-inner">
+    <div class="sec-label">PROBLEME LÖSEN</div>
+    <h2 class="sec-title">Mögliche Probleme und deren Bewältigung</h2>
+    <div class="sol-b">
+      <div class="sol-b-card">
+        <h4>Druckgefühl beim Aufstehen</h4>
+        <div class="sol-b-row">
+          <span class="sol-b-label sol-problem">Ursache:</span>
+          <p>Das Blut sackt gegen die Schwerkraft nach unten.</p>
+        </div>
+        <div class="sol-b-row">
+          <span class="sol-b-label sol-loesung">Lösung:</span>
+          <p>Bleibe beim ersten Aufstehen kurz sitzen, um den Kreislauf zu stabilisieren. Die Kapillaren müssen erst wieder lernen, damit umzugehen. Das Druckgefühl ist in den ersten Tagen normal.</p>
+        </div>
+      </div>
+      <div class="sol-b-card">
+        <h4>Schutzspannung im Oberschenkel</h4>
+        <div class="sol-b-row">
+          <span class="sol-b-label sol-problem">Ursache:</span>
+          <p>Der Körper versucht, das Knie durch eine unwillkürliche Muskelanspannung zu schützen.</p>
+        </div>
+        <div class="sol-b-row">
+          <span class="sol-b-label sol-loesung">Lösung:</span>
+          <p>Versuche bewusst, die Muskulatur zu entspannen, um diese Schutzspannung zu lösen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sec-4b">
+  <div class="sec-inner">
+    <div class="sol-b">
+      <div class="sol-b-card">
+        <h4>Allgemeine Schmerzen, die sich besonders in den ersten Nächten verstärken können</h4>
+        <div class="sol-b-row">
+          <span class="sol-b-label sol-problem">Ursache:</span>
+          <p>Der natürliche Wundheilungsprozess und die Entzündungsreaktion nach der Operation.</p>
+        </div>
+        <div class="sol-b-row">
+          <span class="sol-b-label sol-loesung">Lösung:</span>
+          <p>Sanfte Bewegung hilft, die Schmerzen zu lindern. Kühle gezielt bei Schmerz und Überwärmung, aber nicht gegen die Schwellung (maximal 5 Minuten, nicht gefroren).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-ice" id="sec-5">
+  <div class="sec-inner">
+    <div class="sec-label">FORTSCHRITTE</div>
+    <h2 class="sec-title">Fortschritte im Alltag erkennen</h2>
+    <p class="sec-intro">Dein Körper ist jetzt in der Heilungsphase. Auch kleine Erfolge sind große Fortschritte. Ziel ist es, grundlegende Alltagsaktivitäten sicher und kontrolliert auszuführen.</p>
+    <div class="ben-a">
+      <div class="ben-a-card" style="border-left: 4px solid var(--orange);">
+        <div class="ben-a-ico">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="11" width="18" height="11" rx="2" fill="#2ab5d7" opacity="0.15"/>
+            <rect x="3" y="11" width="18" height="11" rx="2" stroke="#004467" stroke-width="1.5"/>
+            <path d="M7 11V7a5 5 0 0110 0v4" stroke="#004467" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Sicheres Aufstehen und Hinsetzen</h4>
+          <p>Du beherrschst die kontrollierte Bewegung vom Sitzen ins Stehen und zurück, ohne dabei dein Knie zu überlasten oder den Kreislauf zu stark zu belasten.</p>
+        </div>
+      </div>
+      <div class="ben-a-card" style="border-left: 4px solid var(--orange);">
+        <div class="ben-a-ico">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" fill="#2ab5d7" opacity="0.15"/>
+            <polyline points="22 4 12 14.01 9 11.01" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Kontrolliertes Gehen mit Krücken über kurze Distanzen</h4>
+          <p>Du nutzt die Krücken sicher und gehst mit gleichmäßigem Gangbild kurze Wege im Wohnbereich. Die Belastung folgt deiner ärztlichen Vorgabe.</p>
+        </div>
+      </div>
+      <div class="ben-a-card" style="border-left: 4px solid var(--orange);">
+        <div class="ben-a-ico">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#2ab5d7" opacity="0.15"/>
+            <polyline points="20 6 9 17 4 12" stroke="#004467" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(-2 0)"/>
+            <circle cx="12" cy="12" r="10" stroke="#004467" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Selbstständiges Durchführen der Mobilisationsübungen</h4>
+          <p>Du kannst deine Mobilisationsübungen im Bett oder auf dem Boden eigenständig durchführen, ohne ständige Anleitung.</p>
+        </div>
+      </div>
+    </div>
+    <p class="sec-intro" style="margin-top: 18px; margin-bottom: 0;">Das Erreichen dieser kleinen Ziele zeigt dir, dass du auf dem richtigen Weg bist und die Kontrolle zurückgewinnst.</p>
+  </div>
+</section>
+
+<section class="sec bg-grad" id="sec-6">
+  <div class="sec-inner">
+    <div class="sec-label">MOTIVATION</div>
+    <h2 class="sec-title">Den Grundstein legen</h2>
+    <div class="fok-c">
+      <div class="fok-c-row" style="border-left: 4px solid #ff6b35;">
+        <div class="fok-c-num">1</div>
+        <p><strong>Das Fundament wird jetzt gelegt:</strong> Die ersten Tage nach einer Operation sind entscheidend. Du legst jetzt das Fundament für deine gesamte Rehabilitation.</p>
+      </div>
+      <div class="fok-c-row" style="border-left: 4px solid #ff6b35;">
+        <div class="fok-c-num">2</div>
+        <p><strong>Jeder Baustein zählt:</strong> Jede Übung, die du machst, und jede Vorsichtsmaßnahme, die du beachtest, ist ein wichtiger Baustein für deine spätere Belastbarkeit.</p>
+      </div>
+      <div class="fok-c-row" style="border-left: 4px solid #ff6b35;">
+        <div class="fok-c-num">3</div>
+        <p><strong>Vertraue auf den Prozess:</strong> Sei geduldig mit deinem Körper und vertraue auf den Prozess.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-off" id="sec-7">
+  <div class="sec-inner">
+    <div class="sec-label">EQUIPMENT</div>
+    <h2 class="sec-title">Empfohlenes Equipment</h2>
+    <div class="ben-a">
+      <div class="ben-a-card">
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.01.32.png" alt="Pezziball" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
+        <div>
+          <h4>Pezziball</h4>
+          <p>Unterstützt dich bei verschiedenen Mobilitätsübungen und hilft dir, dein Gleichgewicht zu trainieren.</p>
+        </div>
+      </div>
+      <div class="ben-a-card">
+        <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.00.58.png" alt="Mini Bands" style="width: 80px; height: 80px; object-fit: contain; border-radius: 8px;">
+        <div>
+          <h4>Mini Bands</h4>
+          <p>Perfekt für die erste sanfte Muskelaktivierung und kontrolliertes Krafttraining.</p>
+        </div>
+      </div>
+      <div class="ben-a-card">
+        <img src="https://knieathletics.github.io/knieathletics-akademie/handtuchrolle.png" alt="Handtuchrolle oder Faszienrolle" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
+        <div>
+          <h4>Handtuchrolle oder Faszienrolle</h4>
+          <p>Ideal für Mobilisationsübungen und gezielte Ansteuerungsübungen der Muskulatur.</p>
+        </div>
+      </div>
+    </div>
+    <p class="sec-intro" style="margin-top: 18px; margin-bottom: 0;">Diese Hilfsmittel unterstützen dich optimal in deinem Rehabilitationsprozess. Stelle sicher, dass sie in deiner Reichweite sind, wenn du mit den Übungen beginnst.</p>
+  </div>
+</section>
+
+<section class="sec bg-ice" id="sec-8">
+  <div class="sec-inner">
+    <div class="sec-label">ERNÄHRUNG</div>
+    <h2 class="sec-title">Tipps zur Ernährung</h2>
+    <img src="https://vuj6cwnvmgbtrwci.public.blob.vercel-storage.com/Bildschirmfoto%202026-02-18%20um%2023.02.39.png" alt="Ernährungssupplemente" style="max-width:300px;margin:0 auto 20px;display:block;border-radius:12px;">
+    <div class="fok-c">
+      <div class="fok-c-row">
+        <div class="fok-c-num">1</div>
+        <p><strong>Hydration:</strong> Trinke viel, um das Blut flüssig zu halten - mindestens zwei Liter Wasser am Tag.</p>
+      </div>
+      <div class="fok-c-row">
+        <div class="fok-c-num">2</div>
+        <p><strong>Vitamin C:</strong> Vitamin C als Ascorbinsäure am besten in Pulverform, empfohlene Menge pro Tag 95 mg bei Frauen und 110 mg bei Männern. Am besten 3-4 Portionen (ca. eine Messerspitze pro Portion) über den Tag verteilen. Der Körper kann nicht so viel auf einmal aufnehmen. Vitamin C hilft beim Aufbau von Kollagen.</p>
+      </div>
+      <div class="fok-c-row">
+        <div class="fok-c-num">3</div>
+        <p><strong>Mineralstoffe:</strong> Von Vorteil könnte auch die Supplementation von Mineralstoffen sein. Bei der Kombination mit anderen Supplements, wie zum Beispiel Vitamin C, muss man jedoch darauf achten, den empfohlenen Tagesbedarf nicht zu überschreiten.</p>
+      </div>
+      <div class="fok-c-row">
+        <div class="fok-c-num">4</div>
+        <p><strong>Omega 3:</strong> Omega-3-Fettsäuren sind essenzielle Fettsäuren, die der Körper nicht selbst produzieren kann. Eine tägliche Aufnahme von 250-500 mg Omega-3 wird empfohlen.</p>
+      </div>
+      <div class="fok-c-row">
+        <div class="fok-c-num">5</div>
+        <p><strong>Supplementierung von Proteinen:</strong> Nimm ausreichend Eiweiß zum Aufbau von Gewebe zu dir: Nimm zwischen 1,8-2 g pro kg Körpergewicht.</p>
+      </div>
+      <div class="fok-c-row">
+        <div class="fok-c-num">6</div>
+        <p><strong>Supplementierung von Kollagen:</strong> Die Wissenschaft über die Wirksamkeit von Kollagen-Supplementen ist noch umstritten. Einige Studien haben gezeigt, dass eine tägliche Supplementation von Kollagen Gelenkschmerzen lindern und bei dem Aufbau des Gewebes helfen kann.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="doc-footer">
+  <p>&copy; KNIEATHLETICS &middot; Nur für Mitglieder</p>
+</div>
+
+</div>
+
+<div class="fab-bar">
+  <button class="fab-full" onclick="toggleFullscreen()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+    </svg>
+    <span id="fabFullLabel">Vollbild</span>
+  </button>
+  <button class="fab-pdf" onclick="window.print()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+    </svg>
+    PDF
+  </button>
+</div>
+
+<script>
+function toggleFullscreen() {
+  var html = document.documentElement;
+  var label = document.getElementById('fabFullLabel');
+  if (window.parent !== window) {
+    window.parent.postMessage({ type: 'ka-fullscreen-toggle' }, '*');
+    return;
+  }
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    return;
+  }
+  if (html.classList.contains('fullscreen-mode')) {
+    html.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+    return;
+  }
+  if (html.requestFullscreen) {
+    html.requestFullscreen().catch(function() {
+      html.classList.add('fullscreen-mode');
+      if (label) label.textContent = 'Normal';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  } else {
+    html.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+document.addEventListener('fullscreenchange', function() {
+  var label = document.getElementById('fabFullLabel');
+  if (document.fullscreenElement) {
+    document.documentElement.classList.add('fullscreen-mode');
+    if (label) label.textContent = 'Normal';
+  } else {
+    document.documentElement.classList.remove('fullscreen-mode');
+    if (label) label.textContent = 'Vollbild';
+  }
+});
+var sections = document.querySelectorAll('[id^="sec-"]');
+var navItems = document.querySelectorAll('.nav-item');
+var navBar = document.getElementById('navBar');
+function updateScrollspy() {
+  var scrollPos = window.scrollY + 140;
+  var activeIndex = 0;
+  sections.forEach(function(sec, i) { if (sec.offsetTop <= scrollPos) activeIndex = i; });
+  navItems.forEach(function(item, i) { item.classList.toggle('active', i === activeIndex); });
+  var activeNav = navItems[activeIndex];
+  if (activeNav && navBar) {
+    var navRect = navBar.getBoundingClientRect();
+    var itemRect = activeNav.getBoundingClientRect();
+    if (itemRect.left < navRect.left || itemRect.right > navRect.right) {
+      activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+}
+window.addEventListener('scroll', updateScrollspy, { passive: true });
+updateScrollspy();
+if (window.location.search.includes('fullscreen=true')) {
+  document.documentElement.classList.add('fullscreen-mode');
+}
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href^="#"]');
+  if (link) {
+    e.preventDefault();
+    var id = link.getAttribute('href').slice(1);
+    var target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+});
+</script>
+</body>
+</html>
