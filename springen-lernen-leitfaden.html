@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>KNIEATHLETICS – Springen lernen</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#004467;--petrol:#0087B3;--cyan:#2ab5d7;--orange:#ff6d09;--ice:#eef6f9;--offwhite:#f3eee7;--txt:#2d3748;--muted:#718096;--heading:#004467;--grad-blue:linear-gradient(135deg,#004467 0%,#006a8e 40%,#0087B3 70%,#2ab5d7 100%);--grad-orange:linear-gradient(135deg,#ff5500 0%,#ff6d09 50%,#ff8b3c 100%)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5;font-size:15px;line-height:1.55}
+.content{max-width:900px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(0,0,0,.08)}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-bottom:1px solid rgba(0,0,0,.06);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px)}
+.topbar-logo{height:22px}
+.topbar-right{display:flex;align-items:center;gap:12px;font-size:.78rem;color:var(--muted)}
+.badge{background:var(--ice);color:var(--petrol);font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:.5px}
+.sec{padding:40px}
+.sec+.sec{border-top:1px solid rgba(0,0,0,.04)}
+.sec-label{font-size:.62rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--petrol);margin-bottom:6px}
+.sec-title{font-size:1.65rem;font-weight:900;color:var(--heading);margin-bottom:14px;letter-spacing:-.3px}
+.bg-ice{background:var(--ice)}
+.bg-off{background:var(--offwhite)}
+.bg-grad{background:var(--grad-blue);color:#fff}
+.bg-grad .sec-label{color:rgba(255,255,255,.3)}
+.bg-grad .sec-title{color:#fff}
+.hero{background:var(--grad-blue);color:#fff;padding:48px 40px}
+.hero-label{font-size:.6rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.hero h1{font-size:2.2rem;font-weight:900;margin-bottom:8px;letter-spacing:-.5px}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.62);margin-bottom:28px;max-width:600px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.info-card{background:rgba(0,30,50,.5);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px}
+.info-card h3{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:8px}
+.info-card p{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6}
+.warum-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}
+.cat-label{font-size:.95rem;font-weight:700;color:var(--heading);margin-bottom:10px}
+.bg-grad .cat-label{color:#fff}
+.b-stack{display:flex;flex-direction:column;gap:10px}
+.ben{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid rgba(0,0,0,.04);display:flex;gap:12px}
+.bg-grad .ben{background:rgba(0,30,50,.5);border-color:rgba(255,255,255,.08)}
+.b-ico{flex-shrink:0;width:30px;height:30px;background:var(--cyan);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:.78rem}
+.ben h4{font-size:.82rem;font-weight:700;color:var(--heading);margin-bottom:2px}
+.bg-grad .ben h4{color:#fff}
+.ben p{font-size:.76rem;color:var(--txt);line-height:1.55}
+.bg-grad .ben p{color:rgba(255,255,255,.65)}
+.goal-box{background:var(--ice);border-radius:10px;padding:16px 18px;border-left:4px solid var(--petrol);margin-bottom:18px}
+.goal-box p{font-size:.86rem;line-height:1.6}
+.focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.f-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:8px;padding:14px 16px;border-top:3px solid var(--cyan)}
+.f-card h4{font-size:.85rem;font-weight:700;color:var(--heading);margin-bottom:4px}
+.f-card p{font-size:.78rem;line-height:1.55;color:var(--txt)}
+.steps{margin-top:16px}
+.stp{display:flex;gap:14px;padding:10px 0;align-items:flex-start}
+.stp-n{flex-shrink:0;width:30px;height:30px;background:var(--grad-blue);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;font-weight:900}
+.stp h3{font-size:.88rem;font-weight:700;color:var(--heading);margin-bottom:3px}
+.stp p{font-size:.8rem;line-height:1.55;color:var(--txt)}
+.crit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.cri{display:flex;gap:12px;background:rgba(0,30,50,.5);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px}
+.cri-n{flex-shrink:0;width:38px;height:38px;background:var(--grad-orange);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:900;color:#fff}
+.cri h4{font-size:.85rem;font-weight:700;color:#fff;margin-bottom:3px}
+.cri p{font-size:.76rem;color:rgba(255,255,255,.7);line-height:1.55}
+.stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.stage{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:12px;padding:18px;border-top:4px solid var(--petrol)}
+.bg-grad .stage{background:rgba(0,30,50,.5);border-color:rgba(255,255,255,.08);border-top-color:var(--cyan)}
+.stage h3{font-size:.95rem;font-weight:900;color:var(--heading);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.bg-grad .stage h3{color:#fff}
+.stage h3 .stage-n{background:var(--grad-orange);color:#fff;font-size:.7rem;font-weight:900;padding:2px 8px;border-radius:50px}
+.stage .stage-sub{font-size:.74rem;color:var(--petrol);font-weight:600;margin-bottom:8px}
+.bg-grad .stage .stage-sub{color:var(--cyan)}
+.stage p{font-size:.78rem;line-height:1.55;color:var(--txt);margin-bottom:6px}
+.bg-grad .stage p{color:rgba(255,255,255,.72)}
+.stage ul{list-style:none;padding:0;margin:6px 0 0 0}
+.stage ul li{font-size:.76rem;line-height:1.5;padding-left:14px;position:relative;margin-bottom:3px;color:var(--txt)}
+.bg-grad .stage ul li{color:rgba(255,255,255,.72)}
+.stage ul li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;background:var(--cyan);border-radius:50%}
+.info-tip{background:rgba(42,181,215,.1);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.info-tip p{font-size:.78rem;color:var(--txt);line-height:1.55}
+.bg-grad .info-tip{background:rgba(42,181,215,.12)}
+.bg-grad .info-tip p{color:rgba(255,255,255,.78)}
+.warn-tip{background:rgba(255,109,9,.08);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.warn-tip p{font-size:.78rem;color:var(--txt);line-height:1.55}
+.vol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.vol{background:#fff;border-radius:10px;padding:14px;border:1px solid rgba(0,0,0,.05);text-align:center;border-top:3px solid var(--cyan)}
+.vol .vol-stage{font-size:.66rem;font-weight:700;color:var(--petrol);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.vol .vol-num{font-size:1.8rem;font-weight:900;color:var(--dark);line-height:1;margin:4px 0}
+.vol .vol-label{font-size:.66rem;color:var(--muted);margin-bottom:6px}
+.vol p{font-size:.7rem;line-height:1.5;color:var(--txt)}
+.text-content p{font-size:.86rem;line-height:1.7;margin-bottom:10px;color:var(--txt)}
+.text-content p:last-child{margin-bottom:0}
+.bg-grad .text-content p{color:rgba(255,255,255,.78)}
+.doc-footer{padding:16px 40px;background:var(--dark);text-align:center}
+.doc-footer p{font-size:.68rem;color:rgba(255,255,255,.25)}
+.action-bar{display:flex;gap:12px;justify-content:center;padding:32px 40px;background:#fff;border-top:1px solid rgba(0,0,0,.06)}
+.action-bar a,.action-bar button{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-size:.88rem;font-weight:700;text-decoration:none;font-family:inherit;cursor:pointer;border:none;transition:transform .15s}
+.action-bar a:hover,.action-bar button:hover{transform:scale(1.03)}
+.btn-fullscreen{background:var(--dark);color:#fff}
+.btn-print{background:var(--ice);color:var(--dark);border:1px solid rgba(0,0,0,.08)!important}
+.fab-bar{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:200;display:flex;gap:8px;background:rgba(0,44,67,.95);backdrop-filter:blur(8px);padding:8px 12px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.fab-bar a,.fab-bar button{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;font-size:.78rem;font-weight:600;text-decoration:none;font-family:inherit;cursor:pointer;border:none;color:#fff}
+.fab-full{background:rgba(255,255,255,.15)}
+.fab-pdf{background:var(--orange)}
+@media(max-width:700px){.sec,.hero{padding:28px 20px}.hero h1{font-size:1.6rem}.hero-grid,.warum-grid,.focus-grid,.crit-grid,.stage-grid,.vol-grid{grid-template-columns:1fr}.topbar{padding:10px 20px}}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  @page{size:297mm 210mm;margin:0}
+  html,body{width:297mm;background:#fff;font-size:13px;line-height:1.5;margin:0;padding:0;overflow:visible}
+  .content{max-width:100%!important;width:100%!important;box-shadow:none;margin:0;padding:0}
+  .topbar,.doc-footer,.action-bar,.fab-bar{display:none!important}
+  .sec,.hero{page-break-after:always;width:100%!important;max-width:100%!important;height:210mm!important;min-height:210mm!important;padding:14mm 28mm;margin:0;overflow:hidden;display:flex!important;flex-direction:column!important}
+  .hero{padding:16mm 30mm}
+  .sec:last-of-type{page-break-after:auto}
+  .sec+.sec{border-top:none}
+  .sec-inner,.hero-inner{margin-top:auto!important;margin-bottom:auto!important;max-width:100%!important}
+  .ben,.stp,.f-card,.goal-box,.info-card,.stage,.cri,.vol{break-inside:avoid;page-break-inside:avoid}
+  .sec-label,.sec-title{break-after:avoid;page-break-after:avoid}
+  h3,h4{break-after:avoid;page-break-after:avoid}
+  p,li{orphans:2;widows:2}
+  .hero-inner{display:block!important;width:100%}
+  .hero h1{font-size:2.6rem!important;margin-bottom:12px}
+  .hero-sub{font-size:1.1rem!important;margin-bottom:26px;max-width:680px}
+  .hero-grid{gap:26px;display:grid!important;grid-template-columns:1fr 1fr;min-height:240px}
+  .info-card{padding:30px;display:flex;flex-direction:column;justify-content:center}
+  .info-card h3{font-size:1.2rem;margin-bottom:12px}
+  .info-card p{font-size:1rem;line-height:1.7}
+  .sec-label{font-size:.78rem;letter-spacing:4px;margin-bottom:10px}
+  .sec-title{font-size:1.95rem!important;margin-bottom:16px}
+  .warum-grid{gap:24px;margin-top:16px;flex:1}
+  .cat-label{font-size:1.05rem;margin-bottom:14px}
+  .b-stack{gap:12px}
+  .ben{padding:14px 18px;gap:14px}
+  .b-ico{width:34px;height:34px;font-size:.9rem}
+  .ben h4{font-size:.92rem;margin-bottom:3px}
+  .ben p{font-size:.84rem;line-height:1.55}
+  .focus-grid{gap:14px;margin-top:14px;flex:1}
+  .f-card{padding:18px 20px}
+  .f-card h4{font-size:.98rem;margin-bottom:5px}
+  .f-card p{font-size:.86rem;line-height:1.55}
+  .stage-grid{gap:16px;margin-top:14px;flex:1}
+  .stage{padding:20px}
+  .stage h3{font-size:1.05rem}
+  .stage .stage-sub{font-size:.84rem;margin-bottom:8px}
+  .stage p{font-size:.86rem;line-height:1.55}
+  .stage ul li{font-size:.84rem;line-height:1.55;margin-bottom:4px}
+  .crit-grid{gap:16px;margin-top:14px;flex:1}
+  .cri{padding:18px;gap:14px}
+  .cri-n{width:44px;height:44px;font-size:1.05rem}
+  .cri h4{font-size:.96rem;margin-bottom:4px}
+  .cri p{font-size:.84rem;line-height:1.55}
+  .vol-grid{gap:12px;margin-top:14px;flex:1}
+  .vol{padding:18px}
+  .vol .vol-stage{font-size:.74rem}
+  .vol .vol-num{font-size:2.4rem;margin:6px 0}
+  .vol .vol-label{font-size:.74rem;margin-bottom:8px}
+  .vol p{font-size:.8rem;line-height:1.55}
+  .info-tip{padding:12px 16px;margin-top:14px}
+  .info-tip p{font-size:.86rem;line-height:1.55}
+  .warn-tip{padding:12px 16px;margin-top:14px}
+  .warn-tip p{font-size:.86rem;line-height:1.55}
+  .steps{flex:1;margin-top:14px}
+  .stp{padding:8px 0;gap:14px}
+  .stp-n{width:34px;height:34px;font-size:.88rem}
+  .stp h3{font-size:.98rem;margin-bottom:4px}
+  .stp p{font-size:.86rem;line-height:1.55}
+  .text-content{flex:1}
+  .text-content p{font-size:.95rem;line-height:1.7}
+  .goal-box{padding:18px 20px;margin-bottom:18px}
+  .goal-box p{font-size:.94rem;line-height:1.6}
+}
+</style>
+</head>
+<body>
+
+<div class="content">
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <svg viewBox="0 0 841.89 231.42" xmlns="http://www.w3.org/2000/svg" class="topbar-logo"><style>.st0{fill:#0087B3}</style><g><path d="M758.98,133.73c-2.41,1.76-5.61,2.63-9.59,2.63c-4.47,0-8.05-1.04-10.74-3.13c-2.69-2.08-4.04-4.93-4.04-8.53h-4.32c0,3,0.78,5.65,2.34,7.97c1.56,2.32,3.84,4.12,6.85,5.41c3.01,1.29,6.31,1.93,9.92,1.93c5.27,0,9.51-1.22,12.73-3.65c3.22-2.44,4.83-5.67,4.83-9.69c0-2.55-0.6-4.76-1.79-6.64c-1.19-1.87-2.97-3.48-5.34-4.83c-2.36-1.35-5.84-2.65-10.43-3.9c-4.59-1.25-7.92-2.7-10.01-4.34c-2.08-1.64-3.13-3.76-3.13-6.37c0-2.81,1.16-5.09,3.48-6.84c2.32-1.75,5.43-2.62,9.34-2.62c4.03,0,7.23,1.06,9.62,3.19c2.39,2.13,3.58,4.94,3.58,8.43h4.35c0-2.88-0.74-5.49-2.21-7.83c-1.47-2.34-3.55-4.17-6.23-5.48c-2.68-1.31-5.72-1.97-9.11-1.97c-5.01,0-9.12,1.22-12.34,3.67c-3.22,2.45-4.83,5.62-4.83,9.53c0,4.03,1.73,7.28,5.2,9.76c2.43,1.76,6.3,3.38,11.59,4.86c5.29,1.49,8.93,3.05,10.92,4.7c1.99,1.65,2.98,3.89,2.98,6.72C762.59,129.65,761.39,131.98,758.98,133.73 M713.41,123.37c-0.54,4.33-1.95,7.58-4.25,9.74c-2.29,2.17-5.7,3.25-10.22,3.25c-4.56,0-8.19-1.76-10.87-5.27c-2.68-3.51-4.02-8.22-4.02-14.12v-6.26c0-6.11,1.37-10.9,4.13-14.37c2.75-3.47,6.44-5.2,11.08-5.2c8.36,0,13.07,4.34,14.15,13.03h4.35c-0.52-5.22-2.36-9.31-5.53-12.25c-3.17-2.95-7.5-4.42-12.97-4.42c-3.89,0-7.32,0.95-10.31,2.86c-2.98,1.91-5.27,4.62-6.86,8.13c-1.59,3.51-2.39,7.54-2.39,12.08v6.64c0.02,4.47,0.83,8.45,2.42,11.92c1.59,3.48,3.84,6.16,6.76,8.06c2.91,1.9,6.27,2.84,10.06,2.84c5.43,0,9.78-1.43,13.04-4.28c3.27-2.86,5.19-6.97,5.78-12.36H713.41z M662.31,88.19h-4.32v51.12h4.32V88.19z M643.4,88.19h-39.33v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M589.93,111.15h-23.91V91.84h27.32v-3.65H561.7v51.12h31.81v-3.65h-27.49v-20.86h23.91V111.15z M522.78,88.19h-4.35v51.12h29.6v-3.65h-25.25V88.19z M500.04,88.19h-4.35v22.96h-29.21V88.19h-4.32v51.12h4.32v-24.51h29.21v24.51h4.35V88.19z M448.51,88.19h-39.32v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M384.02,93.46l10.25,27.84h-20.5L384.02,93.46z M400.95,139.31h4.49L386.1,88.19h-4.11l-19.35,51.12h4.53l5.27-14.36h23.21L400.95,139.31z M347.47,108.91h-20.23V96.72h23.67v-8.53h-34.2v51.12h34.27v-8.46h-23.74v-13.69h20.23V108.91z M301.56,88.19h-10.53v51.12h10.53V88.19z M275.77,88.19h-10.5v33.71l-20.54-33.71H234.2v51.12h10.53v-33.64l20.51,33.64h10.53V88.19z M212.3,139.31h12.54l-18.68-28.41l18.15-22.72h-12.96l-13.03,16.82l-4.63,6.35V88.19h-10.53v51.12h10.53v-14.61l5.48-5.9L212.3,139.31z"/><path d="M120.08,102.43c-0.37,1.96-1.59,3.31-2.82,4.78c-5.15,6.5-8.59,13.49-7.85,22.08c0.25,3.07,1.96,5.52,3.07,8.22c0.74,1.72,0.37,2.82-0.61,4.17c-6.5,8.95-8.59,18.77-6.62,29.56c0.12,0.37,0.12,0.86,0.61,1.23c0.49-11.04,2.7-21.59,7.6-32.01c0.74,2.21,0.61,4.05,0.25,5.89c-0.61,2.82-1.84,5.4-2.94,8.1c-0.86,2.33-1.84,4.66-1.84,7.24c1.23-4.05,3.56-7.48,5.4-11.16c1.96-3.93,2.58-7.97,1.1-12.14c-0.49-1.35-0.98-2.7-1.59-3.93c-2.45-4.78-2.45-9.81-0.86-14.84c1.47-4.54,3.07-9.08,6.13-12.88C119.96,105.37,120.33,103.9,120.08,102.43"/><path d="M74.94,80.47c9.08,13.98,22.57,21.1,38.64,23.92c-6.87-3.31-13.98-6.01-20.61-9.94C86.35,90.53,80.71,85.38,74.94,80.47"/><path d="M125.11,171.12c4.54-14.11,12.51-26,19.38-38.39c5.52-9.81,10.67-19.87,13-31.03c0.86-3.8,1.23-7.73,0.49-11.65c-0.86-5.03-3.56-8.83-7.85-11.53c-3.07-1.96-6.38-3.31-9.69-4.66c-12.27-4.91-24.65-9.69-36.92-14.6c-0.49-0.25-0.98-0.37-1.59-0.25c0.49,0.25,1.1,0.49,1.59,0.74c13,5.76,26,11.53,39,17.29c1.72,0.74,3.31,1.59,5.03,2.45c6.13,3.43,8.83,8.71,8.34,15.7c-0.61,7.73-3.19,14.96-6.13,22.08c-3.07,7.24-6.87,14.11-10.67,20.97c-4.66,8.59-9.32,17.17-12.39,26.49c-0.61,1.72-0.98,3.56-1.59,5.4C124.99,170.38,124.99,170.63,125.11,171.12"/><path class="st0" d="M147.93,100.59c-5.64,4.05-9.32,3.56-13.98-1.47c-1.47,1.47-1.84,3.31-1.96,5.27c-0.12,2.58,0.49,5.03,0.25,7.48c-0.49,5.03-2.33,9.69-3.92,14.35c-4.91,14.35-10.06,28.7-15.58,42.81c-0.49,1.35-0.25,1.84,1.1,2.21c3.19,0.86,3.19,0.98,4.42-2.09c3.8-8.46,7.48-16.81,11.28-25.27c4.78-10.67,9.57-21.34,14.35-32.01C145.59,108.32,146.94,104.64,147.93,100.59"/><path class="st0" d="M90.77,63.67c-0.74,4.05-1.59,7.97-4.29,11.04c0.37,0.49,0.98,0.61,1.47,0.74c12.88,4.54,25.64,9.44,37.53,16.19c3.07,1.72,6.01,3.8,8.83,5.89c2.21,1.72,4.42,2.94,7.24,3.19c4.29,0.49,8.22-4.66,6.13-8.83c-1.47-3.07-3.8-5.03-6.75-6.38c-2.45-1.1-5.15-1.59-7.73-2.21c-11.77-2.7-22.45-7.97-32.75-13.98C97.14,67.47,93.96,65.63,90.77,63.67"/><path class="st0" d="M148.42,105.86c4.29-4.42,5.15-11.65,1.96-15.7C151.36,95.68,150.62,100.71,148.42,105.86"/></g></svg>
+  <div class="topbar-right"><span class="badge">Leitfaden</span><span>Springen lernen</span></div>
+</div>
+
+<!-- 1 HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Sprungtraining · Schritt für Schritt</div>
+    <h1>Springen lernen</h1>
+    <p class="hero-sub">Wie wir dich nach deiner Knieverletzung zurück zur vollen Belastung führen — vom ersten kontrollierten Sprung bis zum reaktiven Spielzug.</p>
+    <div class="hero-grid">
+      <div class="info-card">
+        <h3>Was du in diesem Leitfaden findest</h3>
+        <p>Warum Springen wichtig ist · welche Arten es gibt · wie wir sie sinnvoll aufeinander aufbauen · wann du zur nächsten Stufe darfst · und wie wir gemeinsam Vertrauen in dein Knie aufbauen.</p>
+      </div>
+      <div class="info-card">
+        <h3>Unser Versprechen</h3>
+        <p>Du springst nicht zu früh und nicht zu wenig. Jede Stufe hat klare Kriterien — und wir prüfen sie mit dir, bevor wir gemeinsam einen Schritt weitergehen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 WARUM -->
+<section class="sec bg-ice">
+  <div class="sec-inner">
+    <div class="sec-label">Relevanz</div>
+    <h2 class="sec-title">Warum Springen so wichtig ist</h2>
+    <div class="warum-grid">
+      <div>
+        <div class="cat-label">Im Alltag</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">↓</div><div><h4>Treppe runter ohne Vorsicht</h4><p>Jede Stufe ist ein kleiner Sprung mit Lande-Phase. Wer springen kann, geht sicher Treppen.</p></div></div>
+          <div class="ben"><div class="b-ico">⚡</div><div><h4>Stolper-Reaktion</h4><p>Wenn du dich verschätzt, fängt dein Bein dich blitzschnell ab. Das ist nichts anderes als ein reaktiver Sprung.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cat-label">Im Sport</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">↗</div><div><h4>Antreten &amp; Beschleunigen</h4><p>Jeder Antritt beginnt mit einer Schub-Phase, die wie ein flacher Sprung funktioniert.</p></div></div>
+          <div class="ben"><div class="b-ico">↺</div><div><h4>Vertrauen in die betroffene Seite</h4><p>Springen zeigt deinem Kopf und deinem Knie: Diese Seite hält. Ohne diese Erfahrung bleibt Unsicherheit.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 SPRUNG-ARTEN -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Übersicht</div>
+    <h2 class="sec-title">Welche Sprünge gibt es?</h2>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:6px">Vier große Familien — von der einfachsten zur anspruchsvollsten:</p>
+    <div class="focus-grid">
+      <div class="f-card">
+        <h4>1 · Beidbein vertikal</h4>
+        <p>Aus dem Stand gerade nach oben. Beide Beine tragen gleichermaßen. Beispiel: Sprung auf eine niedrige Box.</p>
+      </div>
+      <div class="f-card">
+        <h4>2 · Beidbein vorwärts oder seitlich</h4>
+        <p>Weiter Sprung nach vorne oder seitlich aus dem Stand. Beide Beine landen gemeinsam. Beispiel: Standweitsprung.</p>
+      </div>
+      <div class="f-card">
+        <h4>3 · Einbein — alle Richtungen</h4>
+        <p>Du springst von einem Bein ab und landest auf demselben Bein. Vorne, seitlich, diagonal. Das ist sport-nah.</p>
+      </div>
+      <div class="f-card">
+        <h4>4 · Reaktiv (schnelle Folge)</h4>
+        <p>Kurze Bodenkontakte hintereinander — wie ein „Sprungball". Trainiert die federnde Steifigkeit deines Beins.</p>
+      </div>
+    </div>
+    <div class="info-tip"><p><b>Wichtig:</b> Wir starten nie mit einem einbeinigen oder reaktiven Sprung. Beides kommt erst, wenn dein Knie und dein Kopf bereit sind.</p></div>
+  </div>
+</section>
+
+<!-- 4 AUFBAU-PRINZIPIEN -->
+<section class="sec bg-off">
+  <div class="sec-inner">
+    <div class="sec-label">Aufbau</div>
+    <h2 class="sec-title">So bauen wir das Sprungtraining auf</h2>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:6px">Vier Achsen, an denen wir gleichzeitig arbeiten — immer von links nach rechts:</p>
+    <div class="focus-grid">
+      <div class="f-card">
+        <h4>Beide Beine → ein Bein</h4>
+        <p>Zuerst beidbeinig — dein gesundes Bein hilft mit. Dann einbeinig, wenn die betroffene Seite stark genug ist.</p>
+      </div>
+      <div class="f-card">
+        <h4>Vorwärts → seitlich → multidirektional</h4>
+        <p>Erst gerade Bewegung. Dann seitlich. Dann in alle Richtungen — wie es im Sport oder Alltag wirklich passiert.</p>
+      </div>
+      <div class="f-card">
+        <h4>Kontrolliert → schnell-reaktiv</h4>
+        <p>Erst langsam und bewusst landen. Dann schneller und federnder. Reaktive Sprünge stellen die höchste Anforderung.</p>
+      </div>
+      <div class="f-card">
+        <h4>Geplant → spontan</h4>
+        <p>Erst weißt du genau, wohin du springst. Später entscheidest du erst im Sprung — das ist Sport-Realität.</p>
+      </div>
+    </div>
+    <div class="info-tip"><p><b>Warum die Reihenfolge?</b> Mit jeder Stufe steigt die Kraft, die in deinem Bein wirkt — bis zum 7-fachen deines Körpergewichts bei reaktiven Sprüngen. Deshalb gehen wir Schritt für Schritt.</p></div>
+  </div>
+</section>
+
+<!-- 5 STUFE 1 + 2 -->
+<section class="sec bg-grad">
+  <div class="sec-inner">
+    <div class="sec-label">Stufen 1 + 2</div>
+    <h2 class="sec-title">Erste Sprünge — beidbeinig</h2>
+    <div class="stage-grid">
+      <div class="stage">
+        <h3><span class="stage-n">Stufe 1</span> Kontrolliert &amp; sanft</h3>
+        <div class="stage-sub">Etwa ab Woche 10 nach der OP</div>
+        <p>Du springst sub-maximal — also nicht so hoch wie du könntest. Wir bauen ein sauberes Landen auf: leise, weich, ohne dass das Knie nach innen kippt.</p>
+        <ul>
+          <li>Sprung auf eine niedrige Box (federt die Landung)</li>
+          <li>Skipping &amp; Hüpfen am Platz</li>
+          <li>Lunge nach hinten mit Schub</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <h3><span class="stage-n">Stufe 2</span> Beidbeinig &amp; maximal</h3>
+        <div class="stage-sub">Etwa ab Woche 15</div>
+        <p>Jetzt springst du wirklich hoch und weit — aber noch immer mit beiden Beinen. Erste „abprallende" Sprünge von einer kleinen Box kommen dazu.</p>
+        <ul>
+          <li>Hochsprung am Platz und mit Anlauf</li>
+          <li>Standweitsprung</li>
+          <li>Erste Abprall-Sprünge von 30 cm Box</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-tip"><p><b>Was wir beobachten:</b> Wie weich landest du? Wie sicher fühlt sich die betroffene Seite an? Wie steht das Knie über dem Fuß? Das entscheidet, wann wir weitergehen.</p></div>
+  </div>
+</section>
+
+<!-- 6 STUFE 3 + 4 -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Stufen 3 + 4</div>
+    <h2 class="sec-title">Einbeinig &amp; reaktiv — der Weg zum Sport</h2>
+    <div class="stage-grid">
+      <div class="stage">
+        <h3><span class="stage-n">Stufe 3</span> Einbeinig &amp; in alle Richtungen</h3>
+        <div class="stage-sub">Etwa ab Woche 19</div>
+        <p>Jetzt geht es nur noch auf der betroffenen Seite. Vorwärts, seitlich, diagonal, mit Drehung. Hier bereiten wir dich auf alle Bewegungen vor, die im Alltag und Sport vorkommen.</p>
+        <ul>
+          <li>Einbein-Sprünge nach vorne, zur Seite, diagonal</li>
+          <li>Drehsprünge (z. B. 90°)</li>
+          <li>Erste Richtungswechsel-Übungen (Step Cuts)</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <h3><span class="stage-n">Stufe 4</span> Sport-nah &amp; reaktiv</h3>
+        <div class="stage-sub">Etwa ab Woche 23 — Vorbereitung Sport-Rückkehr</div>
+        <p>Hier kommen schnelle, federnde Sprünge dazu. Du reagierst auf Signale, du springst kontinuierlich, du wechselst spontan die Richtung — wie im echten Spiel.</p>
+        <ul>
+          <li>Reaktive Abprall-Sprünge von höheren Boxen</li>
+          <li>Sprünge mit Medizinball oder Band</li>
+          <li>Spontane Richtungswechsel auf Signal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 KRITERIEN -->
+<section class="sec bg-grad">
+  <div class="sec-inner">
+    <div class="sec-label">Wann darfst du weiter?</div>
+    <h2 class="sec-title">Vier Fragen, bevor du eine Stufe steigst</h2>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:6px">Wir entscheiden nicht nach Wochen, sondern nach Qualität — das ist deutlich sicherer.</p>
+    <div class="crit-grid">
+      <div class="cri"><div class="cri-n">1</div><div><h4>Sind beide Beine ähnlich stark?</h4><p>Wir messen deine Beinkraft. Beide Seiten sollten in einem ähnlichen Bereich liegen, bevor wir einbeinige Sprünge machen.</p></div></div>
+      <div class="cri"><div class="cri-n">2</div><div><h4>Ist das Springen schmerzfrei?</h4><p>Leichtes Muskelgefühl ist okay. Aber: kein Stechen im Knie, keine Schwellung am nächsten Tag.</p></div></div>
+      <div class="cri"><div class="cri-n">3</div><div><h4>Landest du sauber?</h4><p>Das Knie bleibt über dem Fuß. Du landest leise. Der Oberkörper bleibt stabil. Das ist wichtiger als die Höhe.</p></div></div>
+      <div class="cri"><div class="cri-n">4</div><div><h4>Vertraust du der betroffenen Seite?</h4><p>Wenn du dich noch zurückhältst, brauchen wir mehr Zeit auf der aktuellen Stufe — keine Schwäche, sondern Schutz.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 WIE OFT & WIE VIEL -->
+<section class="sec bg-ice">
+  <div class="sec-inner">
+    <div class="sec-label">Dosierung</div>
+    <h2 class="sec-title">Wie oft &amp; wie viele Sprünge?</h2>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:6px">Zwei Sprung-Trainings pro Woche · 48 Stunden Pause dazwischen · Anzahl wächst mit deiner Stufe:</p>
+    <div class="vol-grid">
+      <div class="vol"><div class="vol-stage">Stufe 1</div><div class="vol-num">50</div><div class="vol-label">Bodenkontakte</div><p>pro Sprung-Training, 2× / Woche</p></div>
+      <div class="vol"><div class="vol-stage">Stufe 2</div><div class="vol-num">100</div><div class="vol-label">Bodenkontakte</div><p>pro Sprung-Training, 2× / Woche</p></div>
+      <div class="vol"><div class="vol-stage">Stufe 3</div><div class="vol-num">150</div><div class="vol-label">Bodenkontakte</div><p>pro Sprung-Training, 2–3× / Woche</p></div>
+      <div class="vol"><div class="vol-stage">Stufe 4</div><div class="vol-num">200</div><div class="vol-label">Bodenkontakte</div><p>pro Sprung-Training, 2–3× / Woche</p></div>
+    </div>
+    <div class="info-tip"><p><b>Was ist ein „Bodenkontakt"?</b> Jeder einzelne Sprung zählt einmal. Bei einer Übung mit 5 schnellen Hüpfern hintereinander sind das 5 Bodenkontakte. Aufwärm-Hüpfer zählen nicht mit.</p></div>
+    <div class="warn-tip"><p><b>Pause zwischen Sätzen:</b> in den ersten beiden Stufen etwa 1 Minute · in den späteren Stufen 2–3 Minuten, damit jeder Sprung kraftvoll bleibt.</p></div>
+  </div>
+</section>
+
+<!-- 9 SICHERHEIT -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Sicherheit</div>
+    <h2 class="sec-title">Wann pausieren — und wann sofort stoppen</h2>
+    <div class="warum-grid">
+      <div>
+        <div class="cat-label">Pausieren &amp; abklären</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">!</div><div><h4>Schmerz im Knie</h4><p>Mehr als ein leichtes Ziehen? Stoppe die Übung und sag uns Bescheid. Wir passen die Dosierung an.</p></div></div>
+          <div class="ben"><div class="b-ico">!</div><div><h4>Schwellung am nächsten Tag</h4><p>Wenn dein Knie nach dem Training warm und dick wird, war es zu viel. Wir reduzieren beim nächsten Mal.</p></div></div>
+          <div class="ben"><div class="b-ico">!</div><div><h4>Du wirst deutlich langsamer</h4><p>Wenn du am Ende einer Übung merklich tiefer landest oder weniger Sprungkraft hast, ist das ein klares Stopp-Signal.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cat-label">So bleibt es sicher</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">✓</div><div><h4>Immer 48 Stunden Pause</h4><p>Zwischen zwei Sprung-Trainings braucht dein Knie Erholung — egal wie gut du dich fühlst.</p></div></div>
+          <div class="ben"><div class="b-ico">✓</div><div><h4>Qualität vor Anzahl</h4><p>Lieber 30 saubere Sprünge als 60 mit nachlassender Landung. Wir hören auf, bevor die Form bricht.</p></div></div>
+          <div class="ben"><div class="b-ico">✓</div><div><h4>Krafttraining bleibt parallel</h4><p>Springen ersetzt kein Krafttraining — es baut darauf auf. Beides läuft parallel.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 VERTRAUEN -->
+<section class="sec bg-grad">
+  <div class="sec-inner">
+    <div class="sec-label">Mentale Seite</div>
+    <h2 class="sec-title">Vertrauen entsteht durch wiederholte gute Erfahrungen</h2>
+    <div class="text-content">
+      <p>Springen ist nach einer Knieverletzung nicht nur eine körperliche Herausforderung. Es kostet auch Überwindung — und das ist absolut normal. Dein Körper hat eine schlechte Erfahrung gemacht, und dein Gehirn arbeitet gerade hart daran, dich davor zu schützen. Diese Vorsicht ist sinnvoll — und sie verschwindet nicht von selbst.</p>
+      <p>Was wirklich hilft: viele kleine, gelungene Sprünge auf einer Stufe, die zu dir passt. Mit jedem leisen Landen, mit jedem stabilen Knie, mit jedem Sprung, der sich gut anfühlt, sagst du deinem Gehirn: <b>„Diese Seite hält."</b> Das ist der eigentliche Vertrauensaufbau — nicht ein einzelner mutiger Sprung, sondern hunderte kleine, kontrollierte.</p>
+      <p>Wenn sich eine Übung nicht richtig anfühlt, gehen wir eine Stufe zurück. Das ist kein Rückschritt — das ist der schnellste Weg nach vorne. Wir sind als digitale Physiotherapie an deiner Seite, schauen uns deine Sprünge im Video an und passen den Plan gemeinsam mit dir an.</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /content -->
+
+<div class="action-bar" id="actionBar">
+  <a href="https://knieathletics.github.io/knieathletics-akademie/springen-lernen-leitfaden.html" target="_blank" class="btn-fullscreen">Vollansicht öffnen</a>
+  <button class="btn-print" onclick="window.print()">Drucken / PDF</button>
+</div>
+
+<div class="doc-footer"><p>&copy; 2026 MJS Sports GmbH · KNIEATHLETICS · knieathletics.de · Leitfaden Sprungtraining</p></div>
+
+<div class="fab-bar" id="fabBar">
+  <a href="https://knieathletics.github.io/knieathletics-akademie/springen-lernen-leitfaden.html" target="_blank" class="fab-full">Vollansicht</a>
+  <button class="fab-pdf" onclick="window.print()">PDF</button>
+</div>
+
+<script>
+(function(){
+  var inIframe = window.self !== window.top;
+  document.getElementById('fabBar').style.display = inIframe ? 'flex' : 'none';
+  document.getElementById('actionBar').style.display = inIframe ? 'none' : 'flex';
+})();
+</script>
+
+</body>
+</html>
