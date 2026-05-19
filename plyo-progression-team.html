@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>KNIEATHLETICS – Sprungtraining-Progression (Team)</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#004467;--petrol:#0087B3;--cyan:#2ab5d7;--orange:#ff6d09;--ice:#eef6f9;--offwhite:#f3eee7;--txt:#2d3748;--muted:#718096;--heading:#004467;--grad-blue:linear-gradient(135deg,#004467 0%,#006a8e 40%,#0087B3 70%,#2ab5d7 100%);--grad-orange:linear-gradient(135deg,#ff5500 0%,#ff6d09 50%,#ff8b3c 100%)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Roboto','Arial',sans-serif;color:var(--txt);background:#f5f5f5;font-size:15px;line-height:1.55}
+.content{max-width:900px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(0,0,0,.08)}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-bottom:1px solid rgba(0,0,0,.06);position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px)}
+.topbar-logo{height:22px}
+.topbar-right{display:flex;align-items:center;gap:12px;font-size:.78rem;color:var(--muted)}
+.badge{background:var(--ice);color:var(--petrol);font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:.5px}
+.sec{padding:40px}
+.sec+.sec{border-top:1px solid rgba(0,0,0,.04)}
+.sec-cont{padding-top:0!important}
+.sec.sec-cont{border-top:none!important}
+.sec-cont+.sec{border-top:1px solid rgba(0,0,0,.04)}
+.print-only-header{display:none}
+.sec-label{font-size:.62rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--petrol);margin-bottom:6px}
+.sec-title{font-size:1.65rem;font-weight:900;color:var(--heading);margin-bottom:14px;letter-spacing:-.3px}
+.bg-ice{background:var(--ice)}
+.bg-off{background:var(--offwhite)}
+.bg-grad{background:var(--grad-blue);color:#fff}
+.bg-grad .sec-label{color:rgba(255,255,255,.3)}
+.bg-grad .sec-title{color:#fff}
+.hero{background:var(--grad-blue);color:#fff;padding:48px 40px}
+.hero-label{font-size:.6rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.hero h1{font-size:2.2rem;font-weight:900;margin-bottom:8px;letter-spacing:-.5px}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:28px;max-width:560px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.info-card{background:rgba(0,30,50,.5);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px}
+.info-card h3{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:8px}
+.info-card p{font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:6px}
+.info-card ul{list-style:none;padding:0;margin:6px 0}
+.info-card ul li{font-size:.76rem;color:rgba(255,255,255,.62);line-height:1.55;padding-left:14px;position:relative;margin-bottom:4px}
+.info-card ul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--cyan);border-radius:50%}
+.info-tip{background:rgba(42,181,215,.1);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0;padding:8px 12px;margin-top:12px}
+.info-tip p{font-size:.74rem;color:rgba(255,255,255,.62)}
+.warum-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}
+.cat-label{font-size:.9rem;font-weight:700;color:var(--heading);margin-bottom:10px}
+.bg-grad .cat-label{color:#fff}
+.b-stack{display:flex;flex-direction:column;gap:10px}
+.ben{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid rgba(0,0,0,.04);display:flex;gap:12px}
+.bg-grad .ben{background:rgba(0,30,50,.5);border-color:rgba(255,255,255,.08)}
+.b-ico{flex-shrink:0;width:28px;height:28px;background:var(--cyan);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:.75rem}
+.ben h4{font-size:.8rem;font-weight:700;color:var(--heading);margin-bottom:2px}
+.bg-grad .ben h4{color:#fff}
+.ben p{font-size:.74rem;color:var(--txt);line-height:1.5}
+.bg-grad .ben p{color:rgba(255,255,255,.62)}
+.goal-box{background:var(--ice);border-radius:10px;padding:16px 18px;border-left:4px solid var(--petrol);margin-bottom:18px}
+.goal-box p{font-size:.84rem;line-height:1.6}
+.focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.f-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:8px;padding:12px 14px;border-top:3px solid var(--cyan)}
+.f-card h4{font-size:.82rem;font-weight:700;color:var(--heading);margin-bottom:4px}
+.f-card p{font-size:.74rem;line-height:1.5;color:var(--txt)}
+.steps{margin-top:16px}
+.stp{display:flex;gap:14px;padding:8px 0;align-items:flex-start}
+.stp-n{flex-shrink:0;width:28px;height:28px;background:var(--grad-blue);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.72rem;font-weight:900}
+.stp h3{font-size:.82rem;font-weight:700;color:var(--heading);margin-bottom:3px}
+.stp ul{list-style:none;padding:0;margin:0}
+.stp li{font-size:.74rem;line-height:1.5;padding-left:12px;position:relative;margin-bottom:2px;color:var(--txt)}
+.stp li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--cyan);border-radius:50%}
+.errs{margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.er{display:flex;align-items:center;gap:12px;background:var(--ice);border-radius:8px;padding:9px 14px}
+.er-n{flex-shrink:0;width:26px;height:26px;background:var(--grad-blue);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900}
+.er span{font-size:.76rem;font-weight:500}
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.sol{background:#fff;border-radius:10px;padding:14px;border:1px solid rgba(0,0,0,.04)}
+.sol h4{font-size:.78rem;font-weight:700;color:var(--heading);margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid rgba(0,0,0,.06)}
+.sol-r{display:flex;gap:6px;margin-bottom:4px;align-items:baseline}
+.sol-t{font-size:.6rem;font-weight:700;color:var(--petrol);text-transform:uppercase;letter-spacing:.3px;flex-shrink:0;width:64px}
+.sol-v{font-size:.7rem;line-height:1.45;color:var(--txt)}
+.crit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.cri{display:flex;gap:12px;background:rgba(0,30,50,.5);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px}
+.cri-n{flex-shrink:0;width:34px;height:34px;background:var(--grad-orange);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.88rem;font-weight:900;color:#fff}
+.cri h4{font-size:.8rem;font-weight:700;color:#fff;margin-bottom:2px}
+.cri p{font-size:.7rem;color:rgba(255,255,255,.65);line-height:1.5}
+.ben-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.text-content{margin-top:12px}
+.text-content p{font-size:.82rem;line-height:1.65;margin-bottom:10px}
+.text-content p:last-child{margin-bottom:0}
+table.kv{width:100%;border-collapse:collapse;margin-top:14px;font-size:.74rem;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:8px;overflow:hidden}
+table.kv th{background:var(--dark);color:#fff;font-weight:700;text-align:left;padding:8px 12px;font-size:.7rem;letter-spacing:.4px;text-transform:uppercase}
+table.kv td{padding:7px 12px;border-top:1px solid rgba(0,0,0,.05);vertical-align:top;line-height:1.45}
+table.kv tr:nth-child(even) td{background:var(--ice)}
+table.kv td.num{font-weight:700;color:var(--dark);text-align:center;font-variant-numeric:tabular-nums}
+.bg-grad table.kv{background:rgba(0,30,50,.45);border-color:rgba(255,255,255,.08)}
+.bg-grad table.kv th{background:rgba(0,0,0,.35);color:#fff}
+.bg-grad table.kv td{color:rgba(255,255,255,.78);border-top-color:rgba(255,255,255,.06)}
+.bg-grad table.kv tr:nth-child(even) td{background:rgba(0,30,50,.65)}
+.bg-grad table.kv td.num{color:var(--cyan)}
+.stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.stage{background:rgba(0,30,50,.5);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.stage h3{font-size:.92rem;font-weight:900;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.stage h3 .stage-n{background:var(--grad-orange);color:#fff;font-size:.72rem;font-weight:900;padding:2px 8px;border-radius:50px}
+.stage .stage-meta{font-size:.7rem;color:var(--cyan);font-weight:600;margin-bottom:8px}
+.stage .stage-bullets{list-style:none;padding:0;margin:0}
+.stage .stage-bullets li{font-size:.72rem;color:rgba(255,255,255,.7);line-height:1.5;padding-left:12px;position:relative;margin-bottom:3px}
+.stage .stage-bullets li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--cyan);border-radius:50%}
+.stage .stage-vol{margin-top:8px;font-size:.74rem;font-weight:700;color:var(--orange);background:rgba(255,109,9,.12);padding:5px 9px;border-radius:6px;display:inline-block}
+.src-list{display:flex;flex-direction:column;gap:7px;margin-top:14px;counter-reset:src}
+.src{background:rgba(0,30,50,.5);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:9px 13px;counter-increment:src;position:relative;padding-left:38px}
+.src::before{content:counter(src);position:absolute;left:9px;top:9px;width:22px;height:22px;background:var(--grad-orange);color:#fff;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:900}
+.src .src-title{font-size:.74rem;font-weight:700;color:#fff;line-height:1.4}
+.src .src-meta{font-size:.66rem;color:var(--cyan);margin-top:2px}
+.kbd{display:inline-block;background:var(--ice);color:var(--dark);font-family:'SFMono-Regular',monospace;font-size:.7rem;padding:1px 6px;border-radius:3px;font-weight:600}
+.bg-grad .kbd{background:rgba(255,255,255,.12);color:#fff}
+.doc-footer{padding:16px 40px;background:var(--dark);text-align:center}
+.doc-footer p{font-size:.68rem;color:rgba(255,255,255,.25)}
+.action-bar{display:flex;gap:12px;justify-content:center;padding:32px 40px;background:#fff;border-top:1px solid rgba(0,0,0,.06)}
+.action-bar a,.action-bar button{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-size:.88rem;font-weight:700;text-decoration:none;font-family:inherit;cursor:pointer;border:none;transition:transform .15s}
+.action-bar a:hover,.action-bar button:hover{transform:scale(1.03)}
+.btn-fullscreen{background:var(--dark);color:#fff}
+.btn-print{background:var(--ice);color:var(--dark);border:1px solid rgba(0,0,0,.08)!important}
+.fab-bar{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:200;display:flex;gap:8px;background:rgba(0,44,67,.95);backdrop-filter:blur(8px);padding:8px 12px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.fab-bar a,.fab-bar button{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;font-size:.78rem;font-weight:600;text-decoration:none;font-family:inherit;cursor:pointer;border:none;color:#fff}
+.fab-full{background:rgba(255,255,255,.15)}
+.fab-pdf{background:var(--orange)}
+@media(max-width:700px){.sec,.hero{padding:28px 20px}.hero h1{font-size:1.6rem}.hero-grid,.warum-grid,.focus-grid,.sol-grid,.crit-grid,.stage-grid{grid-template-columns:1fr}.topbar{padding:10px 20px}}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  @page{size:297mm 210mm;margin:0}
+  html,body{width:297mm;background:#fff;font-size:12px;line-height:1.45;margin:0;padding:0;overflow:visible}
+  .content{max-width:100%!important;width:100%!important;box-shadow:none;margin:0;padding:0}
+  .topbar,.doc-footer,.action-bar,.fab-bar{display:none!important}
+  .sec,.hero{page-break-after:always;width:100%!important;max-width:100%!important;height:210mm!important;min-height:210mm!important;padding:12mm 22mm;margin:0;overflow:hidden;display:flex!important;flex-direction:column!important}
+  .hero{padding:14mm 24mm}
+  .sec:last-of-type{page-break-after:auto}
+  .sec+.sec{border-top:none}
+  .sec-inner,.hero-inner{margin-top:auto!important;margin-bottom:auto!important;max-width:100%!important}
+  .print-only-header{display:block!important}
+  .sec-cont{padding-top:12mm!important}
+  .sec.sec-cont+.sec{border-top:none}
+  .ben,.stp,.er,.sol,.cri,.f-card,.goal-box,.info-card,.stage,.src{break-inside:avoid;page-break-inside:avoid}
+  .sec-label,.sec-title{break-after:avoid;page-break-after:avoid}
+  h3,h4{break-after:avoid;page-break-after:avoid}
+  p,li{orphans:2;widows:2}
+  .hero-inner{display:block!important;width:100%}
+  .hero h1{font-size:2.4rem!important;margin-bottom:10px}
+  .hero-sub{font-size:1rem!important;margin-bottom:22px;max-width:680px}
+  .hero-grid{gap:22px;display:grid!important;grid-template-columns:1fr;min-height:auto}
+  .info-card{padding:22px}
+  .info-card h3{font-size:1.05rem;margin-bottom:10px}
+  .info-card p{font-size:.86rem;line-height:1.6}
+  .info-card ul li{font-size:.84rem;line-height:1.55;margin-bottom:5px}
+  .sec-label{font-size:.72rem;letter-spacing:4px;margin-bottom:8px}
+  .sec-title{font-size:1.7rem!important;margin-bottom:14px}
+  table.kv{font-size:.78rem;margin-top:12px}
+  table.kv th{font-size:.7rem;padding:7px 10px}
+  table.kv td{padding:6px 10px}
+  .stage-grid{gap:14px;margin-top:12px}
+  .stage{padding:16px}
+  .stage h3{font-size:1rem}
+  .stage .stage-meta{font-size:.78rem}
+  .stage .stage-bullets li{font-size:.78rem;line-height:1.5}
+  .stage .stage-vol{font-size:.82rem}
+  .warum-grid{gap:22px;margin-top:14px}
+  .cat-label{font-size:1rem;margin-bottom:12px}
+  .ben{padding:13px 16px;gap:13px}
+  .b-ico{width:30px;height:30px;font-size:.82rem}
+  .ben h4{font-size:.9rem;margin-bottom:3px}
+  .ben p{font-size:.8rem;line-height:1.5}
+  .focus-grid{gap:12px;margin-top:14px}
+  .f-card{padding:14px 16px}
+  .f-card h4{font-size:.9rem;margin-bottom:4px}
+  .f-card p{font-size:.8rem;line-height:1.5}
+  .crit-grid{gap:14px;margin-top:14px}
+  .cri{padding:16px;gap:14px}
+  .cri-n{width:38px;height:38px;font-size:.95rem}
+  .cri h4{font-size:.92rem;margin-bottom:3px}
+  .cri p{font-size:.8rem;line-height:1.5}
+  .src{padding:9px 13px 9px 38px}
+  .src .src-title{font-size:.82rem;line-height:1.45}
+  .src .src-meta{font-size:.74rem}
+  .text-content p{font-size:.9rem;line-height:1.6}
+  .errs{gap:6px;margin-top:12px}
+  .er{padding:10px 14px;gap:12px}
+  .er-n{width:28px;height:28px;font-size:.78rem}
+  .er span{font-size:.84rem}
+}
+</style>
+</head>
+<body>
+
+<div class="content">
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <svg viewBox="0 0 841.89 231.42" xmlns="http://www.w3.org/2000/svg" class="topbar-logo"><style>.st0{fill:#0087B3}</style><g><path d="M758.98,133.73c-2.41,1.76-5.61,2.63-9.59,2.63c-4.47,0-8.05-1.04-10.74-3.13c-2.69-2.08-4.04-4.93-4.04-8.53h-4.32c0,3,0.78,5.65,2.34,7.97c1.56,2.32,3.84,4.12,6.85,5.41c3.01,1.29,6.31,1.93,9.92,1.93c5.27,0,9.51-1.22,12.73-3.65c3.22-2.44,4.83-5.67,4.83-9.69c0-2.55-0.6-4.76-1.79-6.64c-1.19-1.87-2.97-3.48-5.34-4.83c-2.36-1.35-5.84-2.65-10.43-3.9c-4.59-1.25-7.92-2.7-10.01-4.34c-2.08-1.64-3.13-3.76-3.13-6.37c0-2.81,1.16-5.09,3.48-6.84c2.32-1.75,5.43-2.62,9.34-2.62c4.03,0,7.23,1.06,9.62,3.19c2.39,2.13,3.58,4.94,3.58,8.43h4.35c0-2.88-0.74-5.49-2.21-7.83c-1.47-2.34-3.55-4.17-6.23-5.48c-2.68-1.31-5.72-1.97-9.11-1.97c-5.01,0-9.12,1.22-12.34,3.67c-3.22,2.45-4.83,5.62-4.83,9.53c0,4.03,1.73,7.28,5.2,9.76c2.43,1.76,6.3,3.38,11.59,4.86c5.29,1.49,8.93,3.05,10.92,4.7c1.99,1.65,2.98,3.89,2.98,6.72C762.59,129.65,761.39,131.98,758.98,133.73 M713.41,123.37c-0.54,4.33-1.95,7.58-4.25,9.74c-2.29,2.17-5.7,3.25-10.22,3.25c-4.56,0-8.19-1.76-10.87-5.27c-2.68-3.51-4.02-8.22-4.02-14.12v-6.26c0-6.11,1.37-10.9,4.13-14.37c2.75-3.47,6.44-5.2,11.08-5.2c8.36,0,13.07,4.34,14.15,13.03h4.35c-0.52-5.22-2.36-9.31-5.53-12.25c-3.17-2.95-7.5-4.42-12.97-4.42c-3.89,0-7.32,0.95-10.31,2.86c-2.98,1.91-5.27,4.62-6.86,8.13c-1.59,3.51-2.39,7.54-2.39,12.08v6.64c0.02,4.47,0.83,8.45,2.42,11.92c1.59,3.48,3.84,6.16,6.76,8.06c2.91,1.9,6.27,2.84,10.06,2.84c5.43,0,9.78-1.43,13.04-4.28c3.27-2.86,5.19-6.97,5.78-12.36H713.41z M662.31,88.19h-4.32v51.12h4.32V88.19z M643.4,88.19h-39.33v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M589.93,111.15h-23.91V91.84h27.32v-3.65H561.7v51.12h31.81v-3.65h-27.49v-20.86h23.91V111.15z M522.78,88.19h-4.35v51.12h29.6v-3.65h-25.25V88.19z M500.04,88.19h-4.35v22.96h-29.21V88.19h-4.32v51.12h4.32v-24.51h29.21v24.51h4.35V88.19z M448.51,88.19h-39.32v3.65h17.49v47.47h4.32V91.84h17.52V88.19z M384.02,93.46l10.25,27.84h-20.5L384.02,93.46z M400.95,139.31h4.49L386.1,88.19h-4.11l-19.35,51.12h4.53l5.27-14.36h23.21L400.95,139.31z M347.47,108.91h-20.23V96.72h23.67v-8.53h-34.2v51.12h34.27v-8.46h-23.74v-13.69h20.23V108.91z M301.56,88.19h-10.53v51.12h10.53V88.19z M275.77,88.19h-10.5v33.71l-20.54-33.71H234.2v51.12h10.53v-33.64l20.51,33.64h10.53V88.19z M212.3,139.31h12.54l-18.68-28.41l18.15-22.72h-12.96l-13.03,16.82l-4.63,6.35V88.19h-10.53v51.12h10.53v-14.61l5.48-5.9L212.3,139.31z"/><path d="M120.08,102.43c-0.37,1.96-1.59,3.31-2.82,4.78c-5.15,6.5-8.59,13.49-7.85,22.08c0.25,3.07,1.96,5.52,3.07,8.22c0.74,1.72,0.37,2.82-0.61,4.17c-6.5,8.95-8.59,18.77-6.62,29.56c0.12,0.37,0.12,0.86,0.61,1.23c0.49-11.04,2.7-21.59,7.6-32.01c0.74,2.21,0.61,4.05,0.25,5.89c-0.61,2.82-1.84,5.4-2.94,8.1c-0.86,2.33-1.84,4.66-1.84,7.24c1.23-4.05,3.56-7.48,5.4-11.16c1.96-3.93,2.58-7.97,1.1-12.14c-0.49-1.35-0.98-2.7-1.59-3.93c-2.45-4.78-2.45-9.81-0.86-14.84c1.47-4.54,3.07-9.08,6.13-12.88C119.96,105.37,120.33,103.9,120.08,102.43"/><path d="M74.94,80.47c9.08,13.98,22.57,21.1,38.64,23.92c-6.87-3.31-13.98-6.01-20.61-9.94C86.35,90.53,80.71,85.38,74.94,80.47"/><path d="M125.11,171.12c4.54-14.11,12.51-26,19.38-38.39c5.52-9.81,10.67-19.87,13-31.03c0.86-3.8,1.23-7.73,0.49-11.65c-0.86-5.03-3.56-8.83-7.85-11.53c-3.07-1.96-6.38-3.31-9.69-4.66c-12.27-4.91-24.65-9.69-36.92-14.6c-0.49-0.25-0.98-0.37-1.59-0.25c0.49,0.25,1.1,0.49,1.59,0.74c13,5.76,26,11.53,39,17.29c1.72,0.74,3.31,1.59,5.03,2.45c6.13,3.43,8.83,8.71,8.34,15.7c-0.61,7.73-3.19,14.96-6.13,22.08c-3.07,7.24-6.87,14.11-10.67,20.97c-4.66,8.59-9.32,17.17-12.39,26.49c-0.61,1.72-0.98,3.56-1.59,5.4C124.99,170.38,124.99,170.63,125.11,171.12"/><path class="st0" d="M147.93,100.59c-5.64,4.05-9.32,3.56-13.98-1.47c-1.47,1.47-1.84,3.31-1.96,5.27c-0.12,2.58,0.49,5.03,0.25,7.48c-0.49,5.03-2.33,9.69-3.92,14.35c-4.91,14.35-10.06,28.7-15.58,42.81c-0.49,1.35-0.25,1.84,1.1,2.21c3.19,0.86,3.19,0.98,4.42-2.09c3.8-8.46,7.48-16.81,11.28-25.27c4.78-10.67,9.57-21.34,14.35-32.01C145.59,108.32,146.94,104.64,147.93,100.59"/><path class="st0" d="M90.77,63.67c-0.74,4.05-1.59,7.97-4.29,11.04c0.37,0.49,0.98,0.61,1.47,0.74c12.88,4.54,25.64,9.44,37.53,16.19c3.07,1.72,6.01,3.8,8.83,5.89c2.21,1.72,4.42,2.94,7.24,3.19c4.29,0.49,8.22-4.66,6.13-8.83c-1.47-3.07-3.8-5.03-6.75-6.38c-2.45-1.1-5.15-1.59-7.73-2.21c-11.77-2.7-22.45-7.97-32.75-13.98C97.14,67.47,93.96,65.63,90.77,63.67"/><path class="st0" d="M148.42,105.86c4.29-4.42,5.15-11.65,1.96-15.7C151.36,95.68,150.62,100.71,148.42,105.86"/></g></svg>
+  <div class="topbar-right"><span class="badge">Team-Leitfaden</span><span>Sprungtraining-Progression</span></div>
+</div>
+
+<!-- 1 HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Wissenschaftlicher Leitfaden · Mai 2026</div>
+    <h1>Sprungtraining-Progression</h1>
+    <p class="hero-sub">Plyometrie nach ACL-Rekonstruktion und im Return-to-Sport · Evidenzbasis aus Buckthorpe &amp; Della Villa, Davies, NSCA, BJSM/JOSPT.</p>
+    <div class="hero-grid">
+      <div class="info-card">
+        <h3>Kernaussagen</h3>
+        <ul>
+          <li><b>Goldstandard:</b> Buckthorpe &amp; Della Villa 2021 — 4-Stufen-Modell, Kriterien-basiert, 50/100/150/200 Bodenkontakte.</li>
+          <li><b>Volumen healthy:</b> 80–140 Kontakte/Session (Chu, Potach NSCA); Reha-Start <b>50</b>.</li>
+          <li><b>RTS-Gates:</b> Quad-LSI ≥ 90 %, Hop-LSI ≥ 90 %, ≥ 9 Mo post-OP (Grindem 2016).</li>
+          <li><b>Frequenz:</b> 48–72 h zwischen Sessions; Pausen 60 s (Reha) bis 2–3 min (High-Intensity).</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Was dieser Leitfaden NICHT ist</h3>
+        <p>Kein Ersatz für die klinische Beurteilung. Wochenzahlen sind Orientierung — alle Stufen-Wechsel sind <b>criteria-based, not time-based</b>. Bei Schwellung, Schmerz NRS &gt; 2 oder Lande-Qualität-Verlust: Stufe halten oder zurück.</p>
+        <div class="info-tip"><p>Tabellen im Anschluss sind aus den Originalquellen abgeleitet. Bei Konflikten zwischen NSCA/Davies und Buckthorpe gilt im Reha-Kontext immer <b>Buckthorpe</b>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 TAXONOMIE — Plyometrie-Grundlagen -->
+<section class="sec bg-ice">
+  <div class="sec-inner">
+    <div class="sec-label">Definitionen</div>
+    <h2 class="sec-title">Plyometrie — Begriffe sauber trennen</h2>
+    <div class="focus-grid">
+      <div class="f-card">
+        <h4>Stretch-Shortening Cycle (SSC)</h4>
+        <p>Vordehnung der Muskel-Sehnen-Einheit → kurze Amortisation → konzentrische Aktion. Trainiert reaktive Steifigkeit.</p>
+      </div>
+      <div class="f-card">
+        <h4>Slow SSC (GCT &gt; 250 ms)</h4>
+        <p>Große Gelenkamplituden, längere Bodenkontaktzeit. Beispiele: CMJ aus tiefem Squat, Standweitsprung.</p>
+      </div>
+      <div class="f-card">
+        <h4>Fast SSC (GCT &lt; 250 ms)</h4>
+        <p>Kleine Amplituden, kurze GCT. Beispiele: Drop Jump, Hop-Folgen, Sprintkontakt. Schwelle nach Schmidtbleicher.</p>
+      </div>
+      <div class="f-card">
+        <h4>Reactive Strength Index (RSI)</h4>
+        <p>Sprunghöhe / Bodenkontaktzeit (m/s). Standardmaß für Fast-SSC-Qualität — gemessen via Drop Jump.</p>
+      </div>
+      <div class="f-card">
+        <h4>Drop Jump vs. Depth Jump</h4>
+        <p>In der Literatur weitgehend synonym. NSCA-Konvention: „Drop Jump" Standard (20–40 cm); „Depth Jump" = schockintensive Variante (40–110 cm).</p>
+      </div>
+      <div class="f-card">
+        <h4>Hop vs. Jump</h4>
+        <p><b>Hop:</b> Einbein-Take-Off + Einbein-Landing. <b>Jump:</b> Beidbein-Take-Off ODER -Landing (Davies 2015).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 TAXONOMIE — Sprungarten -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Übersicht</div>
+    <h2 class="sec-title">Sprungarten — die fünf Familien</h2>
+    <table class="kv">
+      <thead><tr><th style="width:21%">Familie</th><th>Beispiele</th><th style="width:22%">Charakteristik</th></tr></thead>
+      <tbody>
+        <tr><td><b>Foundational / Pre-Plyo</b></td><td>Pogo Jump, Ankle Hop, Skipping, Shuffling, Mini Jumps, Wall-Drill-Hops</td><td>GRF &lt; 1× KG · zählt NICHT zur Plyo-Volumen-Bilanz</td></tr>
+        <tr><td><b>Beidbeinig vertikal</b></td><td>Squat Jump (SJ, kein SSC), Countermovement Jump (CMJ, slow SSC), Tuck Jump, Jump-to-Reach</td><td>SJ isoliert konzentrisch · CMJ Standard-Test</td></tr>
+        <tr><td><b>Beidbeinig horiz./lat.</b></td><td>Broad Jump, Forward Bound, Lateral Jump-and-Stick, Box Jump (geringere Lande-GRF)</td><td>Box Jump = Reha-Einstieg</td></tr>
+        <tr><td><b>Einbeinig (Hops)</b></td><td>SL SJ/CMJ, Single Hop, Triple Hop, Crossover Hop, 6-m-Timed (Noyes-Battery), SL Lateral Hop, 90°-Hop, Y-Hop</td><td>RTS-Test-Pflicht</td></tr>
+        <tr><td><b>Reaktiv / Schock</b></td><td>Drop Jump (DJ), Depth Jump, Bounding (Wechsel-Einbein, lange Flugphase)</td><td>Fast SSC · höchste GRF (bis 7× KG)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 4 PROGRESSIONS-ACHSEN -->
+<section class="sec bg-off">
+  <div class="sec-inner">
+    <div class="sec-label">Architektur</div>
+    <h2 class="sec-title">Progressions-Achsen — worauf die Reihenfolge basiert</h2>
+    <table class="kv">
+      <thead><tr><th style="width:22%">Achse</th><th>Niedrig</th><th>Mittel</th><th>Hoch</th></tr></thead>
+      <tbody>
+        <tr><td>Stützfläche</td><td>Bilateral</td><td>–</td><td>Unilateral</td></tr>
+        <tr><td>Ebene</td><td>Sagittal (vert./forward)</td><td>Frontal (lateral)</td><td>Multiplanar / Rotational</td></tr>
+        <tr><td>Volition</td><td>In-Place</td><td>Forward → Lateral</td><td>Reactive / Random / Cutting</td></tr>
+        <tr><td>Intensität</td><td>Submaximal</td><td>Maximal kontrolliert</td><td>Maximal reaktiv</td></tr>
+        <tr><td>SSC-Tempo</td><td>Slow (&gt; 250 ms)</td><td>Mittel</td><td>Fast (&lt; 250 ms)</td></tr>
+        <tr><td>Landing</td><td>Bilateral Land</td><td>Unilateral Stick</td><td>Reactive Land</td></tr>
+        <tr><td>Bodenkontaktzeit</td><td>&gt; 1 s</td><td>0,4–1 s</td><td>&lt; 0,25 s</td></tr>
+        <tr><td>Bodenreaktionskraft</td><td>&lt; 2× KG</td><td>2–4× KG</td><td>4–7× KG</td></tr>
+        <tr><td>Oberfläche</td><td>Wasser / Sand</td><td>Rasen / Matte</td><td>Hartboden</td></tr>
+        <tr><td>Antizipation</td><td>Pre-Planned</td><td>Reactive (Cue)</td><td>Sport-Random</td></tr>
+      </tbody>
+    </table>
+    <div class="info-tip" style="margin-top:14px;background:rgba(0,68,103,.06);border-color:var(--petrol)"><p style="color:var(--txt)"><b>Mechanistik:</b> Kraft (linear progredient) und Komplexität (planar progredient) werden <b>entkoppelt</b>. Kraft-Voraussetzungen sind Gates vor jeder Komplexitäts-Stufe.</p></div>
+  </div>
+</section>
+
+<!-- 5 BUCKTHORPE 4-STUFEN ÜBERSICHT -->
+<section class="sec bg-grad">
+  <div class="sec-inner">
+    <div class="sec-label">Modell</div>
+    <h2 class="sec-title">Buckthorpe &amp; Della Villa 2021 — Vier Reha-Stufen</h2>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:8px">Criteria-based, not time-based. Wochenzahlen sind Orientierung post-ACLR.</p>
+    <div class="stage-grid">
+      <div class="stage">
+        <h3><span class="stage-n">Stage 1</span> Mid-Stage</h3>
+        <div class="stage-meta">Wo. 10–14 · bilateral submaximal</div>
+        <ul class="stage-bullets">
+          <li>Quad-LSI &gt; 70 %, volle Extension, Flex &gt; 120°</li>
+          <li>Lunge Push Back, SJ/CMJ to Box, Skips</li>
+          <li>Step-Up Jump, Pogo (foundational)</li>
+        </ul>
+        <div class="stage-vol">50 Kontakte / Session</div>
+      </div>
+      <div class="stage">
+        <h3><span class="stage-n">Stage 2</span> Late-Stage</h3>
+        <div class="stage-meta">Wo. 15–18 · bilateral maximal</div>
+        <ul class="stage-bullets">
+          <li>Quad-LSI &gt; 80 %, 8RM CC ≥ 1,25× KG</li>
+          <li>SJ/CMJ in place + forward</li>
+          <li>BL Drop Jump 30 cm, Split Jump, Step-Land-Push-Back</li>
+        </ul>
+        <div class="stage-vol">100 Kontakte / Session</div>
+      </div>
+      <div class="stage">
+        <h3><span class="stage-n">Stage 3</span> RTS-Vorbereitung</h3>
+        <div class="stage-meta">Wo. 19–22 · unilateral &amp; multiplanar</div>
+        <ul class="stage-bullets">
+          <li>Quad-LSI &gt; 90 %, 8RM CC ≥ 1,5× KG</li>
+          <li>UL SJ/CMJ, UL DJ, Rotational Jump</li>
+          <li>Hops fwd/lat/diag/90°, Step Cut 30–90°, Bounding</li>
+        </ul>
+        <div class="stage-vol">150 Kontakte / Session</div>
+      </div>
+      <div class="stage">
+        <h3><span class="stage-n">Stage 4</span> RTS-Training</h3>
+        <div class="stage-meta">Wo. 23–29 · maximal-reaktiv</div>
+        <ul class="stage-bullets">
+          <li>Quad-LSI &gt; 90 %, gute BL/UL DJ-Qualität</li>
+          <li>Gewichtete CMJ/SJ, höhere DJ-Boxen</li>
+          <li>Reactive CoD, Step Cut mit Perturbation, On-Field Agility</li>
+        </ul>
+        <div class="stage-vol">200 Kontakte / Session</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 STAGE 1 + 2 DETAIL -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Detail · Stages 1 + 2</div>
+    <h2 class="sec-title">Mid- &amp; Late-Stage Plyometrie</h2>
+    <div class="sol-grid">
+      <div class="sol">
+        <h4>Stage 1 — Mid-Stage (Wo. 10–14)</h4>
+        <div class="sol-r"><span class="sol-t">Entry</span><span class="sol-v">Quad-LSI &gt; 70 %, volle Extension, Flex &gt; 120°, bilateraler Squat-Asymm. &lt; 20 %, NRS 0–1, kein Schwellungsrebound.</span></div>
+        <div class="sol-r"><span class="sol-t">Ziel</span><span class="sol-v">Bilaterale Lande-Qualität bei sub-maximalen Sprüngen, Wiedergewinn der Sprungbereitschaft, Quad-Funktion unter Last.</span></div>
+        <div class="sol-r"><span class="sol-t">Inhalte</span><span class="sol-v">Lunge Push Back, SJ/CMJ to Box, Step-Up Jump, Skips in place, Pogo Jumps (zählen nicht zum Plyo-Volumen).</span></div>
+        <div class="sol-r"><span class="sol-t">Volumen</span><span class="sol-v"><b>50</b> Kontakte/Session · 2× / Woche · 8–12 Wdh/Satz · 60 s Pause.</span></div>
+      </div>
+      <div class="sol">
+        <h4>Stage 2 — Late-Stage (Wo. 15–18)</h4>
+        <div class="sol-r"><span class="sol-t">Entry</span><span class="sol-v">Quad-LSI &gt; 80 % (isokin. 60°/s), 8RM Closed-Chain ≥ 1,25× KG, gute BL-Lande-Qualität, 10 min Treadmill schmerzfrei.</span></div>
+        <div class="sol-r"><span class="sol-t">Ziel</span><span class="sol-v">Maximal-bilaterale Plyo, Einstieg in Slow SSC bei höherer Intensität, Vorbereitung auf unilaterale Belastung.</span></div>
+        <div class="sol-r"><span class="sol-t">Inhalte</span><span class="sol-v">SJ/CMJ in place + forward, Bilateral Drop Jump 30 cm, Split Jump, Step-and-Land, Step-Land-Push-Back, Broad Jump.</span></div>
+        <div class="sol-r"><span class="sol-t">Volumen</span><span class="sol-v"><b>100</b> Kontakte/Session · 2× / Woche · 6–10 Wdh/Satz · 60–90 s Pause.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 STAGE 3 + 4 DETAIL -->
+<section class="sec bg-ice">
+  <div class="sec-inner">
+    <div class="sec-label">Detail · Stages 3 + 4</div>
+    <h2 class="sec-title">RTS-Vorbereitung &amp; RTS-Training</h2>
+    <div class="sol-grid">
+      <div class="sol">
+        <h4>Stage 3 — RTS-Vorbereitung (Wo. 19–22)</h4>
+        <div class="sol-r"><span class="sol-t">Entry</span><span class="sol-v">Quad-LSI &gt; 90 %, 8RM CC ≥ 1,5× KG (oder 1RM Squat ≥ 2× KG), gutes SL Landing + Deceleration, Hop-Test asymmetrisch noch tolerabel.</span></div>
+        <div class="sol-r"><span class="sol-t">Ziel</span><span class="sol-v">Übergang zu unilateraler und multiplanarer Plyo. Lateral, rotational, diagonal — alle Ebenen abdecken.</span></div>
+        <div class="sol-r"><span class="sol-t">Inhalte</span><span class="sol-v">UL SJ/CMJ, UL Drop Jump, Rotational Jump, Lateral Step-Jump-Back, Tuck Jump, Hops (forward/lateral/diagonal/90°), Step Cut 30–90°, Bounding.</span></div>
+        <div class="sol-r"><span class="sol-t">Volumen</span><span class="sol-v"><b>150</b> Kontakte/Session · 2–3× / Woche · 4–8 Wdh/Satz · 90–120 s Pause.</span></div>
+      </div>
+      <div class="sol">
+        <h4>Stage 4 — RTS-Training (Wo. 23–29)</h4>
+        <div class="sol-r"><span class="sol-t">Entry</span><span class="sol-v">Quad-LSI &gt; 90 %, Hop-LSI ≥ 90 %, gute Qualität bei BL/UL DJ + Pre-Planned CoD, sport-spezifisches Lauf-/CoD-Training etabliert.</span></div>
+        <div class="sol-r"><span class="sol-t">Ziel</span><span class="sol-v">Maximal-reaktive Belastung, Verbindung mit On-Field-Drills, antizipatorische und reaktive Entscheidungs-Plyo.</span></div>
+        <div class="sol-r"><span class="sol-t">Inhalte</span><span class="sol-v">Gewichtete CMJ/SJ, höhere DJ-Boxen, Lateral Hop mit Band/Medizinball, SL 90° Lateral DJ, Step Cut mit Perturbation, Reactive CoD, On-Field Agility.</span></div>
+        <div class="sol-r"><span class="sol-t">Volumen</span><span class="sol-v"><b>200</b> Kontakte/Session · 2–3× / Woche · 4–6 Wdh/Satz · 2–3 min Pause.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 RTS-GATES -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Return-to-Sport</div>
+    <h2 class="sec-title">RTS-Gates — was die Literatur fordert</h2>
+    <div class="warum-grid">
+      <div>
+        <div class="cat-label">Kern-Kriterien (konsensual)</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">1</div><div><h4>Quad-LSI ≥ 90 %</h4><p>Isokinetisch 60°/s. Cut-off mit deutlich erhöhtem Re-Riss-Risiko bei &lt; 90 % (Palmieri-Smith &amp; Lepley 2015).</p></div></div>
+          <div class="ben"><div class="b-ico">2</div><div><h4>Hop-Battery LSI ≥ 90 %</h4><p>4 Hops: Single, Triple, Crossover, 6-m-Timed (Noyes / Reid / Logerstedt).</p></div></div>
+          <div class="ben"><div class="b-ico">3</div><div><h4>≥ 9 Monate post-OP</h4><p>Pro Monat Verzögerung sinkt Re-Risk um 51 % bis Monat 9 (Grindem et al. 2016).</p></div></div>
+          <div class="ben"><div class="b-ico">4</div><div><h4>Subjektive Knie-Funktion</h4><p>IKDC-Subjective ≥ 90 % oder altersnormale KOOS-Werte.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cat-label">Evidenz &amp; Limitationen</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">!</div><div><h4>Grindem 2016 — Cohort-Daten</h4><p>RTS-Test bestanden → <b>5,6 %</b> Re-Riss. Nicht bestanden → <b>38,2 %</b>. Kriterien-Bündel reduziert Re-Risk um 84 %.</p></div></div>
+          <div class="ben"><div class="b-ico">!</div><div><h4>Wellsandt 2017 — LSI-Falle</h4><p>LSI überschätzt Funktion, weil das „gesunde" Bein nach OP dekonditioniert. Zusätzlich absolute Norm-Werte oder EPIC heranziehen.</p></div></div>
+          <div class="ben"><div class="b-ico">!</div><div><h4>Chmielewski 2016 — Intensität</h4><p>Low- vs. High-Intensity-Plyo in der Reha → kein klarer Vorteil hoher Intensität. Spricht für vorsichtige Progression.</p></div></div>
+          <div class="ben"><div class="b-ico">!</div><div><h4>Della Villa / Picinini 2025</h4><p>On-Field-Rehabilitation als RTS-Verlängerung nach Indoor-Plyo: hohe RTC-Raten bei strukturierter 5-Stufen-Feldprogression.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 VOLUMEN GESUND -->
+<section class="sec bg-off">
+  <div class="sec-inner">
+    <div class="sec-label">Volumen · gesunde Athlet:innen</div>
+    <h2 class="sec-title">NSCA / Chu / Davies — Standard-Volumen</h2>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:10px"><b>Achtung:</b> Diese Spannen gelten für trainierte Athlet:innen ohne Knieverletzung — sind die <b>obere Grenze</b>, nicht das Reha-Ziel.</p>
+    <table class="kv">
+      <thead><tr><th>Level</th><th class="num">Kontakte / Session</th><th>Wochenfrequenz</th><th>Quelle</th></tr></thead>
+      <tbody>
+        <tr><td>Beginner</td><td class="num">80–100</td><td>2–3× / Woche</td><td>Chu 1998; Potach &amp; Chu (NSCA Essentials Kap. 18)</td></tr>
+        <tr><td>Intermediate</td><td class="num">100–120</td><td>2–3× / Woche</td><td>NSCA Essentials</td></tr>
+        <tr><td>Advanced</td><td class="num">120–140</td><td>2–3× / Woche</td><td>NSCA Essentials</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:14px;margin-bottom:6px"><b>Volumen nach Intensität</b> (Davies, Riemann &amp; Manske 2015; Potach &amp; Chu):</p>
+    <table class="kv">
+      <thead><tr><th>Intensität</th><th class="num">Max Kontakte / Session</th><th>Beispiele</th></tr></thead>
+      <tbody>
+        <tr><td>Low</td><td class="num">bis 400</td><td>Skipping, Mini Jumps, Ankle Bounces (GRF &lt; 2× KG)</td></tr>
+        <tr><td>Moderate</td><td class="num">bis 350</td><td>CMJ, Lateral Jump, Box Jump &lt; 30 cm</td></tr>
+        <tr><td>High</td><td class="num">bis 300</td><td>Drop Jump moderat, SL Hops, Tuck Jumps</td></tr>
+        <tr><td>Very High</td><td class="num">bis 200</td><td>Depth Jumps, hohe Box, SL Reactive</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 10 VOLUMEN REHA -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="sec-label">Volumen · Reha-Kontext</div>
+    <h2 class="sec-title">Buckthorpe — Plyo-Dosierung nach ACLR</h2>
+    <table class="kv">
+      <thead><tr><th>Stage</th><th class="num">Kontakte / Session</th><th>Frequenz</th><th class="num">Wochen-Summe</th><th>Wdh / Satz</th><th>Pause</th></tr></thead>
+      <tbody>
+        <tr><td>Stage 1 · Mid-Stage</td><td class="num">50</td><td>2× / Woche</td><td class="num">~ 100</td><td>8–12</td><td>60 s</td></tr>
+        <tr><td>Stage 2 · Late-Stage</td><td class="num">100</td><td>2× / Woche</td><td class="num">~ 200</td><td>6–10</td><td>60–90 s</td></tr>
+        <tr><td>Stage 3 · RTS-Vorb.</td><td class="num">150</td><td>2–3× / Woche</td><td class="num">~ 300–450</td><td>4–8</td><td>90–120 s</td></tr>
+        <tr><td>Stage 4 · RTS-Training</td><td class="num">200</td><td>2–3× / Woche</td><td class="num">~ 400–600</td><td>4–6</td><td>2–3 min</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:14px;line-height:1.55"><b>Quellen-Konflikt transparent:</b> Buckthorpe-Reha startet <b>unter</b> dem NSCA-Healthy-Beginner-Wert (50 vs. 80–100), weil Quad-Kraft und Closed-Chain-Belastbarkeit erst aufgebaut werden. Davies erlaubt bei Low-Intensity bis 400 Kontakte — nur solange die GRF &lt; 2× KG bleibt. Im Reha-Kontext gilt: Buckthorpe schlägt NSCA.</p>
+    <div class="info-tip" style="background:rgba(255,109,9,.08);border-color:var(--orange);margin-top:14px"><p style="color:var(--txt)"><b>Praxis-Regel:</b> Foundational/Pre-Plyos (Pogo, Ankle Hop, Skipping in place) <b>zählen nicht</b> zur Plyo-Volumen-Bilanz — auch wenn sie in der Session laufen.</p></div>
+  </div>
+</section>
+
+<!-- 11 SICHERHEIT -->
+<section class="sec bg-ice">
+  <div class="sec-inner">
+    <div class="sec-label">Sicherheit</div>
+    <h2 class="sec-title">Pausen, Ermüdung, Kontraindikationen</h2>
+    <div class="warum-grid">
+      <div>
+        <div class="cat-label">Pausen &amp; Frequenz</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">⏱</div><div><h4>Zwischen Sätzen</h4><p>60 s in der Reha (Davies). Bei High-Intensity gesund: 2–3 min (Work-to-Rest 1:5 bis 1:10) — ATP-PCr-Regeneration.</p></div></div>
+          <div class="ben"><div class="b-ico">⏱</div><div><h4>Zwischen Sessions</h4><p>48–72 h Konsens. In der Reha eher 72 h, falls Schwellungs-Rebound möglich.</p></div></div>
+        </div>
+        <div class="cat-label" style="margin-top:14px">Ermüdungs-Marker (Abbruch)</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">!</div><div><h4>Akut</h4><p>Schmerz NRS &gt; 2 · Schwellungs-Zunahme (Stroke-Test) · Verlust der Lande-Qualität (Valgus, Trunk Lean, kein „Quiet Landing").</p></div></div>
+          <div class="ben"><div class="b-ico">!</div><div><h4>Performance</h4><p>Sprunghöhen-Abfall &gt; 10 % vs. Set 1 · RSI-Abfall bei DJ &gt; 10 %.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="cat-label">Kontraindikationen (Davies 2015)</div>
+        <div class="b-stack">
+          <div class="ben"><div class="b-ico">✕</div><div><h4>Akute Pathologie</h4><p>Akute Schmerzen, Entzündung, Schwellung · akute/subakute Sprains/Strains · Gelenkinstabilität.</p></div></div>
+          <div class="ben"><div class="b-ico">✕</div><div><h4>Postoperative Limits</h4><p>Graft-Heilung, Meniskus-Refixation, Soft-Tissue-Schutz-Phasen.</p></div></div>
+          <div class="ben"><div class="b-ico">✕</div><div><h4>Fehlende Grundkraft</h4><p>Davies-Zitat: „<i>the most significant contraindication to plyometrics is when the athlete does not have the foundational strength or training base</i>". Faustregel: Squat-1RM ≥ 1,5× KG vor hoch-intensiver Plyo.</p></div></div>
+          <div class="ben"><div class="b-ico">→</div><div><h4>Pre-Plyo-Gates</h4><p>Stage 1: volle Extension, Flex &gt; 120°, Quad-LSI &gt; 70 %. Stage 3: Lauf-ABC schmerzfrei, 8RM SL-Press ≥ 1,25× KG. RTS-Cutting: Quad-LSI ≥ 90 %, Hop-LSI ≥ 90 %, ≥ 9 Mo.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 QUELLEN -->
+<section class="sec bg-grad">
+  <div class="sec-inner">
+    <div class="sec-label">Evidenz</div>
+    <h2 class="sec-title">Quellen — peer-reviewed, verifiziert</h2>
+    <div class="src-list">
+      <div class="src"><div class="src-title">Buckthorpe M, Della Villa F. Recommendations for Plyometric Training after ACL Reconstruction — A Clinical Commentary.</div><div class="src-meta">Int J Sports Phys Ther 2021;16(3):879–895 · DOI 10.26603/001c.23549</div></div>
+      <div class="src"><div class="src-title">Davies G, Riemann BL, Manske R. Current Concepts of Plyometric Exercise.</div><div class="src-meta">Int J Sports Phys Ther 2015;10(6):760–786 · PMID 26618058</div></div>
+      <div class="src"><div class="src-title">Adams D, Logerstedt D, Hunter-Giordano A, Axe MJ, Snyder-Mackler L. Current Concepts for ACLR — Criterion-Based Progression.</div><div class="src-meta">JOSPT 2012;42(7):601–614 · DOI 10.2519/jospt.2012.3871</div></div>
+      <div class="src"><div class="src-title">van Melick N et al. Evidence-based clinical practice update: ACL rehabilitation guidelines.</div><div class="src-meta">Br J Sports Med 2016;50(24):1506–1515 · DOI 10.1136/bjsports-2015-095898</div></div>
+      <div class="src"><div class="src-title">Grindem H, Snyder-Mackler L, Moksnes H, Engebretsen L, Risberg MA. Simple decision rules can reduce reinjury risk by 84 % after ACLR.</div><div class="src-meta">Br J Sports Med 2016;50(13):804–808 · Delaware-Oslo Cohort</div></div>
+      <div class="src"><div class="src-title">Palmieri-Smith RM, Lepley LK. Quadriceps Strength Asymmetry After ACLR Alters Knee Biomechanics.</div><div class="src-meta">Am J Sports Med 2015;43(7):1662–1669</div></div>
+      <div class="src"><div class="src-title">Wellsandt E, Failla MJ, Snyder-Mackler L. Limb Symmetry Indexes Can Overestimate Knee Function After ACL Injury.</div><div class="src-meta">JOSPT 2017;47(5):334–338 · DOI 10.2519/jospt.2017.7285</div></div>
+      <div class="src"><div class="src-title">Chmielewski TL et al. Low- vs. High-Intensity Plyometric Exercise During Rehab After ACLR.</div><div class="src-meta">Am J Sports Med 2016;44(3):609–617</div></div>
+      <div class="src"><div class="src-title">Myer GD, Ford KR, Hewett TE. Tuck Jump Assessment for Reducing ACL Injury Risk.</div><div class="src-meta">Athl Ther Today 2008;13(5):39–44</div></div>
+      <div class="src"><div class="src-title">Picinini F, Della Villa F et al. High Return to Competition Rate After On-Field Rehabilitation in Soccer Players After ACLR.</div><div class="src-meta">Orthop J Sports Med 2025;13(2) · 100 consecutive cases GPS-tracked</div></div>
+      <div class="src"><div class="src-title">Flanagan EP, Comyns TM. Contact Time and Reactive Strength Index to Optimize Fast-SSC Training.</div><div class="src-meta">Strength Cond J 2008;30(5):32–38 · 250-ms-Schwelle nach Schmidtbleicher</div></div>
+      <div class="src"><div class="src-title">Haff GG, Triplett NT (Eds.). Essentials of Strength Training and Conditioning, 4th Ed. (NSCA).</div><div class="src-meta">Human Kinetics 2016 · Kap. 18: Potach &amp; Chu — Plyometric Training</div></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /content -->
+
+<div class="action-bar" id="actionBar">
+  <a href="https://knieathletics.github.io/knieathletics-akademie/plyo-progression-team.html" target="_blank" class="btn-fullscreen">Vollansicht öffnen</a>
+  <button class="btn-print" onclick="window.print()">Drucken / PDF</button>
+</div>
+
+<div class="doc-footer"><p>&copy; 2026 MJS Sports GmbH · KNIEATHLETICS · knieathletics.de · Team-Leitfaden Sprungtraining</p></div>
+
+<div class="fab-bar" id="fabBar">
+  <a href="https://knieathletics.github.io/knieathletics-akademie/plyo-progression-team.html" target="_blank" class="fab-full">Vollansicht</a>
+  <button class="fab-pdf" onclick="window.print()">PDF</button>
+</div>
+
+<script>
+(function(){
+  var inIframe = window.self !== window.top;
+  document.getElementById('fabBar').style.display = inIframe ? 'flex' : 'none';
+  document.getElementById('actionBar').style.display = inIframe ? 'none' : 'flex';
+})();
+</script>
+
+</body>
+</html>
